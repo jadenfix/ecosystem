@@ -20,8 +20,7 @@ flowchart TB
         memory["beater-memory<br/>typed temporal memory"]
     end
     subgraph observe [Observe & Gate]
-        beater["beater<br/>observability, evals, CI gates"]
-        replaykit["ReplayKit<br/>fork/patch/replay debugger"]
+        beater["beater<br/>observability, fork/patch/replay, evals, CI gates"]
     end
     subgraph settle [Verify & Settle - frontier]
         aether["aether<br/>AI-native L1 blockchain"]
@@ -32,7 +31,6 @@ flowchart TB
     beaterjs -.->|"untrusted code"| beatbox
     tempo -.->|"tool execution"| beatbox
     tempo -->|"session traces"| beater
-    beater <-->|"shared trace format (planned)"| replaykit
     beaterOS -.->|"receipts / audit journals"| beater
     beaterOS -.->|"sandboxed execution"| beatbox
     beaterOS -.->|"memory provenance"| memory
@@ -46,8 +44,7 @@ Solid arrows are integrations that exist today; dotted arrows are designed-for c
 
 | Project | One-liner | Standalone value | Connects to the family via |
 | --- | --- | --- | --- |
-| [beater](https://github.com/jadenfix/beater) | Agent observability, replay, eval, and CI-gate platform | Plain OTEL ingest — works with any agent, no Beater-specific code | Consumes traces from any sibling; its evals gate changes across the family |
-| [ReplayKit](https://github.com/jadenfix/ReplayKit) | Local-first replay debugger: record, fork, patch one step, replay affected work, diff | Full record→fork→diff loop with its own collector, API, and web UI | Deep-replay lane for beater traces and tempo session forks |
+| [beater](https://github.com/jadenfix/beater) | Agent observability, deep replay (fork/patch/replay-affected/diff), eval, and CI-gate platform | Plain OTEL ingest — works with any agent, no Beater-specific code | Consumes traces from any sibling; its evals gate changes across the family |
 | [beater-memory](https://github.com/jadenfix/beater-memory) | Typed temporal memory projected from append-only agent traces | Local Rust app/library with provenance, contradiction warnings, token budgets | Imports beater.js journals and canonical span JSONL; serves memory to any runtime |
 | [beater.js](https://github.com/jadenfix/beater.js) | One Rust binary that serves your web app and runs durable polyglot agents (V8 + CPython + Rust + Wasm) | Full-stack agent runtime with journaled, resumable runs; tools speak MCP natively | Journals feed beater-memory; traces feed beater; beatbox is the planned Wasm sandbox tier |
 | [beatbox](https://github.com/jadenfix/beatbox) | Standalone sandbox service for untrusted, agent-generated code behind explicit capabilities | CLI, daemon, REST API, and MCP endpoint over a hermetic Wasmtime lane | Sandbox lane for beater.js, tempo tool execution, and beaterOS sandboxed side effects |
@@ -69,19 +66,18 @@ The sequencing principle: **win individually first, converge on contracts second
 
 ### Phase 1 — Standalone depth (now)
 Each project sharpens its own wedge:
-- **beater** — the one-binary observe→dataset→eval→gate loop, OTEL-native.
+- **beater** — the one-binary observe→dataset→eval→gate loop, OTEL-native, gaining the deep fork/patch/replay/diff loop per [docs/beater-replaykit-integration.md](docs/beater-replaykit-integration.md).
 - **tempo** — structured observation + batched actions on the Servo lane; CDP fallback hardening.
 - **beater.js** — the M8 build/deploy story; multi-isolate route concurrency.
 - **beatbox** — native Python/JS lanes and stateful sessions beyond the Wasm wedge.
 - **beater-memory** — provider distillation and bitemporal query hardening.
-- **ReplayKit** — fork/patch/replay ergonomics and diff quality.
 - **beaterOS** — contract crate + conformance suite toward the minimum viable kernel.
 - **aether** — testnet hardening: consensus, parallel runtime, DA under adversarial load.
 
 ### Phase 2 — Contract convergence
-- One **canonical span/journal schema** shared by beater, ReplayKit, beater-memory, and beater.js (today there is more than one trace shape; converge before deep composition).
+- One **canonical span/journal schema** shared by beater, beater-memory, and beater.js (today there is more than one trace shape; converge before deep composition).
 - **MCP everywhere**: every service that can act as a tool exposes an MCP endpoint (beatbox and beater.js already do; tempo and beater follow).
-- **beater absorbs ReplayKit's capabilities** (fork/patch/replay-affected/diff) per the design in [docs/beater-replaykit-integration.md](docs/beater-replaykit-integration.md) — best of both: ReplayKit's dirty-set planner and patch taxonomy inside beater's OTEL/eval/gate platform, with ReplayKit serving as the parity oracle during the port.
+- **beater absorbs ReplayKit** (fork/patch/replay-affected/diff) per [docs/beater-replaykit-integration.md](docs/beater-replaykit-integration.md); ReplayKit is retired from this index and serves only as the parity oracle during the port, then archives.
 
 ### Phase 3 — Pairwise integrations (each gated on a real consumer)
 - beater.js → beatbox as the Wasmtime sandbox tier.
@@ -91,11 +87,11 @@ Each project sharpens its own wedge:
 - beater-memory as the memory backend for beater.js agents (journal import already works).
 
 ### Phase 4 — The composed story
-An agent runs durably in **beater.js**, under **beaterOS** authority and policy, browsing through **tempo**, executing untrusted code in **beatbox**, remembering through **beater-memory**, with every run observed, replayable, and CI-gated by **beater** + **ReplayKit** — and, at the frontier, with attestations verifiable and settleable on **aether**.
+An agent runs durably in **beater.js**, under **beaterOS** authority and policy, browsing through **tempo**, executing untrusted code in **beatbox**, remembering through **beater-memory**, with every run observed, forkable, replayable, and CI-gated by **beater** — and, at the frontier, with attestations verifiable and settleable on **aether**.
 
 ## What is deliberately *not* here
 
-Private business planning, coursework, and one-off research repos are out of scope. This index tracks the active, public, composable infrastructure family only.
+Private business planning, coursework, and one-off research repos are out of scope. This index tracks the active, public, composable infrastructure family only. [ReplayKit](https://github.com/jadenfix/ReplayKit) was removed from the index: its fork/patch/replay/diff capabilities are being absorbed into beater ([design](docs/beater-replaykit-integration.md)), after which the repo archives.
 
 ## Contributing
 
