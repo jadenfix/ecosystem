@@ -81,7 +81,7 @@ Each project sharpens its own wedge:
 ### Phase 2 — Contract convergence
 - One **canonical span/journal schema** shared by beater, ReplayKit, beater-memory, and beater.js (today there is more than one trace shape; converge before deep composition).
 - **MCP everywhere**: every service that can act as a tool exposes an MCP endpoint (beatbox and beater.js already do; tempo and beater follow).
-- Positioning clarity between **beater** (platform: observe, eval, gate) and **ReplayKit** (specialist: deep fork/patch/replay) — shared format, distinct jobs.
+- **beater absorbs ReplayKit's capabilities** (fork/patch/replay-affected/diff) per the design in [docs/beater-replaykit-integration.md](docs/beater-replaykit-integration.md) — best of both: ReplayKit's dirty-set planner and patch taxonomy inside beater's OTEL/eval/gate platform, with ReplayKit serving as the parity oracle during the port.
 
 ### Phase 3 — Pairwise integrations (each gated on a real consumer)
 - beater.js → beatbox as the Wasmtime sandbox tier.
