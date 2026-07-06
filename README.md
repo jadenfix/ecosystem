@@ -93,6 +93,10 @@ An agent runs durably in **beater.js**, under **beaterOS** authority and policy,
 
 Private business planning, coursework, and one-off research repos are out of scope. This index tracks the active, public, composable infrastructure family only. [ReplayKit](https://github.com/jadenfix/ReplayKit) was removed from the index: its fork/patch/replay/diff capabilities are being absorbed into beater ([design](docs/beater-replaykit-integration.md)), after which the repo archives.
 
+## Staying fast
+
+Every repo adopts the shared **never-regress perf ratchet** — committed baselines, counter metrics with zero tolerance, paired A/B timing gates, automatic downward ratcheting — per [docs/perf-ratchet-pipeline.md](docs/perf-ratchet-pipeline.md).
+
 ## Contributing
 
 Each repo owns its own issues, CI, and review rules (non-author review; no self-merge). Cross-cutting proposals — shared schemas, protocol changes, roadmap sequencing — belong here in [ecosystem issues](https://github.com/jadenfix/ecosystem/issues).
