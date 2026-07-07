@@ -19,6 +19,17 @@ memory = "remi"
 sandbox = "cradle"
 settlement = "Arrha"
 
+[checkout_aliases]
+# Temporary local checkout names seen before repo-local rename migrations. These
+# are aliases only; canonical sibling checkout paths remain the `repos.*.path`
+# values below.
+palette = ["beater"]
+arrha = ["aether"]
+cradle = ["beatbox"]
+remi = ["beater-memory"]
+temp-js = ["beater.js"]
+tempOS = ["beaterOS"]
+
 [policy.toolchain]
 # Before any migration PR, verify the latest stable Rust from the official Rust
 # release page and update this exact pin if it moved. Checked on 2026-07-06:

@@ -122,7 +122,10 @@ Delete each item only after it is complete and verified.
 - [ ] Finish repo-local rename migrations so package names, binary names,
   generated clients, docs, fixtures, and local checkout folders converge on the
   Tempera product names above. Do not rename GitHub repositories through
-  automation unless the user explicitly asks for remote repo renames.
+  automation unless the user explicitly asks for remote repo renames. Use
+  `python3 scripts/check-local-checkouts.py --root <ecosystem-workspace>` to
+  audit legacy checkout names and print safe alias/remote commands before any
+  filesystem rename.
 - [ ] Enforce `docs/architecture-uniformity.md` across every repo. Remove
   repo-local exceptions unless they have benchmark, security, or product evidence.
 - [ ] Promote `scripts/ecosystem-pipeline.sh gate` to the required CI path once

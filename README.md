@@ -30,6 +30,8 @@ its own PR.
 - `scripts/check-ecosystem-binaries.py`: verifies declared binaries still exist.
 - `scripts/check-ecosystem-uniformity.py`: verifies manifests match the target
   state after migrations land.
+- `scripts/check-local-checkouts.py`: reports legacy checkout folder names and
+  remote mismatches without renaming user worktrees.
 - `scripts/run-ecosystem-verification.py`: runs declared per-repo verification
   commands.
 - `scripts/ecosystem-pipeline.sh`: staged report/gate pipeline for meta, repo,
@@ -76,6 +78,7 @@ scripts/ecosystem-pipeline.sh report
 scripts/ecosystem-pipeline.sh gate
 python3 scripts/check-ecosystem-binaries.py
 python3 scripts/check-ecosystem-uniformity.py
+python3 scripts/check-local-checkouts.py --root /Users/jadenfix/Desktop/ecosystem
 python3 scripts/audit-client-surface.py path/to/client-surface.json
 python3 scripts/run-ecosystem-verification.py --list
 python3 scripts/run-ecosystem-verification.py --repo tempo
