@@ -7,8 +7,8 @@ so the ecosystem stays uniform.
 
 ## Product Names
 
-The top coordination repo is `jadenfix/ecosystem`. Local checkout folder names
-may lag during migration, but GitHub remotes are now the canonical product repos:
+The top coordination repo is `jadenfix/ecosystem`. These are the canonical
+product names, GitHub repositories, and expected sibling checkout names:
 
 - `Palette`: observability/evals/API product, current repo `jadenfix/palette`
 - `temp.js`: language/runtime bridge, current repo `jadenfix/temp.js`
@@ -17,6 +17,10 @@ may lag during migration, but GitHub remotes are now the canonical product repos
 - `remi`: memory product, current repo `jadenfix/remi`
 - `cradle`: sandbox execution product, current repo `jadenfix/cradle`
 - `Arrha`: settlement/chain/credits product, current repo `jadenfix/arrha`
+
+Legacy Beater-family names are no longer public product names. Keep them only
+where a repo-local binary, crate, package, or fixture still has to be migrated in
+its own PR.
 
 ## What This Owns
 
