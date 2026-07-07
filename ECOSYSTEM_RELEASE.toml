@@ -1,0 +1,65 @@
+# Lockstep pre-1.0 Tempera ecosystem release state.
+#
+# Update this file whenever the sibling repos are intentionally synced. It is
+# allowed to break backward compatibility before public adoption; the release
+# note must say what was removed and which repo checks proved the new shape.
+
+version = "0.1.0"
+compatibility = "breaking-allowed-pre-adoption"
+rust_channel = "1.96.1"
+node_lts = "24"
+python_requires = ">=3.10"
+
+[repos.beater]
+product = "Palette"
+path = "beater"
+repository = "https://github.com/jadenfix/palette"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.aether]
+product = "Arrha"
+path = "aether"
+repository = "https://github.com/jadenfix/arrha"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.beatbox]
+product = "cradle"
+path = "beatbox"
+repository = "https://github.com/jadenfix/cradle"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.beater-memory]
+product = "remi"
+path = "beater-memory"
+repository = "https://github.com/jadenfix/remi"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.beater-js]
+product = "temp.js"
+path = "beater.js"
+repository = "https://github.com/jadenfix/temp.js"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.beaterOS]
+product = "tempOS"
+path = "beaterOS"
+repository = "https://github.com/jadenfix/tempOS"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.tempo]
+product = "tempo"
+path = "tempo"
+expected_version = "0.1.0"
+sha = "TODO"
+
+[repos.tempo-ecosystem]
+product = "tempo"
+path = "tempo-ecosystem"
+expected_version = "0.1.0"
+sha = "TODO"

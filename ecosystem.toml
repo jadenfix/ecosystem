@@ -1,0 +1,274 @@
+# Ecosystem control-plane manifest.
+#
+# This root directory is a meta-repo: it owns no product source code. It points
+# at sibling repos, expected binaries, repo-local verification commands, and
+# cross-repo policy checks.
+
+[ecosystem]
+name = "Tempera"
+description = "Rust-first, best-language-wins agent/runtime/browser/OS/memory/settlement ecosystem."
+
+[naming]
+# Current local checkout paths are preserved until explicit filesystem rename
+# migrations land. GitHub remotes are the canonical product repos.
+language = "temp.js"
+browser = "tempo"
+observability = "Palette"
+os = "tempOS"
+memory = "remi"
+sandbox = "cradle"
+settlement = "Arrha"
+
+[policy.toolchain]
+# Before any migration PR, verify the latest stable Rust from the official Rust
+# release page and update this exact pin if it moved. Checked on 2026-07-06:
+# https://blog.rust-lang.org/releases/latest/
+rust_channel = "1.96.1"
+rust_version = "1.96"
+rust_edition = "2024"
+rustfmt_style_edition = "2024"
+source = "https://blog.rust-lang.org/releases/latest/"
+
+[policy.node]
+# Node 24 is the latest LTS line checked on 2026-07-06. Node 26 is Current; keep
+# production apps/tools on LTS and test broader SDK support explicitly.
+package_manager = "npm"
+package_manager_version = "10.9.0"
+engines_node_apps = ">=24 <27"
+
+[policy.python]
+requires_python = ">=3.10"
+packaging = "pep621"
+
+[policy.language]
+default = "Rust"
+rule = "Rust-first for core systems paths, daemons, security boundaries, storage engines, protocol/state machines, and performance-critical code; use another language when it is the better tool for the subsystem and the boundary is explicit, generated/typed where possible, and tested from the ecosystem pipeline."
+allowed = ["Rust", "TypeScript", "Python", "Go", "Java", "Ruby", "PHP", "C", "C++", "Swift", "Kotlin", "Shell"]
+non_rust_requires = ["owner", "boundary", "runtime_version", "verification_command", "interop_contract"]
+
+[policy.storage]
+# There is no single best database. Use the best store for the workload and pin
+# production images/clients to current supported stable/LTS releases.
+relational_control_plane = "PostgreSQL latest supported stable major/minor; checked 2026-07-06: 18.4, not 19 beta"
+embedded_local_state = "SQLite latest stable for local app/daemon state; checked 2026-07-06: 3.53.3"
+analytics_events_traces = "ClickHouse latest LTS for production trace analytics; checked 2026-07-06: 26.3 LTS, with latest stable 26.6 for non-LTS evaluation"
+blockchain_state = "RocksDB remains appropriate for Arrha node state; benchmark any replacement against ledger/runtime workloads"
+migration_policy = "append-only migrations with checksums; never rewrite applied SQL"
+
+[policy.compatibility]
+# Pre-adoption rule: breaking changes are allowed when they improve uniformity,
+# architecture, or long-term operability. Prefer one complete coordinated
+# migration over compatibility shims.
+backward_compatibility_required = false
+require_migration_notes = true
+remove_legacy_aliases = true
+
+[policy.architecture]
+shape = "contract-first modular repos with thin binaries, shared workspace metadata, generated clients from source contracts, append-only migrations, and explicit local-vs-scale storage boundaries"
+binary_rule = "binaries are thin orchestration layers over library crates"
+contract_rule = "OpenAPI/MCP/SDK/schema artifacts are generated or fixture-pinned from one source of truth"
+storage_rule = "local embedded, relational control-plane, analytics/event, and ledger/audit stores are separated by workload"
+observability_rule = "every daemon/runtime emits structured logs, metrics, traces, health/readiness, and version metadata"
+security_rule = "capability, auth, sandbox, policy, and receipt boundaries fail closed and are tested through production paths"
+
+[policy.package_sync]
+version = "0.1.0"
+versioning_mode = "lockstep-pre-1.0"
+release_file = "ECOSYSTEM_RELEASE.toml"
+required_package_fields = ["name", "version", "license", "repository"]
+required_rust_workspace_fields = ["version", "edition", "rust-version", "license", "repository"]
+generated_clients_must_name_source_contract = true
+
+[pipeline.stages.meta]
+description = "Fast root checks over ecosystem.toml, declared binaries, architecture shape, and manifest uniformity."
+commands = [
+  "python3 scripts/check-ecosystem-binaries.py",
+  "python3 scripts/check-architecture-uniformity.py",
+  "python3 scripts/check-ecosystem-uniformity.py",
+]
+
+[pipeline.stages.repo]
+description = "Repo-local format, lint, test, package, and contract checks declared under each repo verify list."
+commands = [
+  "python3 scripts/run-ecosystem-verification.py",
+]
+
+[pipeline.stages.e2e]
+description = "Capability-level scenarios across built binaries and contract fixtures. These are required before declaring the ecosystem uniform."
+commands = [
+  "python3 scripts/run-ecosystem-e2e.py --list",
+]
+
+[capabilities.trace_observability]
+owner = "beater"
+product = "Palette"
+binaries = ["beaterd", "beaterctl"]
+contracts = ["OTLP", "OpenAPI", "SDKs", "MCP"]
+
+[capabilities.browser_observation]
+owner = "tempo"
+product = "tempo"
+binaries = ["tempod", "tempo", "tempo-engined-cdp"]
+contracts = ["compiled-observation", "policy", "tool-exec"]
+
+[capabilities.sandbox_execution]
+owner = "beatbox"
+product = "cradle"
+binaries = ["beatboxd", "beatbox"]
+contracts = ["sandbox-job", "network-deny", "secret-deny"]
+
+[capabilities.agent_runtime_bridge]
+owner = "beater-js"
+product = "temp.js"
+binaries = ["beater", "beater-connect"]
+contracts = ["runtime-bridge", "MCP", "OpenAPI"]
+
+[capabilities.os_admission_receipts]
+owner = "beaterOS"
+product = "tempOS"
+binaries = ["beater-osd", "beaterosctl"]
+contracts = ["capability-grant", "policy-decision", "receipt", "audit-journal"]
+
+[capabilities.memory]
+owner = "beater-memory"
+product = "remi"
+binaries = ["beater-memory"]
+contracts = ["memory-record", "retrieval"]
+
+[capabilities.settlement_chain]
+owner = "aether"
+product = "Arrha"
+binaries = ["aether-node", "aetherctl", "aether-indexer"]
+contracts = ["transaction", "receipt", "indexer"]
+
+[repos.beater]
+product = "Palette"
+path = "beater"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/palette"
+rust = true
+node = true
+python = true
+datastores = ["sqlite", "postgresql", "clickhouse", "object-store"]
+binaries = ["beaterd", "beaterctl", "beater-ingestd", "beater-queryd"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test --workspace",
+  "cd web/dashboard && npm ci && npm test && npm run build",
+]
+
+[repos.aether]
+product = "Arrha"
+path = "aether"
+license = "MIT"
+repository = "https://github.com/jadenfix/arrha"
+rust = true
+node = true
+python = true
+datastores = ["rocksdb", "postgresql-for-indexers-optional"]
+binaries = ["aether-node", "aetherctl", "aether-indexer", "aether-faucet", "aether-keytool", "aether-loadgen"]
+verify = [
+  "./cli-format",
+  "./cli-test",
+  "cargo test --all-features --workspace",
+  "npm ci && npm run test:ts",
+  "cd sdks/python && pip install -e '.[dev]' && PYTHONPATH=src python3 -m pytest",
+]
+
+[repos.beatbox]
+product = "cradle"
+path = "beatbox"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/cradle"
+rust = true
+node = true
+python = true
+datastores = ["sqlite"]
+binaries = ["beatbox", "beatboxd"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test",
+]
+
+[repos.beater-memory]
+product = "remi"
+path = "beater-memory"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/remi"
+rust = true
+node = false
+python = false
+datastores = ["embedded-local-state"]
+binaries = ["beater-memory"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test",
+]
+
+[repos.beater-js]
+product = "temp.js"
+path = "beater.js"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/temp.js"
+rust = true
+node = false
+python = false
+datastores = ["sqlite"]
+binaries = ["beater", "beater-connect"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test",
+]
+
+[repos.beaterOS]
+product = "tempOS"
+path = "beaterOS"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/tempOS"
+rust = true
+node = false
+python = true
+datastores = ["append-only-journal", "embedded-local-state"]
+binaries = ["beater-osd", "beaterosctl"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets --locked -- -D warnings",
+  "cargo test --workspace --locked",
+  "python3 scripts/check-optimization-docs.py",
+]
+
+[repos.tempo]
+product = "tempo"
+path = "tempo"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/tempo"
+rust = true
+node = false
+python = false
+datastores = ["cassette-store", "append-only-journal"]
+binaries = ["tempod", "tempo", "tempo-cli", "tempo-window", "tempo-engined-cdp"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test --workspace",
+]
+
+[repos.tempo-ecosystem]
+product = "tempo"
+path = "tempo-ecosystem"
+license = "Apache-2.0"
+repository = "https://github.com/jadenfix/tempo"
+rust = true
+node = false
+python = false
+datastores = ["cassette-store", "append-only-journal"]
+binaries = ["tempod", "tempo", "tempo-cli", "tempo-window", "tempo-engined-cdp"]
+verify = [
+  "cargo fmt --all -- --check",
+  "cargo clippy --workspace --all-targets -- -D warnings",
+  "cargo test --workspace",
+]

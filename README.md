@@ -1,102 +1,72 @@
-# ecosystem
+# Tempera Ecosystem Meta-Repo
 
-**A family of Rust-first, local-first infrastructure projects for the agent era — each one standalone, all of them composable.**
+This directory is the control plane for the Tempera sibling repos in this
+workspace. It does not vendor product source code. It points to each repo,
+declares the expected binaries and package surfaces, and runs cross-repo checks
+so the ecosystem stays uniform.
 
-Every project here earns its existence on its own: it solves one problem completely, runs locally from a single binary or workspace, and integrates with its siblings **only over protocol boundaries** (OpenTelemetry, MCP, REST, JSONL journals) — never through code coupling. You can adopt any one of them without the others. Together they form a full stack for building, running, observing, and governing AI agents.
+## Product Names
 
-## The map
+The top coordination repo is `jadenfix/ecosystem`. Local checkout folder names
+may lag during migration, but GitHub remotes are now the canonical product repos:
 
-```mermaid
-flowchart TB
-    subgraph govern [Govern]
-        beaterOS["beaterOS<br/>agent kernel: authority, policy, receipts"]
-    end
-    subgraph run [Run]
-        beaterjs["beater.js<br/>polyglot agent runtime"]
-        tempo["tempo<br/>agent-native browser"]
-        beatbox["beatbox<br/>capability sandbox"]
-    end
-    subgraph remember [Remember]
-        memory["beater-memory<br/>typed temporal memory"]
-    end
-    subgraph observe [Observe & Gate]
-        beater["beater<br/>observability, fork/patch/replay, evals, CI gates"]
-    end
-    subgraph settle [Verify & Settle - frontier]
-        aether["aether<br/>AI-native L1 blockchain"]
-    end
+- `Palette`: observability/evals/API product, current repo `jadenfix/palette`
+- `temp.js`: language/runtime bridge, current repo `jadenfix/temp.js`
+- `tempo`: browser/headless product, current repo `jadenfix/tempo`
+- `tempOS`: OS/runtime admission product, current repo `jadenfix/tempOS`
+- `remi`: memory product, current repo `jadenfix/remi`
+- `cradle`: sandbox execution product, current repo `jadenfix/cradle`
+- `Arrha`: settlement/chain/credits product, current repo `jadenfix/arrha`
 
-    beaterjs -->|"journals (JSONL)"| memory
-    beaterjs -->|"OTEL traces"| beater
-    beaterjs -.->|"untrusted code"| beatbox
-    tempo -.->|"tool execution"| beatbox
-    tempo -->|"session traces"| beater
-    beaterOS -.->|"receipts / audit journals"| beater
-    beaterOS -.->|"sandboxed execution"| beatbox
-    beaterOS -.->|"memory provenance"| memory
-    beaterOS -.->|"web authority"| tempo
-    beaterOS -.->|"anchored attestation"| aether
+## What This Owns
+
+- `ecosystem.toml`: repo registry, target toolchains, storage policy, expected
+  binaries, and verification commands.
+- `AGENTS.md`: migration rules for coding agents.
+- `scripts/check-ecosystem-binaries.py`: verifies declared binaries still exist.
+- `scripts/check-ecosystem-uniformity.py`: verifies manifests match the target
+  state after migrations land.
+- `scripts/run-ecosystem-verification.py`: runs declared per-repo verification
+  commands.
+- `scripts/ecosystem-pipeline.sh`: staged report/gate pipeline for meta, repo,
+  and E2E checks.
+- `scripts/watch-ecosystem-prs.py`: watches active PRs across sibling repos and
+  posts one ecosystem compatibility redirect when needed.
+- `docs/ecosystem-pipeline.md`: pipeline and language policy.
+- `scripts/ecosystem-smoke.sh`: root smoke gate for meta-repo checks.
+
+## Target Outcome
+
+After the migration queues are complete, every repo should agree on:
+
+- Latest stable Rust pinned in `rust-toolchain.toml`
+- Rust 2024 edition and matching MSRV
+- Repo-local formatting and lint policy
+- Actual GitHub repository metadata
+- License metadata matching each repo's `LICENSE`
+- npm/Node/Python package baselines where applicable
+- Workload-appropriate storage choices and append-only migration discipline
+- Declared binaries that can be built, launched, and tested from this root
+- Similar architecture in every repo: thin binaries, library-owned behavior,
+  generated contracts, version/health/smoke surfaces, and documented storage
+  boundaries
+- Rust-first implementation by default, while allowing TypeScript, Python,
+  platform languages, and SDK languages when they are the better fit and their
+  boundary is explicit and tested
+
+## Commands
+
+```sh
+scripts/ecosystem-pipeline.sh report
+scripts/ecosystem-pipeline.sh gate
+python3 scripts/check-ecosystem-binaries.py
+python3 scripts/check-ecosystem-uniformity.py
+python3 scripts/run-ecosystem-verification.py --list
+python3 scripts/run-ecosystem-verification.py --repo tempo
+python3 scripts/watch-ecosystem-prs.py
+scripts/ecosystem-smoke.sh
 ```
 
-Solid arrows are integrations that exist today; dotted arrows are designed-for connections that land only when a real consumer needs them.
-
-## The projects
-
-| Project | One-liner | Standalone value | Connects to the family via |
-| --- | --- | --- | --- |
-| [beater](https://github.com/jadenfix/beater) | Agent observability, deep replay (fork/patch/replay-affected/diff), eval, and CI-gate platform | Plain OTEL ingest — works with any agent, no Beater-specific code | Consumes traces from any sibling; its evals gate changes across the family |
-| [beater-memory](https://github.com/jadenfix/beater-memory) | Typed temporal memory projected from append-only agent traces | Local Rust app/library with provenance, contradiction warnings, token budgets | Imports beater.js journals and canonical span JSONL; serves memory to any runtime |
-| [beater.js](https://github.com/jadenfix/beater.js) | One Rust binary that serves your web app and runs durable polyglot agents (V8 + CPython + Rust + Wasm) | Full-stack agent runtime with journaled, resumable runs; tools speak MCP natively | Journals feed beater-memory; traces feed beater; beatbox is the planned Wasm sandbox tier |
-| [beatbox](https://github.com/jadenfix/beatbox) | Standalone sandbox service for untrusted, agent-generated code behind explicit capabilities | CLI, daemon, REST API, and MCP endpoint over a hermetic Wasmtime lane | Sandbox lane for beater.js, tempo tool execution, and beaterOS sandboxed side effects |
-| [tempo](https://github.com/jadenfix/tempo) | AI-agent-native browser: structured observation, batched semantic actions, state forking, API-first fast path | A browser agents can drive at ~2–5KB per observation instead of screenshot-and-click | Uses beatbox for sandboxing and the audited [servo fork](https://github.com/jadenfix/servo) as its Rust engine; sessions observable in beater |
-| [beaterOS](https://github.com/jadenfix/beaterOS) | Agent-first OS layer: explicit authority, deterministic policy, receipts, eval gates, auditable side effects | A local agent kernel spec + Rust contract crate usable by any runtime | The governance spine: policy for beater.js/tempo, execution via beatbox, provenance via beater-memory, receipts into beater |
-| [aether](https://github.com/jadenfix/aether) | Rust-first L1 blockchain with AI-native verification (TEE + VCR), parallel WASM execution, sub-2s finality | A complete L1: consensus, ledger, runtime, SDKs, explorer | Frontier project: potential verifiable-compute and settlement layer for agent economies; on-chain anchoring for beaterOS/beater attestations |
-
-## Design principles
-
-1. **Standalone before integrated.** Each project must be independently useful and independently adoptable. No project may require a sibling to deliver its core value.
-2. **Protocol boundaries, not code coupling.** Siblings talk over OTEL, MCP, REST, and journal/span JSONL. No shared internal crates across repo boundaries.
-3. **Local-first, Rust-first.** Everything runs on your machine from `cargo` or one binary. Hosted is an option, never a requirement.
-4. **No speculative integration.** A connection ships only when a real consumer exists on both sides ("deferred-with-consumer"). Dead glue code is deleted.
-5. **Evidence-gated change.** Changes land through non-author review and CI gates; the ecosystem dogfoods beater to hold itself to that bar.
-
-## Roadmap
-
-The sequencing principle: **win individually first, converge on contracts second, compose third.** Integration is never allowed to block a project's standalone success.
-
-### Phase 1 — Standalone depth (now)
-Each project sharpens its own wedge:
-- **beater** — the one-binary observe→dataset→eval→gate loop, OTEL-native, gaining the deep fork/patch/replay/diff loop per [docs/beater-replaykit-integration.md](docs/beater-replaykit-integration.md).
-- **tempo** — structured observation + batched actions on the Servo lane; CDP fallback hardening.
-- **beater.js** — the M8 build/deploy story; multi-isolate route concurrency.
-- **beatbox** — native Python/JS lanes and stateful sessions beyond the Wasm wedge.
-- **beater-memory** — provider distillation and bitemporal query hardening.
-- **beaterOS** — contract crate + conformance suite toward the minimum viable kernel.
-- **aether** — testnet hardening: consensus, parallel runtime, DA under adversarial load.
-
-### Phase 2 — Contract convergence
-- One **canonical span/journal schema** shared by beater, beater-memory, and beater.js (today there is more than one trace shape; converge before deep composition).
-- **MCP everywhere**: every service that can act as a tool exposes an MCP endpoint (beatbox and beater.js already do; tempo and beater follow).
-- **beater absorbs ReplayKit** (fork/patch/replay-affected/diff) per [docs/beater-replaykit-integration.md](docs/beater-replaykit-integration.md); ReplayKit is retired from this index and serves only as the parity oracle during the port, then archives.
-
-### Phase 3 — Pairwise integrations (each gated on a real consumer)
-- beater.js → beatbox as the Wasmtime sandbox tier.
-- tempo tool execution → beatbox.
-- tempo sessions → beater traces and evals.
-- beaterOS receipts/audit journals → beater ingest.
-- beater-memory as the memory backend for beater.js agents (journal import already works).
-
-### Phase 4 — The composed story
-An agent runs durably in **beater.js**, under **beaterOS** authority and policy, browsing through **tempo**, executing untrusted code in **beatbox**, remembering through **beater-memory**, with every run observed, forkable, replayable, and CI-gated by **beater** — and, at the frontier, with attestations verifiable and settleable on **aether**.
-
-## What is deliberately *not* here
-
-Private business planning, coursework, and one-off research repos are out of scope. This index tracks the active, public, composable infrastructure family only. [ReplayKit](https://github.com/jadenfix/ReplayKit) was removed from the index: its fork/patch/replay/diff capabilities are being absorbed into beater ([design](docs/beater-replaykit-integration.md)), after which the repo archives.
-
-## Staying fast
-
-Every repo adopts the shared **never-regress perf ratchet** — committed baselines, counter metrics with zero tolerance, paired A/B timing gates, automatic downward ratcheting — per [docs/perf-ratchet-pipeline.md](docs/perf-ratchet-pipeline.md).
-
-## Contributing
-
-Each repo owns its own issues, CI, and review rules (non-author review; no self-merge). Cross-cutting proposals — shared schemas, protocol changes, roadmap sequencing — belong here in [ecosystem issues](https://github.com/jadenfix/ecosystem/issues).
+`check-ecosystem-uniformity.py` is expected to fail until the repo-local
+migration tasks are completed. That failure is useful: it is the remaining work
+list made executable.

@@ -1,0 +1,21 @@
+# Sibling product repos are local checkouts, not vendored source for this
+# ecosystem meta-repo.
+/aether/
+/beatbox/
+/beater/
+/beater-memory/
+/beater.js/
+/beaterOS/
+/tempo/
+/tempo-ecosystem/
+
+# Local coordination/worktree scratch.
+/.targets/
+/.worktrees/
+
+# Runtime/build/cache output.
+__pycache__/
+*.py[cod]
+node_modules/
+target/
+.DS_Store
