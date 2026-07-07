@@ -3,8 +3,11 @@
 Goal: every service in the ecosystem should feel like one product family from
 the outside, even while each repo stays standalone. A caller should be able to
 learn one SDK shape, one error model, and one MCP pattern, then move between
-`beater`, `beatbox`, `tempo`, `beater-memory`, `beaterOS`, and `aether` with
-minimal new ceremony.
+`Palette`, `cradle`, `tempo`, `temp.js`, `tempOS`, `remi`, and `Arrha` with
+minimal new ceremony. Legacy binary, crate, or route names such as `beatbox`,
+`beater-memory`, or `aetherctl` may remain inside their owning repos until their
+repo-local rename tasks land, but new public docs and manifests should use the
+canonical product names from `ecosystem.toml`.
 
 This is a convergence profile, not a mandate to force every repo onto the same
 transport. REST services should expose OpenAPI. JSON-RPC services should publish
@@ -79,7 +82,7 @@ For a future shared SDK core, this means every service can be described as:
 
 ```json
 {
-  "service": "beatbox",
+  "service": "cradle",
   "base_url": "http://127.0.0.1:7300",
   "auth": {"scheme": "bearer", "compat_headers": ["x-beatbox-api-key"]},
   "contract": "sdks/openapi.json",
@@ -151,6 +154,8 @@ has a stable REST control plane:
 
 Services that are MCP-native, such as `beater.js` app tools or `tempo` browser
 tools, should still publish a committed tool catalog fixture and drift-check it.
+Use the current product name (`temp.js`) in public docs and reserve `beater.js`
+for legacy package/binary identifiers that have not migrated yet.
 
 ## Schema Profile
 
@@ -166,14 +171,16 @@ Repos that are not REST services yet should still have one public shape:
 
 ## Current Alignment
 
-- `beater`: reference implementation for REST/OpenAPI -> SDK/CLI/MCP.
-- `beatbox`: has OpenAPI and SDKs; should align operation names and error docs,
-  then project MCP from the same surface over time.
+- `Palette`: reference implementation for REST/OpenAPI -> SDK/CLI/MCP.
+- `cradle`: has the legacy `beatbox` OpenAPI and SDKs; should keep operation
+  names, auth metadata, error docs, and future MCP projection tied to the same
+  contract.
 - `tempo`: MCP-native today; should add a committed MCP catalog fixture and, if
   it grows a REST control plane, an OpenAPI contract.
-- `beater-memory`: has `/v1` routes; should add OpenAPI before publishing SDKs
-  or MCP.
-- `beaterOS`: schema-first; should keep one canonical schema source and generate
+- `remi`: has legacy `beater-memory` `/v1` routes; should keep a committed route
+  manifest now and add OpenAPI before publishing SDKs or MCP.
+- `tempOS`: schema-first; should keep one canonical schema source and generate
   packaging copies from it.
-- `aether`: JSON-RPC/gRPC domain; should publish a JSON-RPC method manifest and
-  SDK parity checks rather than pretending it is an OpenAPI service.
+- `Arrha`: JSON-RPC/gRPC domain with legacy `aether` binaries; should publish a
+  JSON-RPC method manifest and SDK parity checks rather than pretending it is an
+  OpenAPI service.
