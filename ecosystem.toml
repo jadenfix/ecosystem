@@ -100,7 +100,7 @@ commands = [
 ]
 
 [capabilities.trace_observability]
-owner = "beater"
+owner = "palette"
 product = "Palette"
 binaries = ["beaterd", "beaterctl"]
 contracts = ["OTLP", "OpenAPI", "SDKs", "MCP"]
@@ -112,38 +112,38 @@ binaries = ["tempod", "tempo", "tempo-engined-cdp"]
 contracts = ["compiled-observation", "policy", "tool-exec"]
 
 [capabilities.sandbox_execution]
-owner = "beatbox"
+owner = "cradle"
 product = "cradle"
 binaries = ["beatboxd", "beatbox"]
 contracts = ["sandbox-job", "network-deny", "secret-deny"]
 
 [capabilities.agent_runtime_bridge]
-owner = "beater-js"
+owner = "temp-js"
 product = "temp.js"
 binaries = ["beater", "beater-connect"]
 contracts = ["runtime-bridge", "MCP", "OpenAPI"]
 
 [capabilities.os_admission_receipts]
-owner = "beaterOS"
+owner = "tempOS"
 product = "tempOS"
 binaries = ["beater-osd", "beaterosctl"]
 contracts = ["capability-grant", "policy-decision", "receipt", "audit-journal"]
 
 [capabilities.memory]
-owner = "beater-memory"
+owner = "remi"
 product = "remi"
 binaries = ["beater-memory"]
 contracts = ["memory-record", "retrieval"]
 
 [capabilities.settlement_chain]
-owner = "aether"
+owner = "arrha"
 product = "Arrha"
 binaries = ["aether-node", "aetherctl", "aether-indexer"]
 contracts = ["transaction", "receipt", "indexer"]
 
-[repos.beater]
+[repos.palette]
 product = "Palette"
-path = "beater"
+path = "palette"
 license = "Apache-2.0"
 repository = "https://github.com/jadenfix/palette"
 rust = true
@@ -158,9 +158,9 @@ verify = [
   "cd web/dashboard && npm ci && npm test && npm run build",
 ]
 
-[repos.aether]
+[repos.arrha]
 product = "Arrha"
-path = "aether"
+path = "arrha"
 license = "MIT"
 repository = "https://github.com/jadenfix/arrha"
 rust = true
@@ -176,9 +176,9 @@ verify = [
   "cd sdks/python && pip install -e '.[dev]' && PYTHONPATH=src python3 -m pytest",
 ]
 
-[repos.beatbox]
+[repos.cradle]
 product = "cradle"
-path = "beatbox"
+path = "cradle"
 license = "Apache-2.0"
 repository = "https://github.com/jadenfix/cradle"
 rust = true
@@ -192,9 +192,9 @@ verify = [
   "cargo test",
 ]
 
-[repos.beater-memory]
+[repos.remi]
 product = "remi"
-path = "beater-memory"
+path = "remi"
 license = "Apache-2.0"
 repository = "https://github.com/jadenfix/remi"
 rust = true
@@ -208,9 +208,9 @@ verify = [
   "cargo test",
 ]
 
-[repos.beater-js]
+[repos.temp-js]
 product = "temp.js"
-path = "beater.js"
+path = "temp.js"
 license = "Apache-2.0"
 repository = "https://github.com/jadenfix/temp.js"
 rust = true
@@ -224,9 +224,9 @@ verify = [
   "cargo test",
 ]
 
-[repos.beaterOS]
+[repos.tempOS]
 product = "tempOS"
-path = "beaterOS"
+path = "tempOS"
 license = "Apache-2.0"
 repository = "https://github.com/jadenfix/tempOS"
 rust = true
@@ -244,22 +244,6 @@ verify = [
 [repos.tempo]
 product = "tempo"
 path = "tempo"
-license = "Apache-2.0"
-repository = "https://github.com/jadenfix/tempo"
-rust = true
-node = false
-python = false
-datastores = ["cassette-store", "append-only-journal"]
-binaries = ["tempod", "tempo", "tempo-cli", "tempo-window", "tempo-engined-cdp"]
-verify = [
-  "cargo fmt --all -- --check",
-  "cargo clippy --workspace --all-targets -- -D warnings",
-  "cargo test --workspace",
-]
-
-[repos.tempo-ecosystem]
-product = "tempo"
-path = "tempo-ecosystem"
 license = "Apache-2.0"
 repository = "https://github.com/jadenfix/tempo"
 rust = true

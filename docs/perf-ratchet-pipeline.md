@@ -15,7 +15,7 @@ Push everything you can into class 1. Most "performance" regressions (an extra s
 
 Each repo tracks 3–5 numbers that define its product promise. If one of these dips, the product got worse — everything else is diagnostic detail.
 
-### beater (observe → replay → eval → gate)
+### Palette (observe → replay → eval → gate)
 | Metric | Class | Why it's the product |
 | --- | --- | --- |
 | Ingest cost per span (instructions + allocations, OTLP→stored) | counter | headroom for "point any agent at it" |
@@ -33,7 +33,7 @@ Each repo tracks 3–5 numbers that define its product promise. If one of these 
 | Per-action p50/p99: observe → decide → act → settled (per lane, CDP and Servo) | timing | the measured bottleneck map lives here |
 | ObservationDiff size on incremental steps | counter | diff-ability thesis |
 
-### beater.js (durable polyglot runtime)
+### temp.js (durable polyglot runtime)
 | Metric | Class | Why |
 | --- | --- | --- |
 | Journal overhead per step (bytes + fsync count + instructions) | counter | durability must stay cheap |
@@ -41,7 +41,7 @@ Each repo tracks 3–5 numbers that define its product promise. If one of these 
 | Route p99 (V8) and SSR first-chunk time | timing | it's still a web server |
 | Cold start of a built bundle | timing | the M8 deploy story |
 
-### beatbox (capability sandbox)
+### cradle (capability sandbox)
 | Metric | Class | Why |
 | --- | --- | --- |
 | Instantiate-to-first-instruction latency (hermetic module) | timing | sandbox tax = adoption blocker |
@@ -49,7 +49,7 @@ Each repo tracks 3–5 numbers that define its product promise. If one of these 
 | Memory per idle job; job-store rows after retention run | counter | daemon must not grow |
 | Escapes/capability leaks on the adversarial fixture suite | counter (= 0) | non-negotiable |
 
-### beater-memory (typed temporal memory)
+### remi (typed temporal memory)
 | Metric | Class | Why |
 | --- | --- | --- |
 | Query p99 per tier (lexical / graph / active reconstruction) | timing | read path is the product |
@@ -57,14 +57,14 @@ Each repo tracks 3–5 numbers that define its product promise. If one of these 
 | Provenance coverage of answers (= 100%) | counter | the differentiator |
 | Distillation rejection rate on the malformed-provider corpus (all rejected, none looping) | counter | provider boundary |
 
-### beaterOS (agent kernel)
+### tempOS (agent kernel)
 | Metric | Class | Why |
 | --- | --- | --- |
 | Policy decision cost in **instructions** (it's a pure function — wall-clock is the wrong unit) | counter | hot-path kernel promise |
 | Receipt write overhead per side effect | counter | audit must stay cheap |
 | Decision replay determinism: byte-identical receipts on the conformance corpus (= 100%) | counter | the kernel promise itself |
 
-### aether (L1)
+### Arrha (L1)
 | Metric | Class | Why |
 | --- | --- | --- |
 | Time-to-finality on the reference devnet topology (< 2s budget) | timing | the headline claim |
@@ -122,14 +122,14 @@ After every merge to the default branch:
 - Timing jobs run on a **pinned self-hosted runner** (a dedicated always-on box — the Mac mini class of machine is fine), never on shared cloud runners.
 - Warmup runs discarded; results recorded with machine fingerprint; if the runner changes, timings re-baseline from a clean sweep (counters are unaffected — that's why counters are the backbone).
 
-### 2.5 Dogfood: beater is the metrics store and the gate
+### 2.5 Dogfood: Palette is the metrics store and the gate
 
-Every `perf-gate` run exports its results as OTEL spans to a beater instance (`evaluator.run` spans with metric attributes). That gives:
+Every `perf-gate` run exports its results as OTEL spans to a Palette instance (`evaluator.run` spans with metric attributes). That gives:
 - history and dashboards for every metric per commit, for free;
-- beater's own gate API (`POST /v1/gates/.../run`) as the eventual gate implementation — the ecosystem's CI-gate product gating the ecosystem;
+- Palette's own gate API (`POST /v1/gates/.../run`) as the eventual gate implementation — the ecosystem's CI-gate product gating the ecosystem;
 - regressions promotable to datasets: a dip becomes a permanent fixture case (`from-trace`), so the corpus grows from real failures — the same failure can never sneak past twice.
 
-Until beater's gate endpoints are fully live, a ~200-line `ratchet` script (read baseline, run suite, compare, exit code) in each repo does steps 2.2–2.3; the JSON format above is the contract so swapping the script for beater gates later changes nothing else.
+Until Palette's gate endpoints are fully live, a ~200-line `ratchet` script (read baseline, run suite, compare, exit code) in each repo does steps 2.2–2.3; the JSON format above is the contract so swapping the script for Palette gates later changes nothing else.
 
 ## 3. What "never dips for anything" means precisely
 
@@ -141,10 +141,10 @@ Until beater's gate endpoints are fully live, a ~200-line `ratchet` script (read
 ## 4. Rollout order (consumer-gated, one PR-sized slice each)
 
 1. **tempo** — it already has a measured bottleneck map and live perf PRs; codify existing numbers as the first `perf/baseline.json` + ratchet script. Highest immediate value.
-2. **beater** — ingest + read-path counters and timings; then the absorption metrics (dirty-set plan cost, cassette hit rate) land as ratcheted metrics *from the first Phase C PR*, so deep replay is born gated and can never regress from its opening numbers.
-3. **beatbox** — instantiation latency + adversarial-suite zero-escape counter.
-4. **beater.js** — journal overhead + kill-9 matrix.
-5. **beater-memory, beaterOS** — tier latencies / instruction-counted decisions as those hot paths stabilize.
-6. **aether** — devnet finality/TPS harness is a bigger build; its determinism counter (identical state roots) should land first since it's cheap and existential.
+2. **Palette** — ingest + read-path counters and timings; then the absorption metrics (dirty-set plan cost, cassette hit rate) land as ratcheted metrics *from the first Phase C PR*, so deep replay is born gated and can never regress from its opening numbers.
+3. **cradle** — instantiation latency + adversarial-suite zero-escape counter.
+4. **temp.js** — journal overhead + kill-9 matrix.
+5. **remi, tempOS** — tier latencies / instruction-counted decisions as those hot paths stabilize.
+6. **Arrha** — devnet finality/TPS harness is a bigger build; its determinism counter (identical state roots) should land first since it's cheap and existential.
 
 Each rollout PR contains: the fixture corpus, the ratchet script wired into CI as a required check, the initial `baseline.json` measured on the pinned runner, and the gate-honesty fixture. Definition of done: a deliberately-added redundant serialization on a hot path fails CI in that repo.

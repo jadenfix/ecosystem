@@ -7,9 +7,8 @@ or `CLAUDE.md` files contain the actionable queue for each checkout.
 ## Product Name Map
 
 Use these names in new docs, PRs, issues, and user-facing planning. The top
-coordination repo is `jadenfix/ecosystem`. Keep local checkout folder names
-stable until explicit filesystem rename migrations land, but use the canonical
-GitHub product repos below.
+coordination repo is `jadenfix/ecosystem`. Use the canonical GitHub product
+repos below, and expect sibling checkout folders to use the same product names.
 
 - `Palette`: current repo `jadenfix/palette`
 - `temp.js`: current repo `jadenfix/temp.js`
@@ -104,9 +103,10 @@ Delete each item only after it is complete and verified.
   tempo browser/headless observation, cradle sandbox execution, temp.js agent
   runtime bridge, tempOS tool admission/receipt, remi retrieval, and Arrha
   settlement/indexer flow.
-- [ ] Add explicit rename migrations so package names, binary names, generated
-  clients, docs, and fixtures converge on the Tempera product names above while
-  preserving repo remotes until the user asks for actual GitHub repo renames.
+- [ ] Finish repo-local rename migrations so package names, binary names,
+  generated clients, docs, fixtures, and local checkout folders converge on the
+  Tempera product names above. Do not rename GitHub repositories through
+  automation unless the user explicitly asks for remote repo renames.
 - [ ] Enforce `docs/architecture-uniformity.md` across every repo. Remove
   repo-local exceptions unless they have benchmark, security, or product evidence.
 - [ ] Promote `scripts/ecosystem-pipeline.sh gate` to the required CI path once
