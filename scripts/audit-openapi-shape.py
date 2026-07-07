@@ -22,6 +22,7 @@ from typing import Any
 
 CAMEL = re.compile(r"^[a-z][a-zA-Z0-9]*$")
 DEFAULT_ERROR_SCHEMA_SUFFIXES = ("/ErrorResponse", "/ApiErrorBody")
+PUBLIC_OPERATION_IDS = {"health", "getHealth", "openapi", "getOpenapi", "postMcp"}
 
 
 @dataclass(frozen=True)
@@ -56,16 +57,52 @@ def schema_ref(response: dict[str, Any]) -> str:
     )
 
 
+def is_public_operation(path: str, operation_id: str | None) -> bool:
+    normalized = path.rstrip("/")
+    return (
+        operation_id in PUBLIC_OPERATION_IDS
+        or normalized.endswith("/health")
+        or normalized.endswith("/openapi.json")
+        or normalized == "/mcp"
+    )
+
+
+def has_bearer_security_scheme(spec: dict[str, Any]) -> bool:
+    schemes = spec.get("components", {}).get("securitySchemes", {})
+    for scheme in schemes.values():
+        if (
+            scheme.get("type") == "http"
+            and scheme.get("scheme", "").lower() == "bearer"
+        ):
+            return True
+    return False
+
+
+def operation_requires_security(
+    spec_security: Any,
+    operation_security: Any,
+) -> bool:
+    security = operation_security if operation_security is not None else spec_security
+    return isinstance(security, list) and bool(security)
+
+
 def audit_spec(
     spec: dict[str, Any],
     *,
     error_schema_suffixes: tuple[str, ...] = DEFAULT_ERROR_SCHEMA_SUFFIXES,
     list_pagination_exemptions: set[str] | None = None,
+    enforce_auth: bool = False,
 ) -> AuditResult:
     violations: list[str] = []
     op_ids: dict[str, list[str]] = {}
     ops = operations(spec)
     list_pagination_exemptions = list_pagination_exemptions or set()
+    spec_security = spec.get("security")
+
+    if enforce_auth and not has_bearer_security_scheme(spec):
+        violations.append(
+            "components.securitySchemes: missing HTTP bearer security scheme"
+        )
 
     for method, path, op in ops:
         where = f"{method} {path}"
@@ -81,6 +118,12 @@ def audit_spec(
 
         if len(tags) != 1:
             violations.append(f"{where}: expected exactly 1 tag, got {tags}")
+
+        if enforce_auth and not is_public_operation(path, oid):
+            if not operation_requires_security(spec_security, op.get("security")):
+                violations.append(
+                    f"{where}: authenticated operation lacks OpenAPI security"
+                )
 
         responses = op.get("responses", {})
         is_health = oid in {"health", "getHealth"} or path.rstrip("/").endswith("/health")
@@ -131,10 +174,23 @@ def audit_spec(
 def main(argv: list[str] | None = None) -> int:
     args = sys.argv[1:] if argv is None else argv
     if not args:
-        print("usage: audit-openapi-shape.py <openapi.json>", file=sys.stderr)
+        print(
+            "usage: audit-openapi-shape.py [--enforce-auth] <openapi.json>",
+            file=sys.stderr,
+        )
+        return 2
+    enforce_auth = False
+    if "--enforce-auth" in args:
+        enforce_auth = True
+        args = [arg for arg in args if arg != "--enforce-auth"]
+    if not args:
+        print(
+            "usage: audit-openapi-shape.py [--enforce-auth] <openapi.json>",
+            file=sys.stderr,
+        )
         return 2
 
-    result = audit_spec(load_spec(args[0]))
+    result = audit_spec(load_spec(args[0]), enforce_auth=enforce_auth)
     print(
         f"audited {result.operation_count} operations, "
         f"{result.unique_operation_id_count} unique operationIds, "

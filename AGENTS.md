@@ -72,7 +72,10 @@ Use these defaults unless a repo-local task says otherwise:
   fields, and SDK error shapes as public surface too. New client-facing HTTP
   auth should prefer `Authorization: Bearer <token>` with any legacy
   `x-<service>-api-key` header kept only as a documented compatibility alias
-  backed by the same verifier.
+  backed by the same verifier. If a repo exposes CLI and SDK clients, their
+  config names, auth precedence, timeout behavior, JSON output mode, and error
+  fields should match the shared API/SDK/MCP shape profile unless the PR records
+  a tested repo-local exception.
 - If an agent is already active on a PR, its next sequence of turns should first
   reconcile that repo/PR with the ecosystem pipeline before adding unrelated
   product scope. Treat `scripts/ecosystem-pipeline.sh report` as the handoff

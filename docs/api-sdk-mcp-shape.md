@@ -13,6 +13,27 @@ conformance fixtures. The common rule is that each public boundary has one
 machine-readable source of truth and every SDK/MCP/CLI surface derives from it
 or is drift-checked against it.
 
+## Client-Facing Shape
+
+Every repo should describe the same client-facing facts in the same place and
+use the same names across docs, SDKs, CLIs, MCP tools, examples, and fixtures:
+
+- Contract path: OpenAPI, JSON-RPC manifest, MCP catalog, or JSON Schema.
+- Base URL field: `base_url` on snake_case surfaces and `baseUrl` on camelCase
+  surfaces.
+- Auth field: `token` for Bearer auth. `api_key`/`apiKey` may remain only for
+  legacy aliases and should be documented as such.
+- Timeout field: `timeout_ms`/`timeoutMs`, measured in milliseconds.
+- Output mode: `json` for stable machine-readable output; `text` only as a
+  human convenience.
+- Error fields: `status`, `code`, `message`, optional `request_id`, optional
+  `details`.
+- Idempotency field/header: use `Idempotency-Key` for HTTP unless the transport
+  has a clearly documented equivalent.
+
+If the CLI, SDK, MCP tool, and README cannot all be updated in the same PR, the
+PR must add or update a drift fixture that makes the missing surface obvious.
+
 ## Service Profile
 
 Services with HTTP control planes should use this shape:
@@ -28,15 +49,19 @@ Services with HTTP control planes should use this shape:
   response `next_cursor`/`nextCursor` according to that repo's wire casing.
 - One drift gate that proves the served/generated contract equals the committed
   contract.
+- REST repos should run the shared OpenAPI audit with `--enforce-auth` once
+  their public spec declares Bearer security and public endpoint exemptions.
 
 ## SDK Profile
 
 SDKs may be idiomatic per language, but they should share the same conceptual
 surface:
 
-- One client config shape: `base_url`/`baseUrl`, `api_key`/`apiKey` or
-  `token`, `timeout_ms`/`timeoutMs`, and optional service-scoped fields such as
+- One client config shape: `base_url`/`baseUrl`, `token`, `timeout_ms`/
+  `timeoutMs`, and optional service-scoped fields such as
   tenant, project, profile, or environment.
+- `api_key`/`apiKey` is allowed only when a repo still exposes a documented
+  compatibility API-key alias. New docs should call the value a Bearer token.
 - Operation methods map from the canonical operation name.
 - Transport errors and API errors are separate typed errors.
 - API errors carry HTTP status, stable error code, message, optional request id,
@@ -73,12 +98,16 @@ can describe one public surface:
 - Use operation names from the contract for subcommands unless the CLI has a
   better domain noun that is documented as an alias.
 - Every networked CLI accepts the same global flags where applicable:
-  `--base-url`, `--api-key`, `--api-key-file`, `--timeout-ms`, `--output
-  json|text`, and `--json` as a shortcut for JSON output.
+  `--base-url`, `--token`, `--token-file`, `--timeout-ms`, `--output json|text`,
+  and `--json` as a shortcut for JSON output.
+- `--api-key` and `--api-key-file` may remain as deprecated aliases only when
+  the service has a documented compatibility API-key header.
 - Environment variables use the uppercase service prefix:
-  `<SERVICE>_BASE_URL`, `<SERVICE>_API_KEY`, and `<SERVICE>_TIMEOUT_MS`.
-- `--api-key-file` reads secret material without printing it and wins over
-  `<SERVICE>_API_KEY`; explicit `--api-key` wins over both for local debugging.
+  `<SERVICE>_BASE_URL`, `<SERVICE>_TOKEN`, and `<SERVICE>_TIMEOUT_MS`.
+- Compatibility aliases may also read `<SERVICE>_API_KEY`, but the canonical
+  env var is `<SERVICE>_TOKEN`.
+- `--token-file` reads secret material without printing it and wins over
+  `<SERVICE>_TOKEN`; explicit `--token` wins over both for local debugging.
 - JSON output is stable and contract-shaped. Text output may be friendly, but it
   must not be the only way to access a field.
 - Authenticated commands must not follow redirects with auth headers attached.
