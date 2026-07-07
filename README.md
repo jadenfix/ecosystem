@@ -44,6 +44,8 @@ its own PR.
   services.
 - `docs/client-surface-manifest.schema.json`: common manifest format for SDK,
   CLI, auth, output, and error surfaces.
+- `docs/client-surface-manifest.example.json`: copyable known-good profile for
+  OpenAPI plus SDK, CLI, auth, error, and MCP catalog parity.
 - `scripts/audit-client-surface.py`: portable client-surface manifest audit for
   SDK/CLI/auth parity.
 - `docs/ecosystem-pipeline.md`: pipeline and language policy.
@@ -79,6 +81,7 @@ scripts/ecosystem-pipeline.sh gate
 python3 scripts/check-ecosystem-binaries.py
 python3 scripts/check-ecosystem-uniformity.py
 python3 scripts/check-local-checkouts.py --root /Users/jadenfix/Desktop/ecosystem
+python3 scripts/audit-client-surface.py --print-template cradle
 python3 scripts/audit-client-surface.py path/to/client-surface.json
 python3 scripts/run-ecosystem-verification.py --list
 python3 scripts/run-ecosystem-verification.py --repo tempo

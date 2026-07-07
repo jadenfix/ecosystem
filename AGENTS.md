@@ -79,6 +79,17 @@ Use these defaults unless a repo-local task says otherwise:
   SDK, CLI, MCP, auth, or error behavior, add or update a client-surface manifest
   matching `docs/client-surface-manifest.schema.json` and run
   `scripts/audit-client-surface.py` or the repo-local copy of that check.
+- Do not let CLI, SDK, MCP, docs, examples, and manifests drift apart. Public
+  client-facing changes are not complete until every mirrored surface uses the
+  same canonical operation names, `base_url`/`token`/`timeout_ms` client config,
+  `--base-url`/`--token`/`--token-file`/`--timeout-ms`/`--output`/`--json` CLI
+  flags, service-prefixed `<SERVICE>_TOKEN` env vars, shared Bearer auth
+  semantics, and normalized `status`/`code`/`message` error fields. Use
+  `python3 scripts/audit-client-surface.py --print-template <service>` when a
+  repo needs a new manifest, then keep that manifest in sync in the same PR as
+  the code, docs, fixtures, and generated clients. The long-term target is that
+  these repos can share one SDK transport/auth/error core; every repo-local
+  exception should be visible, tested, and temporary.
 - If an agent is already active on a PR, its next sequence of turns should first
   reconcile that repo/PR with the ecosystem pipeline before adding unrelated
   product scope. Treat `scripts/ecosystem-pipeline.sh report` as the handoff

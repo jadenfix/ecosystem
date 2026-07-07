@@ -91,6 +91,17 @@
             "type": "string",
             "enum": ["flag", "token_file", "env"]
           },
+          "prefixItems": [
+            {
+              "const": "flag"
+            },
+            {
+              "const": "token_file"
+            },
+            {
+              "const": "env"
+            }
+          ],
           "minItems": 3,
           "maxItems": 3,
           "uniqueItems": true
@@ -105,8 +116,21 @@
         "config_fields": {
           "type": "array",
           "items": {
-            "type": "string"
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
           },
+          "prefixItems": [
+            {
+              "const": "base_url"
+            },
+            {
+              "const": "token"
+            },
+            {
+              "const": "timeout_ms"
+            }
+          ],
+          "minItems": 3,
           "uniqueItems": true
         },
         "error_type": {
@@ -129,6 +153,27 @@
           "items": {
             "type": "string"
           },
+          "prefixItems": [
+            {
+              "const": "--base-url"
+            },
+            {
+              "const": "--token"
+            },
+            {
+              "const": "--token-file"
+            },
+            {
+              "const": "--timeout-ms"
+            },
+            {
+              "const": "--output"
+            },
+            {
+              "const": "--json"
+            }
+          ],
+          "minItems": 6,
           "uniqueItems": true
         },
         "env": {
@@ -144,6 +189,8 @@
             "type": "string",
             "enum": ["json", "text"]
           },
+          "minItems": 2,
+          "maxItems": 2,
           "uniqueItems": true
         },
         "operation_names": {
@@ -164,6 +211,33 @@
             "enum": ["status", "code", "message", "request_id", "details"]
           },
           "uniqueItems": true
+        }
+      }
+    },
+    "mcp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "drift_check", "tool_names", "auth", "errors"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "drift_check": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_names": {
+          "type": "string",
+          "enum": ["contract", "catalog", "documented_composites"]
+        },
+        "auth": {
+          "type": "string",
+          "const": "shared"
+        },
+        "errors": {
+          "type": "string",
+          "enum": ["structured_content", "transport_native"]
         }
       }
     }

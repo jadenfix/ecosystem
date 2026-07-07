@@ -20,11 +20,19 @@ CONTRACT_TYPES = {
     "http_route_manifest",
 }
 AUTH_PRECEDENCE = ["flag", "token_file", "env"]
-SDK_CONFIG_FIELDS = {"base_url", "token", "timeout_ms"}
-CLI_FLAGS = {"--base-url", "--token", "--token-file", "--timeout-ms", "--output"}
+SDK_CONFIG_FIELDS = ["base_url", "token", "timeout_ms"]
+CLI_FLAGS = [
+    "--base-url",
+    "--token",
+    "--token-file",
+    "--timeout-ms",
+    "--output",
+    "--json",
+]
 ERROR_FIELDS = ["status", "code", "message"]
 OPTIONAL_ERROR_FIELDS = {"request_id", "details"}
 LOWER_CAMEL = re.compile(r"^[a-z][a-zA-Z0-9]*$")
+SNAKE = re.compile(r"^[a-z][a-z0-9_]*$")
 ENV_TOKEN = re.compile(r"^[A-Z][A-Z0-9_]*_TOKEN$")
 ENV_API_KEY = re.compile(r"^[A-Z][A-Z0-9_]*_API_KEY$")
 
@@ -38,6 +46,48 @@ class AuditResult:
 def load_manifest(path: str | Path) -> dict[str, Any]:
     with Path(path).open(encoding="utf-8") as handle:
         return json.load(handle)
+
+
+def service_env_prefix(service: str) -> str:
+    prefix = re.sub(r"[^A-Za-z0-9]+", "_", service).strip("_").upper()
+    return prefix or "SERVICE"
+
+
+def template_manifest(service: str) -> dict[str, Any]:
+    prefix = service_env_prefix(service)
+    return {
+        "surface_version": SURFACE_VERSION,
+        "service": service,
+        "contract": {
+            "type": "openapi",
+            "path": "sdks/openapi.json",
+            "drift_check": "replace with the repo-local contract drift check",
+        },
+        "auth": {
+            "scheme": "bearer",
+            "header": "Authorization",
+            "value_format": "Bearer <token>",
+            "token_field": "token",
+            "env_token": f"{prefix}_TOKEN",
+            "compat_headers": [],
+            "compat_env": [],
+            "precedence": AUTH_PRECEDENCE,
+        },
+        "sdk": {
+            "config_fields": SDK_CONFIG_FIELDS,
+            "error_type": "ApiError",
+            "operation_names": "contract",
+        },
+        "cli": {
+            "global_flags": CLI_FLAGS,
+            "env": [f"{prefix}_BASE_URL", f"{prefix}_TOKEN", f"{prefix}_TIMEOUT_MS"],
+            "output_modes": ["json", "text"],
+            "operation_names": "contract",
+        },
+        "errors": {
+            "fields": ["status", "code", "message", "request_id", "details"],
+        },
+    }
 
 
 def require_object(parent: dict[str, Any], key: str, violations: list[str]) -> dict[str, Any]:
@@ -67,6 +117,7 @@ def audit_manifest(manifest: dict[str, Any]) -> AuditResult:
         )
     if not isinstance(service, str) or not service.strip():
         violations.append("service: expected non-empty string")
+    env_prefix = service_env_prefix(str(service))
 
     contract = require_object(manifest, "contract", violations)
     contract_type = contract.get("type")
@@ -90,6 +141,10 @@ def audit_manifest(manifest: dict[str, Any]) -> AuditResult:
         env_token = auth.get("env_token")
         if not isinstance(env_token, str) or not ENV_TOKEN.match(env_token):
             violations.append("auth.env_token: expected <SERVICE>_TOKEN")
+        elif env_token != f"{env_prefix}_TOKEN":
+            violations.append(
+                f"auth.env_token: expected service-prefixed {env_prefix}_TOKEN"
+            )
 
     precedence = require_list(auth, "precedence", violations)
     if precedence and precedence != AUTH_PRECEDENCE:
@@ -105,30 +160,43 @@ def audit_manifest(manifest: dict[str, Any]) -> AuditResult:
             violations.append("auth.compat_env: expected <SERVICE>_API_KEY aliases")
 
     sdk = require_object(manifest, "sdk", violations)
-    config_fields = set(require_list(sdk, "config_fields", violations))
-    missing_sdk_fields = sorted(SDK_CONFIG_FIELDS - config_fields)
-    if missing_sdk_fields:
-        violations.append(f"sdk.config_fields: missing {missing_sdk_fields}")
+    config_fields = require_list(sdk, "config_fields", violations)
+    if config_fields[: len(SDK_CONFIG_FIELDS)] != SDK_CONFIG_FIELDS:
+        violations.append(
+            f"sdk.config_fields: must start with {SDK_CONFIG_FIELDS}"
+        )
     if "api_key" in config_fields or "apiKey" in config_fields:
         violations.append("sdk.config_fields: api_key/apiKey may not be canonical")
+    for field in config_fields:
+        if not isinstance(field, str) or not SNAKE.match(field):
+            violations.append(
+                f"sdk.config_fields: {field!r} must be a snake_case client field"
+            )
     if sdk.get("operation_names") != "contract":
         violations.append("sdk.operation_names: expected 'contract'")
     if not isinstance(sdk.get("error_type"), str) or not sdk.get("error_type", "").strip():
         violations.append("sdk.error_type: expected non-empty string")
 
     cli = require_object(manifest, "cli", violations)
-    flags = set(require_list(cli, "global_flags", violations))
-    missing_flags = sorted(CLI_FLAGS - flags)
-    if missing_flags:
-        violations.append(f"cli.global_flags: missing {missing_flags}")
+    flags = require_list(cli, "global_flags", violations)
+    if flags[: len(CLI_FLAGS)] != CLI_FLAGS:
+        violations.append(f"cli.global_flags: must start with {CLI_FLAGS}")
     if "--api-key" in flags or "--api-key-file" in flags:
         violations.append("cli.global_flags: api-key flags may only be aliases")
     env = set(require_list(cli, "env", violations))
     if auth_scheme == "bearer" and auth.get("env_token") not in env:
         violations.append("cli.env: missing canonical token env var")
+    expected_env = {
+        f"{env_prefix}_BASE_URL",
+        f"{env_prefix}_TOKEN",
+        f"{env_prefix}_TIMEOUT_MS",
+    }
+    missing_env = sorted(expected_env - env)
+    if missing_env:
+        violations.append(f"cli.env: missing service-prefixed env vars {missing_env}")
     output_modes = set(require_list(cli, "output_modes", violations))
-    if "json" not in output_modes:
-        violations.append("cli.output_modes: missing stable json output")
+    if output_modes != {"json", "text"}:
+        violations.append("cli.output_modes: expected exactly ['json', 'text']")
     if cli.get("operation_names") not in {"contract", "documented_aliases"}:
         violations.append(
             "cli.operation_names: expected 'contract' or 'documented_aliases'"
@@ -155,13 +223,44 @@ def audit_manifest(manifest: dict[str, Any]) -> AuditResult:
                         f"operations: {operation!r} is not a lower-camel operation name"
                     )
 
+    mcp = manifest.get("mcp")
+    if mcp is not None:
+        if not isinstance(mcp, dict):
+            violations.append("mcp: expected object when present")
+        else:
+            for key in ("path", "drift_check"):
+                if not isinstance(mcp.get(key), str) or not mcp.get(key).strip():
+                    violations.append(f"mcp.{key}: expected non-empty string")
+            if mcp.get("tool_names") not in {
+                "contract",
+                "catalog",
+                "documented_composites",
+            }:
+                violations.append(
+                    "mcp.tool_names: expected 'contract', 'catalog', or "
+                    "'documented_composites'"
+                )
+            if mcp.get("auth") != "shared":
+                violations.append("mcp.auth: expected 'shared'")
+            if mcp.get("errors") not in {"structured_content", "transport_native"}:
+                violations.append(
+                    "mcp.errors: expected 'structured_content' or 'transport_native'"
+                )
+
     return AuditResult(service=str(service), violations=violations)
 
 
 def main(argv: list[str] | None = None) -> int:
     args = sys.argv[1:] if argv is None else argv
+    if len(args) == 2 and args[0] == "--print-template":
+        print(json.dumps(template_manifest(args[1]), indent=2))
+        return 0
     if len(args) != 1:
-        print("usage: audit-client-surface.py <client-surface.json>", file=sys.stderr)
+        print(
+            "usage: audit-client-surface.py <client-surface.json>\n"
+            "       audit-client-surface.py --print-template <service>",
+            file=sys.stderr,
+        )
         return 2
 
     result = audit_manifest(load_manifest(args[0]))

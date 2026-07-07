@@ -44,6 +44,28 @@ learning every repo's internal layout. Run `scripts/audit-client-surface.py`
 against that manifest when any SDK config, CLI flag, env var, auth rule, output
 mode, operation name, or normalized error field changes.
 
+Create a starting point with:
+
+```sh
+python3 scripts/audit-client-surface.py --print-template cradle \
+  > docs/client-surface.json
+```
+
+The standard profile is intentionally narrow:
+
+- SDK config starts with `base_url`, `token`, `timeout_ms`.
+- CLI globals start with `--base-url`, `--token`, `--token-file`,
+  `--timeout-ms`, `--output`, `--json`.
+- Auth secret lookup is always `--token`, then `--token-file`, then the
+  service-prefixed token env var.
+- Service env vars use the canonical product name, uppercased with punctuation
+  converted to underscores: `CRADLE_TOKEN`, `TEMP_JS_TOKEN`, `ARRHA_TOKEN`.
+- Stable CLI output supports both `json` and `text`; JSON is the contract-shaped
+  output used by tests and automation.
+- Normalized SDK/CLI errors start with `status`, `code`, and `message`.
+- MCP projections, when present, record their catalog path, drift check, shared
+  auth behavior, and error mode in the same manifest.
+
 Minimal Bearer-auth example:
 
 ```json
@@ -76,7 +98,8 @@ Minimal Bearer-auth example:
       "--token",
       "--token-file",
       "--timeout-ms",
-      "--output"
+      "--output",
+      "--json"
     ],
     "env": ["CRADLE_BASE_URL", "CRADLE_TOKEN", "CRADLE_TIMEOUT_MS"],
     "output_modes": ["json", "text"],
@@ -84,6 +107,13 @@ Minimal Bearer-auth example:
   },
   "errors": {
     "fields": ["status", "code", "message", "request_id", "details"]
+  },
+  "mcp": {
+    "path": "crates/beatbox-server/fixtures/mcp-tools.catalog.json",
+    "drift_check": "cargo test -p beatbox-server --test mcp_catalog_drift",
+    "tool_names": "catalog",
+    "auth": "shared",
+    "errors": "transport_native"
   }
 }
 ```
@@ -166,6 +196,10 @@ can describe one public surface:
   env var is `<SERVICE>_TOKEN`.
 - `--token-file` reads secret material without printing it and wins over
   `<SERVICE>_TOKEN`; explicit `--token` wins over both for local debugging.
+- SDKs, CLIs, and MCP clients must all use that same precedence:
+  `--token`/config token, then token file, then env. Do not add repo-local
+  precedence rules unless the manifest records and the audit allows the
+  exception.
 - JSON output is stable and contract-shaped. Text output may be friendly, but it
   must not be the only way to access a field.
 - Authenticated commands must not follow redirects with auth headers attached.
