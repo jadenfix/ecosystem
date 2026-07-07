@@ -99,6 +99,10 @@ Services with HTTP control planes should use this shape:
 - Exactly one resource tag per operation.
 - Named request and response schemas; no anonymous success objects.
 - A shared error envelope for every documented 4xx/5xx response.
+- Transport-native endpoints such as MCP JSON-RPC may document transport errors
+  in that protocol's shape instead of the REST error envelope; do not force a
+  REST `ErrorResponse` onto `/mcp` if runtime returns a JSON-RPC envelope or an
+  empty origin/CORS denial.
 - Cursor pagination for list operations: `limit`, optional `cursor`, and
   response `next_cursor`/`nextCursor` according to that repo's wire casing.
 - One drift gate that proves the served/generated contract equals the committed

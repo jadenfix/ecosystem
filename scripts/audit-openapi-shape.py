@@ -67,6 +67,10 @@ def is_public_operation(path: str, operation_id: str | None) -> bool:
     )
 
 
+def uses_transport_native_errors(path: str, operation_id: str | None) -> bool:
+    return path.rstrip("/") == "/mcp" or operation_id == "postMcp"
+
+
 def has_bearer_security_scheme(spec: dict[str, Any]) -> bool:
     schemes = spec.get("components", {}).get("securitySchemes", {})
     for scheme in schemes.values():
@@ -127,7 +131,7 @@ def audit_spec(
 
         responses = op.get("responses", {})
         is_health = oid in {"health", "getHealth"} or path.rstrip("/").endswith("/health")
-        if not is_health:
+        if not is_health and not uses_transport_native_errors(path, oid):
             err_codes = [code for code in responses if code.startswith(("4", "5"))]
             if not err_codes:
                 violations.append(f"{where}: no documented 4xx/5xx error response")
