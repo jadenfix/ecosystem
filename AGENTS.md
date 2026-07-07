@@ -63,6 +63,16 @@ Use these defaults unless a repo-local task says otherwise:
 - Do one repo per PR unless the change is pure documentation.
 - Prefer complete migrations over partial churn: manifest updates, lockfiles,
   formatting, lint inheritance, docs, and verification should land together.
+- Keep public surfaces in sync by default. When a route, JSON-RPC method, schema,
+  SDK method, MCP tool, CLI command, fixture, README table, or generated client
+  changes, update every derived or mirrored surface in the same slice and add or
+  run the drift check that proves they still agree. Prefer generated or
+  fixture-pinned contracts over hand-maintained parallel descriptions. Treat
+  auth headers, env vars, CLI flags, timeout names, output formats, idempotency
+  fields, and SDK error shapes as public surface too. New client-facing HTTP
+  auth should prefer `Authorization: Bearer <token>` with any legacy
+  `x-<service>-api-key` header kept only as a documented compatibility alias
+  backed by the same verifier.
 - If an agent is already active on a PR, its next sequence of turns should first
   reconcile that repo/PR with the ecosystem pipeline before adding unrelated
   product scope. Treat `scripts/ecosystem-pipeline.sh report` as the handoff

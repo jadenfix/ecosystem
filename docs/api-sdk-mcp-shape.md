@@ -1,0 +1,150 @@
+# Shared API, SDK, and MCP Shape
+
+Goal: every service in the ecosystem should feel like one product family from
+the outside, even while each repo stays standalone. A caller should be able to
+learn one SDK shape, one error model, and one MCP pattern, then move between
+`beater`, `beatbox`, `tempo`, `beater-memory`, `beaterOS`, and `aether` with
+minimal new ceremony.
+
+This is a convergence profile, not a mandate to force every repo onto the same
+transport. REST services should expose OpenAPI. JSON-RPC services should publish
+a method manifest. Schema-first libraries should publish JSON Schema plus
+conformance fixtures. The common rule is that each public boundary has one
+machine-readable source of truth and every SDK/MCP/CLI surface derives from it
+or is drift-checked against it.
+
+## Service Profile
+
+Services with HTTP control planes should use this shape:
+
+- OpenAPI 3.1 as the committed machine contract.
+- `/v1` for stable REST routes; health/readiness routes may sit outside `/v1`.
+- Unique lower-camel `operationId` values, e.g. `createJob`, `getTrace`,
+  `validateBrowserAdapter`.
+- Exactly one resource tag per operation.
+- Named request and response schemas; no anonymous success objects.
+- A shared error envelope for every documented 4xx/5xx response.
+- Cursor pagination for list operations: `limit`, optional `cursor`, and
+  response `next_cursor`/`nextCursor` according to that repo's wire casing.
+- One drift gate that proves the served/generated contract equals the committed
+  contract.
+
+## SDK Profile
+
+SDKs may be idiomatic per language, but they should share the same conceptual
+surface:
+
+- One client config shape: `base_url`/`baseUrl`, `api_key`/`apiKey` or
+  `token`, `timeout_ms`/`timeoutMs`, and optional service-scoped fields such as
+  tenant, project, profile, or environment.
+- Operation methods map from the canonical operation name.
+- Transport errors and API errors are separate typed errors.
+- API errors carry HTTP status, stable error code, message, optional request id,
+  and optional structured details.
+- Auth never goes in URLs or exception strings.
+- Unknown response fields do not crash deserialization.
+- SDK version follows the contract version.
+
+The preferred auth shape for new clients is `Authorization: Bearer <token>`.
+Existing service-specific API-key headers, such as `x-beatbox-api-key`, may stay
+as compatibility aliases, but new SDK, CLI, MCP, and doc work should prefer
+Bearer and test any alias against the same verifier.
+
+For a future shared SDK core, this means every service can be described as:
+
+```json
+{
+  "service": "beatbox",
+  "base_url": "http://127.0.0.1:7300",
+  "auth": {"scheme": "bearer", "compat_headers": ["x-beatbox-api-key"]},
+  "contract": "sdks/openapi.json",
+  "operations": ["getHealth", "execute", "createJob"]
+}
+```
+
+The generated or shared client can then reuse the same transport, retry,
+timeout, auth, error, pagination, and MCP-tool projection code.
+
+## CLI Profile
+
+CLIs should mirror the SDK shape so docs, tests, and future shared client code
+can describe one public surface:
+
+- Use operation names from the contract for subcommands unless the CLI has a
+  better domain noun that is documented as an alias.
+- Every networked CLI accepts the same global flags where applicable:
+  `--base-url`, `--api-key`, `--api-key-file`, `--timeout-ms`, `--output
+  json|text`, and `--json` as a shortcut for JSON output.
+- Environment variables use the uppercase service prefix:
+  `<SERVICE>_BASE_URL`, `<SERVICE>_API_KEY`, and `<SERVICE>_TIMEOUT_MS`.
+- `--api-key-file` reads secret material without printing it and wins over
+  `<SERVICE>_API_KEY`; explicit `--api-key` wins over both for local debugging.
+- JSON output is stable and contract-shaped. Text output may be friendly, but it
+  must not be the only way to access a field.
+- Authenticated commands must not follow redirects with auth headers attached.
+
+## Auth And Errors
+
+Auth and error handling are part of the public contract, not implementation
+details:
+
+- New HTTP clients use `Authorization: Bearer <token>`.
+- A legacy `x-<service>-api-key` header is allowed only as a documented
+  compatibility alias with a test proving it reaches the same verifier.
+- MCP, CLI, and SDK callers use the same auth material and the same auth failure
+  semantics as REST callers.
+- Secrets never appear in URLs, logs, traces, panic messages, telemetry payloads,
+  or exception strings.
+- JSON requests send `content-type: application/json` and `accept:
+  application/json`.
+- API failures use one shared envelope per service. The SDK-facing normalized
+  error shape is `status`, `code`, `message`, optional `request_id`, and optional
+  `details`, regardless of language.
+- Mutating operations that can be retried should accept an `Idempotency-Key`
+  header or a clearly documented request idempotency field.
+
+## MCP Profile
+
+MCP should be a projection of the same operation contract whenever the service
+has a stable REST control plane:
+
+- `POST /mcp` for Streamable HTTP / JSON-RPC.
+- `tools/list` returns one tool per operation plus explicitly documented
+  composite tools.
+- `tools/call` dispatches through the same auth and handler path as the REST
+  operation.
+- Tool names should use the canonical operation name unless a composite tool has
+  a better domain name.
+- Tool input schemas should be generated from or checked against the operation
+  request schema.
+- Tool results should include `structuredContent`; failures should set
+  `isError: true`.
+
+Services that are MCP-native, such as `beater.js` app tools or `tempo` browser
+tools, should still publish a committed tool catalog fixture and drift-check it.
+
+## Schema Profile
+
+Repos that are not REST services yet should still have one public shape:
+
+- Contract schemas live in exactly one canonical directory.
+- Conformance fixtures include at least one valid and one invalid example per
+  public contract.
+- The README points to the canonical directory and does not call any second copy
+  canonical.
+- If another directory exists for packaging, it is generated from the canonical
+  source and checked for drift.
+
+## Current Alignment
+
+- `beater`: reference implementation for REST/OpenAPI -> SDK/CLI/MCP.
+- `beatbox`: has OpenAPI and SDKs; should align operation names and error docs,
+  then project MCP from the same surface over time.
+- `tempo`: MCP-native today; should add a committed MCP catalog fixture and, if
+  it grows a REST control plane, an OpenAPI contract.
+- `beater-memory`: has `/v1` routes; should add OpenAPI before publishing SDKs
+  or MCP.
+- `beaterOS`: schema-first; should keep one canonical schema source and generate
+  packaging copies from it.
+- `aether`: JSON-RPC/gRPC domain; should publish a JSON-RPC method manifest and
+  SDK parity checks rather than pretending it is an OpenAPI service.

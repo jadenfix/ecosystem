@@ -36,6 +36,10 @@ its own PR.
   and E2E checks.
 - `scripts/watch-ecosystem-prs.py`: watches active PRs across sibling repos and
   posts one ecosystem compatibility redirect when needed.
+- `docs/api-sdk-mcp-shape.md`: shared API, SDK, CLI, auth, error, and MCP shape
+  profile for public client-facing surfaces.
+- `scripts/audit-openapi-shape.py`: portable OpenAPI profile audit for REST
+  services.
 - `docs/ecosystem-pipeline.md`: pipeline and language policy.
 - `scripts/ecosystem-smoke.sh`: root smoke gate for meta-repo checks.
 
@@ -54,6 +58,9 @@ After the migration queues are complete, every repo should agree on:
 - Similar architecture in every repo: thin binaries, library-owned behavior,
   generated contracts, version/health/smoke surfaces, and documented storage
   boundaries
+- One public client-facing shape for services: canonical operation names, shared
+  error envelopes, consistent SDK config, CLI flags/env vars, auth handling, and
+  MCP/tool projections that derive from or drift-check against the same contract
 - Rust-first implementation by default, while allowing TypeScript, Python,
   platform languages, and SDK languages when they are the better fit and their
   boundary is explicit and tested
