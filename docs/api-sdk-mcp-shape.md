@@ -37,6 +37,57 @@ use the same names across docs, SDKs, CLIs, MCP tools, examples, and fixtures:
 If the CLI, SDK, MCP tool, and README cannot all be updated in the same PR, the
 PR must add or update a drift fixture that makes the missing surface obvious.
 
+Client-facing repos should also carry a small client-surface manifest using the
+schema in `docs/client-surface-manifest.schema.json`. The manifest is the compact
+SDK/CLI/auth/error contract that a future shared SDK core can consume without
+learning every repo's internal layout. Run `scripts/audit-client-surface.py`
+against that manifest when any SDK config, CLI flag, env var, auth rule, output
+mode, operation name, or normalized error field changes.
+
+Minimal Bearer-auth example:
+
+```json
+{
+  "surface_version": "2026-07-07",
+  "service": "cradle",
+  "contract": {
+    "type": "openapi",
+    "path": "sdks/openapi.json",
+    "drift_check": "cargo test -p beatbox-server --test openapi_drift"
+  },
+  "auth": {
+    "scheme": "bearer",
+    "header": "Authorization",
+    "value_format": "Bearer <token>",
+    "token_field": "token",
+    "env_token": "CRADLE_TOKEN",
+    "compat_headers": ["x-beatbox-api-key"],
+    "compat_env": ["CRADLE_API_KEY"],
+    "precedence": ["flag", "token_file", "env"]
+  },
+  "sdk": {
+    "config_fields": ["base_url", "token", "timeout_ms"],
+    "error_type": "ApiError",
+    "operation_names": "contract"
+  },
+  "cli": {
+    "global_flags": [
+      "--base-url",
+      "--token",
+      "--token-file",
+      "--timeout-ms",
+      "--output"
+    ],
+    "env": ["CRADLE_BASE_URL", "CRADLE_TOKEN", "CRADLE_TIMEOUT_MS"],
+    "output_modes": ["json", "text"],
+    "operation_names": "contract"
+  },
+  "errors": {
+    "fields": ["status", "code", "message", "request_id", "details"]
+  }
+}
+```
+
 ## Service Profile
 
 Services with HTTP control planes should use this shape:

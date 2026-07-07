@@ -40,6 +40,10 @@ its own PR.
   profile for public client-facing surfaces.
 - `scripts/audit-openapi-shape.py`: portable OpenAPI profile audit for REST
   services.
+- `docs/client-surface-manifest.schema.json`: common manifest format for SDK,
+  CLI, auth, output, and error surfaces.
+- `scripts/audit-client-surface.py`: portable client-surface manifest audit for
+  SDK/CLI/auth parity.
 - `docs/ecosystem-pipeline.md`: pipeline and language policy.
 - `scripts/ecosystem-smoke.sh`: root smoke gate for meta-repo checks.
 
@@ -72,6 +76,7 @@ scripts/ecosystem-pipeline.sh report
 scripts/ecosystem-pipeline.sh gate
 python3 scripts/check-ecosystem-binaries.py
 python3 scripts/check-ecosystem-uniformity.py
+python3 scripts/audit-client-surface.py path/to/client-surface.json
 python3 scripts/run-ecosystem-verification.py --list
 python3 scripts/run-ecosystem-verification.py --repo tempo
 python3 scripts/watch-ecosystem-prs.py
