@@ -38,6 +38,14 @@ TRANSPORT_NATIVE_PATHS = {
 }
 ERROR_ENVELOPE_SCHEMAS = {"Error", "ErrorResponse", "ApiError", "ApiErrorBody"}
 ERROR_BODY_SCHEMAS = {"ErrorBody", "ApiErrorBody"}
+CANONICAL_ERROR_BODY_FIELDS = {
+    "code",
+    "message",
+    "status",
+    "details",
+    "request_id",
+    "retryable",
+}
 ASYNC_VERBS = {
     "ingest",
     "run",
@@ -183,6 +191,34 @@ def schema_has_property(
     return False
 
 
+def schema_properties(
+    spec: dict[str, Any],
+    schema: dict[str, Any],
+    seen: set[str] | None = None,
+) -> dict[str, Any]:
+    seen = seen or set()
+    if "$ref" in schema:
+        ref = str(schema["$ref"])
+        if ref in seen:
+            return {}
+        seen.add(ref)
+        resolved = resolve_ref(spec, schema)
+        return schema_properties(spec, resolved, seen) if isinstance(resolved, dict) else {}
+
+    props: dict[str, Any] = {}
+    direct = schema.get("properties", {})
+    if isinstance(direct, dict):
+        props.update(direct)
+
+    for key in ("allOf", "oneOf", "anyOf"):
+        branches = schema.get(key, [])
+        if isinstance(branches, list):
+            for branch in branches:
+                if isinstance(branch, dict):
+                    props.update(schema_properties(spec, branch, seen))
+    return props
+
+
 def schema_ref_schema_name(spec: dict[str, Any], schema: dict[str, Any]) -> str:
     if "$ref" in schema:
         return ref_name(str(schema["$ref"]))
@@ -210,24 +246,48 @@ def schema_is_ref_or_named(spec: dict[str, Any], schema: dict[str, Any], names: 
 
 
 def schema_is_operation(spec: dict[str, Any], schema: dict[str, Any]) -> bool:
-    if schema_is_ref_or_named(spec, schema, {"Operation"}):
-        return True
     resolved = resolve_ref(spec, schema)
     if not isinstance(resolved, dict):
         return False
-    required = set(resolved.get("required", []))
-    props = resolved.get("properties", {})
-    return isinstance(props, dict) and {"name", "done"}.issubset(required | set(props))
+    props = schema_properties(spec, resolved)
+    return {"name", "done"}.issubset(props)
+
+
+def schema_is_canonical_error_body(spec: dict[str, Any], schema: dict[str, Any]) -> bool:
+    resolved = resolve_ref(spec, schema)
+    if not isinstance(resolved, dict):
+        return False
+    props = schema_properties(spec, resolved)
+    return CANONICAL_ERROR_BODY_FIELDS.issubset(props)
 
 
 def schema_is_error_envelope(spec: dict[str, Any], schema: dict[str, Any]) -> bool:
-    if schema_is_ref_or_named(spec, schema, ERROR_ENVELOPE_SCHEMAS):
-        return True
     resolved = resolve_ref(spec, schema)
     if not isinstance(resolved, dict):
         return False
-    props = resolved.get("properties", {})
-    return isinstance(props, dict) and "error" in props
+    props = schema_properties(spec, resolved)
+    error = props.get("error")
+    return isinstance(error, dict) and schema_is_canonical_error_body(spec, error)
+
+
+def has_bearer_security_scheme(spec: dict[str, Any]) -> bool:
+    schemes = spec.get("components", {}).get("securitySchemes", {})
+    if not isinstance(schemes, dict):
+        return False
+    for scheme in schemes.values():
+        if not isinstance(scheme, dict):
+            continue
+        if (
+            scheme.get("type") == "http"
+            and str(scheme.get("scheme", "")).lower() == "bearer"
+        ):
+            return True
+    return False
+
+
+def operation_requires_security(spec_security: Any, operation_security: Any) -> bool:
+    security = operation_security if operation_security is not None else spec_security
+    return isinstance(security, list) and bool(security)
 
 
 def operation_params(operation: Operation) -> list[dict[str, Any]]:
@@ -261,6 +321,17 @@ def operation_id_verb(operation_id: str) -> str:
 def is_transport_native_path(path: str) -> bool:
     normalized = path.rstrip("/") or "/"
     return normalized in TRANSPORT_NATIVE_PATHS
+
+
+def is_unauthenticated_operation(operation: Operation) -> bool:
+    normalized = operation.path.rstrip("/") or "/"
+    return (
+        operation.operation_id in {"health", "getHealth", "openapi", "getOpenapi"}
+        or normalized.endswith("/health")
+        or normalized.endswith("/healthz")
+        or normalized.endswith("/readyz")
+        or normalized.endswith("/openapi.json")
+    )
 
 
 def is_list_operation(operation: Operation) -> bool:
@@ -374,6 +445,7 @@ def audit_openapi(contract: Contract, path: Path, state: AuditState) -> None:
 
     if enforce_aip:
         audit_operation_schema(contract, spec, state)
+        audit_auth_contract(contract, spec, operations, state)
 
     if contract.mcp_tools_from_openapi:
         for operation in operations:
@@ -485,13 +557,51 @@ def audit_operation_schema(contract: Contract, spec: dict[str, Any], state: Audi
     if not isinstance(props, dict):
         state.violations.append(f"{contract.service}: Operation.properties is missing")
         return
+    if "job_id" in props:
+        state.violations.append(
+            f"{contract.service}: Operation schema has service-specific job_id; use name/metadata/response"
+        )
     error = props.get("error")
     if not isinstance(error, dict):
         state.violations.append(f"{contract.service}: Operation.error is missing")
-    elif not schema_is_ref_or_named(spec, error, ERROR_BODY_SCHEMAS):
+    elif not schema_is_canonical_error_body(spec, error):
         state.violations.append(
-            f"{contract.service}: Operation.error must reference inner error body, not HTTP envelope"
+            f"{contract.service}: Operation.error must reference the canonical inner error body"
         )
+
+
+def audit_auth_contract(
+    contract: Contract,
+    spec: dict[str, Any],
+    operations: list[Operation],
+    state: AuditState,
+) -> None:
+    if not has_bearer_security_scheme(spec):
+        state.violations.append(
+            f"{contract.service}: missing HTTP bearer security scheme"
+        )
+
+    spec_security = spec.get("security")
+    for operation in operations:
+        if is_unauthenticated_operation(operation):
+            continue
+        if not operation_requires_security(spec_security, operation.op.get("security")):
+            state.violations.append(
+                f"{operation.where}: authenticated operation lacks OpenAPI security"
+            )
+
+        responses = operation.op.get("responses", {})
+        if not isinstance(responses, dict):
+            state.violations.append(f"{operation.where}: responses object is missing")
+            continue
+        if "401" not in responses:
+            state.violations.append(f"{operation.where}: authenticated operation missing 401 response")
+        elif operation.path.rstrip("/") == "/mcp":
+            schema = response_schema(operation.spec, responses["401"])
+            if not schema_is_ref_or_named(operation.spec, schema, {"JsonRpcErrorResponse"}):
+                state.violations.append(
+                    f"{operation.where}: MCP 401 must use JSON-RPC error response schema"
+                )
 
 
 def load_mcp_catalog(contract: Contract, path: Path, state: AuditState) -> None:

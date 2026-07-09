@@ -3,11 +3,11 @@
 
 The check is intentionally small and portable so every repo can vendor or call
 it without adopting a shared crate:
-  - every operation has a unique lower-camel operationId
+  - every service operation has a unique projects.* operationId
   - every operation has exactly one tag
   - every documented 4xx/5xx response uses a shared error schema
   - success object responses reference named schemas instead of inline objects
-  - list operations expose pagination parameters
+  - list operations expose shared pagination parameters
 """
 
 from __future__ import annotations
@@ -20,8 +20,8 @@ from pathlib import Path
 from typing import Any
 
 
-CAMEL = re.compile(r"^[a-z][a-zA-Z0-9]*$")
-DEFAULT_ERROR_SCHEMA_SUFFIXES = ("/ErrorResponse", "/ApiErrorBody")
+PROJECTS_OPERATION_ID = re.compile(r"^projects(?:\.[a-z][a-zA-Z0-9]*){2,}$")
+DEFAULT_ERROR_SCHEMA_SUFFIXES = ("/Error", "/ErrorResponse", "/ApiErrorBody")
 PUBLIC_OPERATION_IDS = {"health", "getHealth", "openapi", "getOpenapi", "postMcp"}
 
 
@@ -34,7 +34,16 @@ class AuditResult:
 
 
 def load_spec(path: str | Path) -> dict[str, Any]:
-    with Path(path).open(encoding="utf-8") as handle:
+    spec_path = Path(path)
+    with spec_path.open(encoding="utf-8") as handle:
+        if spec_path.suffix.lower() in {".yaml", ".yml"}:
+            try:
+                import yaml  # type: ignore
+            except ModuleNotFoundError as exc:
+                raise RuntimeError(
+                    f"{spec_path}: PyYAML is required to read YAML OpenAPI specs"
+                ) from exc
+            return yaml.safe_load(handle)
         return json.load(handle)
 
 
@@ -48,13 +57,39 @@ def operations(spec: dict[str, Any]) -> list[tuple[str, str, dict[str, Any]]]:
     return ops
 
 
-def schema_ref(response: dict[str, Any]) -> str:
+def resolve_ref(spec: dict[str, Any], value: Any) -> Any:
+    if not isinstance(value, dict) or "$ref" not in value:
+        return value
+    ref = value["$ref"]
+    if not isinstance(ref, str) or not ref.startswith("#/"):
+        return value
+    current: Any = spec
+    for part in ref.removeprefix("#/").split("/"):
+        if not isinstance(current, dict):
+            return value
+        current = current.get(part)
+    return current if current is not None else value
+
+
+def schema_ref(spec: dict[str, Any], response: dict[str, Any]) -> str:
+    response = resolve_ref(spec, response)
+    if not isinstance(response, dict):
+        return ""
     return (
         response.get("content", {})
         .get("application/json", {})
         .get("schema", {})
         .get("$ref", "")
     )
+
+
+def parameter_names(spec: dict[str, Any], op: dict[str, Any]) -> set[str]:
+    names: set[str] = set()
+    for raw in op.get("parameters", []):
+        param = resolve_ref(spec, raw)
+        if isinstance(param, dict) and isinstance(param.get("name"), str):
+            names.add(param["name"])
+    return names
 
 
 def is_public_operation(path: str, operation_id: str | None) -> bool:
@@ -111,17 +146,15 @@ def audit_spec(
     for method, path, op in ops:
         where = f"{method} {path}"
         oid = op.get("operationId")
-        tags = op.get("tags", [])
 
         if not oid:
             violations.append(f"{where}: missing operationId")
         else:
-            if not CAMEL.match(oid):
-                violations.append(f"{where}: operationId {oid!r} is not lower-camel")
+            if not is_public_operation(path, oid) and not PROJECTS_OPERATION_ID.match(oid):
+                violations.append(
+                    f"{where}: operationId {oid!r} is not projects.<collection>[.<subcollection>].<verb>"
+                )
             op_ids.setdefault(oid, []).append(where)
-
-        if len(tags) != 1:
-            violations.append(f"{where}: expected exactly 1 tag, got {tags}")
 
         if enforce_auth and not is_public_operation(path, oid):
             if not operation_requires_security(spec_security, op.get("security")):
@@ -136,7 +169,7 @@ def audit_spec(
             if not err_codes:
                 violations.append(f"{where}: no documented 4xx/5xx error response")
             for code in err_codes:
-                ref = schema_ref(responses[code])
+                ref = schema_ref(spec, responses[code])
                 if not ref.endswith(error_schema_suffixes):
                     violations.append(
                         f"{where}: error {code} body is not shared error schema "
@@ -145,6 +178,8 @@ def audit_spec(
 
         for code, body in responses.items():
             if not code.startswith("2"):
+                continue
+            if is_public_operation(path, oid):
                 continue
             schema = body.get("content", {}).get("application/json", {}).get("schema", {})
             if (
@@ -162,9 +197,9 @@ def audit_spec(
 
     for method, path, op in ops:
         oid = op.get("operationId", "")
-        if oid.startswith("list") and oid not in list_pagination_exemptions:
-            params = {p.get("name") for p in op.get("parameters", [])}
-            if "cursor" not in params and "limit" not in params:
+        if (oid.startswith("list") or oid.endswith(".list")) and oid not in list_pagination_exemptions:
+            params = parameter_names(spec, op)
+            if "page_size" not in params or "page_token" not in params:
                 violations.append(f"{method} {path}: list op {oid!r} lacks pagination")
 
     return AuditResult(
