@@ -100,9 +100,18 @@ list made executable.
 
 `check-api-contracts.py` has the same migration-gate shape. The data-engine
 contract is the strict reference. Palette and cradle are configured as
-`aip-target` services so the full check reports the remaining API migration
-work until those repos adopt project-scoped paths, dotted `projects.*`
-operationIds, shared error envelopes, cursor pagination, `Operation`,
-`Idempotency-Key`, and `If-Match`/`update_mask`. Use `--service data-engine` for
-the current reference-only proof and `--shared-gateway` to prove that an
-unprefixed combined gateway has no method/path collisions.
+`aip-target` services so the full check reports the remaining API migration work
+until those repos adopt project-scoped paths, dotted `projects.*` operationIds,
+shared error envelopes, cursor pagination, `Operation`, `Idempotency-Key`, and
+`If-Match`/`update_mask`. Use `--service data-engine` for the current
+reference-only proof and `--shared-gateway` to prove that an unprefixed combined
+gateway has no method/path collisions.
+
+Cradle's API-alignment branch can be checked before it merges by overriding the
+configured main checkout:
+
+```sh
+python3 scripts/check-api-contracts.py --service cradle \
+  --openapi cradle:/path/to/cradle/sdks/openapi.json \
+  --mcp-catalog cradle:/path/to/cradle/crates/beatbox-server/fixtures/mcp-tools.catalog.json
+```

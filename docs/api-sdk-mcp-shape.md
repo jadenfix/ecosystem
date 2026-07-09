@@ -123,7 +123,8 @@ Minimal Bearer-auth example:
 Services with HTTP control planes should use this shape:
 
 - OpenAPI 3.1 as the committed machine contract.
-- `/v1` for stable REST routes; health/readiness routes may sit outside `/v1`.
+- `/v1` for stable REST routes; health/readiness routes may sit outside `/v1`
+  or use versioned transport-native paths such as `/v1/health`.
 - Unique dotted `operationId` values using
   `projects.<collection>[.<subcollection>].<verb>`, e.g.
   `projects.jobs.create`, `projects.traces.get`, and
@@ -135,8 +136,8 @@ Services with HTTP control planes should use this shape:
   in that protocol's shape instead of the REST error envelope; do not force a
   REST `ErrorResponse` onto `/mcp` if runtime returns a JSON-RPC envelope or an
   empty origin/CORS denial.
-- Cursor pagination for list operations: `limit`, optional `cursor`, and
-  response `next_cursor`/`nextCursor` according to that repo's wire casing.
+- Cursor pagination for list operations: `page_size`, optional `page_token`,
+  and response `next_page_token` plus `total_size`.
 - One drift gate that proves the served/generated contract equals the committed
   contract.
 - REST repos should run the shared OpenAPI audit with `--enforce-auth` once

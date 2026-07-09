@@ -26,7 +26,16 @@ MANIFEST = ROOT / "ecosystem.toml"
 HTTP_METHODS = {"get", "put", "post", "delete", "patch", "options", "head", "trace"}
 PROJECTS_OPERATION_ID = re.compile(r"^projects(?:\.[a-z][a-zA-Z0-9]*){2,}$")
 PUBLIC_OPERATION_IDS = {"health", "getHealth", "openapi", "getOpenapi", "postMcp"}
-TRANSPORT_NATIVE_PATHS = {"/mcp", "/openapi.json", "/health", "/healthz", "/readyz"}
+TRANSPORT_NATIVE_PATHS = {
+    "/mcp",
+    "/openapi.json",
+    "/health",
+    "/healthz",
+    "/readyz",
+    "/v1/health",
+    "/v1/healthz",
+    "/v1/readyz",
+}
 ERROR_ENVELOPE_SCHEMAS = {"Error", "ErrorResponse", "ApiError", "ApiErrorBody"}
 ERROR_BODY_SCHEMAS = {"ErrorBody", "ApiErrorBody"}
 ASYNC_VERBS = {
@@ -182,6 +191,12 @@ def schema_is_ref_or_named(spec: dict[str, Any], schema: dict[str, Any], names: 
     direct = schema_ref_schema_name(spec, schema)
     if direct in names:
         return True
+    for key in ("allOf", "oneOf", "anyOf"):
+        branches = schema.get(key, [])
+        if isinstance(branches, list):
+            for branch in branches:
+                if isinstance(branch, dict) and schema_is_ref_or_named(spec, branch, names):
+                    return True
     resolved = resolve_ref(spec, schema)
     if not isinstance(resolved, dict):
         return False
