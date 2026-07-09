@@ -30,6 +30,7 @@ run_step() {
 run_meta() {
   run_step meta-binaries python3 "$ROOT/scripts/check-ecosystem-binaries.py"
   run_step meta-architecture python3 "$ROOT/scripts/check-architecture-uniformity.py"
+  run_step meta-api-contracts python3 "$ROOT/scripts/check-api-contracts.py"
   run_step meta-uniformity python3 "$ROOT/scripts/check-ecosystem-uniformity.py"
 }
 

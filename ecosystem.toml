@@ -90,11 +90,52 @@ required_package_fields = ["name", "version", "license", "repository"]
 required_rust_workspace_fields = ["version", "edition", "rust-version", "license", "repository"]
 generated_clients_must_name_source_contract = true
 
+[api_contracts.data-engine]
+product = "data-engine"
+repo_path = "data-engine"
+openapi = "api/openapi.yaml"
+style = "aip"
+required = false
+gateway_mount = "/data-engine"
+mcp_namespace = "dataEngine"
+mcp_tools_from_openapi = true
+
+[api_contracts.palette]
+product = "Palette"
+repo_key = "palette"
+openapi = "sdks/openapi/beater-api.json"
+style = "aip-target"
+required = false
+gateway_mount = "/palette"
+mcp_namespace = "palette"
+mcp_tools_from_openapi = true
+
+[api_contracts.cradle]
+product = "cradle"
+repo_key = "cradle"
+openapi = "sdks/openapi.json"
+mcp_catalog = "crates/beatbox-server/fixtures/mcp-tools.catalog.json"
+style = "aip-target"
+required = false
+gateway_mount = "/cradle"
+mcp_namespace = "cradle"
+mcp_tools_from_openapi = true
+
+[api_contracts.tempo]
+product = "tempo"
+repo_key = "tempo"
+mcp_catalog = "crates/tempo-mcp/fixtures/mcp-tools.catalog.json"
+style = "mcp-native"
+required = false
+gateway_mount = "/tempo"
+mcp_namespace = "tempo"
+
 [pipeline.stages.meta]
 description = "Fast root checks over ecosystem.toml, declared binaries, architecture shape, and manifest uniformity."
 commands = [
   "python3 scripts/check-ecosystem-binaries.py",
   "python3 scripts/check-architecture-uniformity.py",
+  "python3 scripts/check-api-contracts.py",
   "python3 scripts/check-ecosystem-uniformity.py",
 ]
 

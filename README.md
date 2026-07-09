@@ -42,6 +42,8 @@ its own PR.
   profile for public client-facing surfaces.
 - `scripts/audit-openapi-shape.py`: portable OpenAPI profile audit for REST
   services.
+- `scripts/check-api-contracts.py`: cross-repo OpenAPI/MCP style and conflict
+  audit that loads configured service contracts from `ecosystem.toml`.
 - `docs/client-surface-manifest.schema.json`: common manifest format for SDK,
   CLI, auth, output, and error surfaces.
 - `docs/client-surface-manifest.example.json`: copyable known-good profile for
@@ -81,6 +83,9 @@ scripts/ecosystem-pipeline.sh gate
 python3 scripts/check-ecosystem-binaries.py
 python3 scripts/check-ecosystem-uniformity.py
 python3 scripts/check-local-checkouts.py --root /Users/jadenfix/Desktop/ecosystem
+python3 scripts/check-api-contracts.py --list
+python3 scripts/check-api-contracts.py --service data-engine
+python3 scripts/check-api-contracts.py --shared-gateway
 python3 scripts/audit-client-surface.py --print-template cradle
 python3 scripts/audit-client-surface.py path/to/client-surface.json
 python3 scripts/run-ecosystem-verification.py --list
@@ -92,3 +97,12 @@ scripts/ecosystem-smoke.sh
 `check-ecosystem-uniformity.py` is expected to fail until the repo-local
 migration tasks are completed. That failure is useful: it is the remaining work
 list made executable.
+
+`check-api-contracts.py` has the same migration-gate shape. The data-engine
+contract is the strict reference. Palette and cradle are configured as
+`aip-target` services so the full check reports the remaining API migration
+work until those repos adopt project-scoped paths, dotted `projects.*`
+operationIds, shared error envelopes, cursor pagination, `Operation`,
+`Idempotency-Key`, and `If-Match`/`update_mask`. Use `--service data-engine` for
+the current reference-only proof and `--shared-gateway` to prove that an
+unprefixed combined gateway has no method/path collisions.

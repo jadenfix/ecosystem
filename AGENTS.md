@@ -139,5 +139,9 @@ Delete each item only after it is complete and verified.
   filesystem rename.
 - [ ] Enforce `docs/architecture-uniformity.md` across every repo. Remove
   repo-local exceptions unless they have benchmark, security, or product evidence.
+- [ ] Make `scripts/check-api-contracts.py` pass for the full configured API
+  registry. `data-engine` is the reference; Palette, cradle, and tempo remain
+  migration targets until their OpenAPI/MCP surfaces use the shared
+  project-scoped operation, error, pagination, idempotency, and conflict rules.
 - [ ] Promote `scripts/ecosystem-pipeline.sh gate` to the required CI path once
   `report` mode has no failures.

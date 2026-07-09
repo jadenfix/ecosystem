@@ -124,8 +124,10 @@ Services with HTTP control planes should use this shape:
 
 - OpenAPI 3.1 as the committed machine contract.
 - `/v1` for stable REST routes; health/readiness routes may sit outside `/v1`.
-- Unique lower-camel `operationId` values, e.g. `createJob`, `getTrace`,
-  `validateBrowserAdapter`.
+- Unique dotted `operationId` values using
+  `projects.<collection>[.<subcollection>].<verb>`, e.g.
+  `projects.jobs.create`, `projects.traces.get`, and
+  `projects.browserAdapters.validate`.
 - Exactly one resource tag per operation.
 - Named request and response schemas; no anonymous success objects.
 - A shared error envelope for every documented 4xx/5xx response.
@@ -139,6 +141,18 @@ Services with HTTP control planes should use this shape:
   contract.
 - REST repos should run the shared OpenAPI audit with `--enforce-auth` once
   their public spec declares Bearer security and public endpoint exemptions.
+- Ecosystem coordination should run `scripts/check-api-contracts.py` from this
+  repo. It loads the configured OpenAPI/MCP contracts, fails duplicate
+  method/path routes inside a service, duplicate operationIds inside a service,
+  duplicate combined MCP tool names, missing cursor pagination fields, missing
+  `Idempotency-Key`, missing `If-Match`/`update_mask`, async operations that do
+  not return `Operation`, non-envelope HTTP errors, non-`/v1` REST paths, and
+  unscoped global list endpoints.
+- Separate service hosts may reuse operationIds when their clients remain
+  separate. A combined gateway or combined MCP catalog must either prefix tools
+  by service, such as `dataEngine.projects.jobs.create`, or keep operationIds
+  globally disjoint. Run `scripts/check-api-contracts.py --shared-gateway` before
+  claiming one host can mount all services without route conflicts.
 
 ## SDK Profile
 
