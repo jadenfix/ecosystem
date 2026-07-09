@@ -29,8 +29,8 @@ use the same names across docs, SDKs, CLIs, MCP tools, examples, and fixtures:
 - Timeout field: `timeout_ms`/`timeoutMs`, measured in milliseconds.
 - Output mode: `json` for stable machine-readable output; `text` only as a
   human convenience.
-- Error fields: `status`, `code`, `message`, optional `request_id`, optional
-  `details`.
+- Error fields: `code`, `message`, `status`, `details`, `request_id`,
+  `retryable`.
 - Idempotency field/header: use `Idempotency-Key` for HTTP unless the transport
   has a clearly documented equivalent.
 
@@ -62,7 +62,8 @@ The standard profile is intentionally narrow:
   converted to underscores: `CRADLE_TOKEN`, `TEMP_JS_TOKEN`, `ARRHA_TOKEN`.
 - Stable CLI output supports both `json` and `text`; JSON is the contract-shaped
   output used by tests and automation.
-- Normalized SDK/CLI errors start with `status`, `code`, and `message`.
+- Normalized SDK/CLI errors expose the same shared `ErrorBody` fields:
+  `code`, `message`, `status`, `details`, `request_id`, and `retryable`.
 - MCP projections, when present, record their catalog path, drift check, shared
   auth behavior, and error mode in the same manifest.
 
@@ -106,7 +107,7 @@ Minimal Bearer-auth example:
     "operation_names": "contract"
   },
   "errors": {
-    "fields": ["status", "code", "message", "request_id", "details"]
+    "fields": ["code", "message", "status", "details", "request_id", "retryable"]
   },
   "mcp": {
     "path": "crates/beatbox-server/fixtures/mcp-tools.catalog.json",
@@ -167,8 +168,8 @@ surface:
   compatibility API-key alias. New docs should call the value a Bearer token.
 - Operation methods map from the canonical operation name.
 - Transport errors and API errors are separate typed errors.
-- API errors carry HTTP status, stable error code, message, optional request id,
-  and optional structured details.
+- API errors carry stable error code, message, HTTP status, structured details,
+  request id, and retryability using the shared `ErrorBody` fields.
 - Auth never goes in URLs or exception strings.
 - Unknown response fields do not crash deserialization.
 - SDK version follows the contract version.
@@ -234,8 +235,8 @@ details:
 - JSON requests send `content-type: application/json` and `accept:
   application/json`.
 - API failures use one shared envelope per service. The SDK-facing normalized
-  error shape is `status`, `code`, `message`, optional `request_id`, and optional
-  `details`, regardless of language.
+  error shape is `code`, `message`, `status`, `details`, `request_id`, and
+  `retryable`, regardless of language.
 - Mutating operations that can be retried should accept an `Idempotency-Key`
   header or a clearly documented request idempotency field.
 

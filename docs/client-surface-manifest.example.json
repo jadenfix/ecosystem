@@ -35,7 +35,7 @@
     "operation_names": "contract"
   },
   "errors": {
-    "fields": ["status", "code", "message", "request_id", "details"]
+    "fields": ["code", "message", "status", "details", "request_id", "retryable"]
   },
   "mcp": {
     "path": "crates/beatbox-server/fixtures/mcp-tools.catalog.json",

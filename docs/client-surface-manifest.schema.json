@@ -208,8 +208,10 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["status", "code", "message", "request_id", "details"]
+            "enum": ["code", "message", "status", "details", "request_id", "retryable"]
           },
+          "minItems": 6,
+          "maxItems": 6,
           "uniqueItems": true
         }
       }

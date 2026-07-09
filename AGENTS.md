@@ -84,7 +84,8 @@ Use these defaults unless a repo-local task says otherwise:
   same canonical operation names, `base_url`/`token`/`timeout_ms` client config,
   `--base-url`/`--token`/`--token-file`/`--timeout-ms`/`--output`/`--json` CLI
   flags, service-prefixed `<SERVICE>_TOKEN` env vars, shared Bearer auth
-  semantics, and normalized `status`/`code`/`message` error fields. Use
+  semantics, and normalized `code`/`message`/`status`/`details`/`request_id`/
+  `retryable` error fields. Use
   `python3 scripts/audit-client-surface.py --print-template <service>` when a
   repo needs a new manifest, then keep that manifest in sync in the same PR as
   the code, docs, fixtures, and generated clients. The long-term target is that

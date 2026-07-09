@@ -29,8 +29,7 @@ CLI_FLAGS = [
     "--output",
     "--json",
 ]
-ERROR_FIELDS = ["status", "code", "message"]
-OPTIONAL_ERROR_FIELDS = {"request_id", "details"}
+ERROR_FIELDS = ["code", "message", "status", "details", "request_id", "retryable"]
 LOWER_CAMEL = re.compile(r"^[a-z][a-zA-Z0-9]*$")
 PROJECTS_OPERATION_ID = re.compile(r"^projects(?:\.[a-z][a-zA-Z0-9]*){2,}$")
 SNAKE = re.compile(r"^[a-z][a-z0-9_]*$")
@@ -86,7 +85,7 @@ def template_manifest(service: str) -> dict[str, Any]:
             "operation_names": "contract",
         },
         "errors": {
-            "fields": ["status", "code", "message", "request_id", "details"],
+            "fields": ERROR_FIELDS,
         },
     }
 
@@ -205,13 +204,11 @@ def audit_manifest(manifest: dict[str, Any]) -> AuditResult:
 
     errors = require_object(manifest, "errors", violations)
     error_fields = require_list(errors, "fields", violations)
-    if error_fields[: len(ERROR_FIELDS)] != ERROR_FIELDS:
+    if error_fields != ERROR_FIELDS:
         violations.append(
-            "errors.fields: must start with ['status', 'code', 'message']"
+            "errors.fields: expected canonical "
+            "['code', 'message', 'status', 'details', 'request_id', 'retryable']"
         )
-    for field in error_fields[len(ERROR_FIELDS) :]:
-        if field not in OPTIONAL_ERROR_FIELDS:
-            violations.append(f"errors.fields: unknown optional field {field!r}")
 
     operations = manifest.get("operations")
     if operations is not None:
