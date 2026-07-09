@@ -86,6 +86,8 @@ class AuditState:
     warnings: list[str] = field(default_factory=list)
     operations: list[Operation] = field(default_factory=list)
     mcp_tools: list[tuple[str, str, str]] = field(default_factory=list)
+    openapi_mcp_tools: dict[str, set[str]] = field(default_factory=dict)
+    catalog_mcp_tools: dict[str, set[str]] = field(default_factory=dict)
 
 
 def load_yaml(path: Path) -> Any:
@@ -376,7 +378,11 @@ def audit_openapi(contract: Contract, path: Path, state: AuditState) -> None:
     if contract.mcp_tools_from_openapi:
         for operation in operations:
             if operation.operation_id and not is_transport_native_path(operation.path):
-                state.mcp_tools.append((contract.service, operation.operation_id, str(path)))
+                state.openapi_mcp_tools.setdefault(contract.service, set()).add(
+                    operation.operation_id
+                )
+                if not contract.mcp_catalog:
+                    state.mcp_tools.append((contract.service, operation.operation_id, str(path)))
 
     print(
         f"audited {contract.service} OpenAPI: {len(operations)} operations "
@@ -431,6 +437,16 @@ def audit_aip_operation(operation: Operation, state: AuditState) -> None:
         schema = request_schema(operation.spec, operation.op)
         if not schema_has_property(operation.spec, schema, {"update_mask", "updateMask"}):
             state.violations.append(f"{operation.where}: PATCH body missing update_mask")
+        success_schemas = [
+            schema
+            for code, schema in response_schemas(operation)
+            if code.startswith("2")
+        ]
+        if not any(
+            schema_has_property(operation.spec, schema, {"etag", "ETag"})
+            for schema in success_schemas
+        ):
+            state.violations.append(f"{operation.where}: PATCH response missing etag")
 
     if is_async_operation(operation):
         success_schemas = [
@@ -494,6 +510,7 @@ def load_mcp_catalog(contract: Contract, path: Path, state: AuditState) -> None:
             continue
         name = tool["name"]
         local[name] = local.get(name, 0) + 1
+        state.catalog_mcp_tools.setdefault(contract.service, set()).add(name)
         state.mcp_tools.append((contract.service, name, str(path)))
     for name, count in local.items():
         if count > 1:
@@ -501,6 +518,23 @@ def load_mcp_catalog(contract: Contract, path: Path, state: AuditState) -> None:
                 f"{contract.service}: MCP catalog has duplicate tool {name!r}"
             )
     print(f"audited {contract.service} MCP catalog: {len(tools)} tools from {path}")
+
+
+def audit_mcp_projection(contracts: dict[str, Contract], state: AuditState) -> None:
+    for service, expected in sorted(state.openapi_mcp_tools.items()):
+        contract = contracts.get(service)
+        if not contract or contract.style not in {"aip", "aip-target"}:
+            continue
+        if not contract.mcp_catalog:
+            continue
+        actual = state.catalog_mcp_tools.get(service)
+        if actual is None:
+            continue
+        missing = sorted(expected - actual)
+        for name in missing:
+            state.violations.append(
+                f"{service}: MCP catalog missing operationId-derived tool {name!r}"
+            )
 
 
 def audit_global_conflicts(
@@ -727,6 +761,7 @@ def main(argv: list[str] | None = None) -> int:
         elif catalog is not None:
             load_mcp_catalog(contract, catalog, state)
 
+    audit_mcp_projection(contracts, state)
     audit_global_conflicts(contracts, state, shared_gateway=args.shared_gateway)
 
     if state.warnings:
