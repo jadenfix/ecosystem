@@ -30,12 +30,26 @@ its own PR.
 - `scripts/check-ecosystem-binaries.py`: verifies declared binaries still exist.
 - `scripts/check-ecosystem-uniformity.py`: verifies manifests match the target
   state after migrations land.
+- `scripts/check-local-checkouts.py`: reports legacy checkout folder names and
+  remote mismatches without renaming user worktrees.
 - `scripts/run-ecosystem-verification.py`: runs declared per-repo verification
   commands.
 - `scripts/ecosystem-pipeline.sh`: staged report/gate pipeline for meta, repo,
   and E2E checks.
 - `scripts/watch-ecosystem-prs.py`: watches active PRs across sibling repos and
   posts one ecosystem compatibility redirect when needed.
+- `docs/api-sdk-mcp-shape.md`: shared API, SDK, CLI, auth, error, and MCP shape
+  profile for public client-facing surfaces.
+- `scripts/audit-openapi-shape.py`: portable OpenAPI profile audit for REST
+  services.
+- `scripts/check-api-contracts.py`: cross-repo OpenAPI/MCP style and conflict
+  audit that loads configured service contracts from `ecosystem.toml`.
+- `docs/client-surface-manifest.schema.json`: common manifest format for SDK,
+  CLI, auth, output, and error surfaces.
+- `docs/client-surface-manifest.example.json`: copyable known-good profile for
+  OpenAPI plus SDK, CLI, auth, error, and MCP catalog parity.
+- `scripts/audit-client-surface.py`: portable client-surface manifest audit for
+  SDK/CLI/auth parity.
 - `docs/ecosystem-pipeline.md`: pipeline and language policy.
 - `scripts/ecosystem-smoke.sh`: root smoke gate for meta-repo checks.
 
@@ -54,6 +68,9 @@ After the migration queues are complete, every repo should agree on:
 - Similar architecture in every repo: thin binaries, library-owned behavior,
   generated contracts, version/health/smoke surfaces, and documented storage
   boundaries
+- One public client-facing shape for services: canonical operation names, shared
+  error envelopes, consistent SDK config, CLI flags/env vars, auth handling, and
+  MCP/tool projections that derive from or drift-check against the same contract
 - Rust-first implementation by default, while allowing TypeScript, Python,
   platform languages, and SDK languages when they are the better fit and their
   boundary is explicit and tested
@@ -65,6 +82,12 @@ scripts/ecosystem-pipeline.sh report
 scripts/ecosystem-pipeline.sh gate
 python3 scripts/check-ecosystem-binaries.py
 python3 scripts/check-ecosystem-uniformity.py
+python3 scripts/check-local-checkouts.py --root /Users/jadenfix/Desktop/ecosystem
+python3 scripts/check-api-contracts.py --list
+python3 scripts/check-api-contracts.py --service data-engine
+python3 scripts/check-api-contracts.py --shared-gateway
+python3 scripts/audit-client-surface.py --print-template cradle
+python3 scripts/audit-client-surface.py path/to/client-surface.json
 python3 scripts/run-ecosystem-verification.py --list
 python3 scripts/run-ecosystem-verification.py --repo tempo
 python3 scripts/watch-ecosystem-prs.py
@@ -74,3 +97,21 @@ scripts/ecosystem-smoke.sh
 `check-ecosystem-uniformity.py` is expected to fail until the repo-local
 migration tasks are completed. That failure is useful: it is the remaining work
 list made executable.
+
+`check-api-contracts.py` has the same migration-gate shape. The data-engine
+contract is the strict reference. Palette and cradle are configured as
+`aip-target` services so the full check reports the remaining API migration work
+until those repos adopt project-scoped paths, dotted `projects.*` operationIds,
+shared error envelopes, cursor pagination, `Operation`, `Idempotency-Key`, and
+`If-Match`/`update_mask`. Use `--service data-engine` for the current
+reference-only proof and `--shared-gateway` to prove that an unprefixed combined
+gateway has no method/path collisions.
+
+Cradle's API-alignment branch can be checked before it merges by overriding the
+configured main checkout:
+
+```sh
+python3 scripts/check-api-contracts.py --service cradle \
+  --openapi cradle:/path/to/cradle/sdks/openapi.json \
+  --mcp-catalog cradle:/path/to/cradle/crates/beatbox-server/fixtures/mcp-tools.catalog.json
+```

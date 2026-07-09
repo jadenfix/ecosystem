@@ -1,0 +1,248 @@
+#!/usr/bin/env python3
+"""Audit an OpenAPI spec for the ecosystem service shape profile.
+
+The check is intentionally small and portable so every repo can vendor or call
+it without adopting a shared crate:
+  - every service operation has a unique projects.* operationId
+  - every operation has exactly one tag
+  - every documented 4xx/5xx response uses a shared error schema
+  - success object responses reference named schemas instead of inline objects
+  - list operations expose shared pagination parameters
+"""
+
+from __future__ import annotations
+
+from dataclasses import dataclass
+import json
+import re
+import sys
+from pathlib import Path
+from typing import Any
+
+
+PROJECTS_OPERATION_ID = re.compile(r"^projects(?:\.[a-z][a-zA-Z0-9]*){2,}$")
+DEFAULT_ERROR_SCHEMA_SUFFIXES = ("/Error", "/ErrorResponse", "/ApiErrorBody")
+PUBLIC_OPERATION_IDS = {"health", "getHealth", "openapi", "getOpenapi", "postMcp"}
+
+
+@dataclass(frozen=True)
+class AuditResult:
+    operation_count: int
+    unique_operation_id_count: int
+    schema_count: int
+    violations: list[str]
+
+
+def load_spec(path: str | Path) -> dict[str, Any]:
+    spec_path = Path(path)
+    with spec_path.open(encoding="utf-8") as handle:
+        if spec_path.suffix.lower() in {".yaml", ".yml"}:
+            try:
+                import yaml  # type: ignore
+            except ModuleNotFoundError as exc:
+                raise RuntimeError(
+                    f"{spec_path}: PyYAML is required to read YAML OpenAPI specs"
+                ) from exc
+            return yaml.safe_load(handle)
+        return json.load(handle)
+
+
+def operations(spec: dict[str, Any]) -> list[tuple[str, str, dict[str, Any]]]:
+    ops: list[tuple[str, str, dict[str, Any]]] = []
+    for path, methods in spec.get("paths", {}).items():
+        for method, op in methods.items():
+            if method == "parameters":
+                continue
+            ops.append((method.upper(), path, op))
+    return ops
+
+
+def resolve_ref(spec: dict[str, Any], value: Any) -> Any:
+    if not isinstance(value, dict) or "$ref" not in value:
+        return value
+    ref = value["$ref"]
+    if not isinstance(ref, str) or not ref.startswith("#/"):
+        return value
+    current: Any = spec
+    for part in ref.removeprefix("#/").split("/"):
+        if not isinstance(current, dict):
+            return value
+        current = current.get(part)
+    return current if current is not None else value
+
+
+def schema_ref(spec: dict[str, Any], response: dict[str, Any]) -> str:
+    response = resolve_ref(spec, response)
+    if not isinstance(response, dict):
+        return ""
+    return (
+        response.get("content", {})
+        .get("application/json", {})
+        .get("schema", {})
+        .get("$ref", "")
+    )
+
+
+def parameter_names(spec: dict[str, Any], op: dict[str, Any]) -> set[str]:
+    names: set[str] = set()
+    for raw in op.get("parameters", []):
+        param = resolve_ref(spec, raw)
+        if isinstance(param, dict) and isinstance(param.get("name"), str):
+            names.add(param["name"])
+    return names
+
+
+def is_public_operation(path: str, operation_id: str | None) -> bool:
+    normalized = path.rstrip("/")
+    return (
+        operation_id in PUBLIC_OPERATION_IDS
+        or normalized.endswith("/health")
+        or normalized.endswith("/openapi.json")
+        or normalized == "/mcp"
+    )
+
+
+def uses_transport_native_errors(path: str, operation_id: str | None) -> bool:
+    return path.rstrip("/") == "/mcp" or operation_id == "postMcp"
+
+
+def has_bearer_security_scheme(spec: dict[str, Any]) -> bool:
+    schemes = spec.get("components", {}).get("securitySchemes", {})
+    for scheme in schemes.values():
+        if (
+            scheme.get("type") == "http"
+            and scheme.get("scheme", "").lower() == "bearer"
+        ):
+            return True
+    return False
+
+
+def operation_requires_security(
+    spec_security: Any,
+    operation_security: Any,
+) -> bool:
+    security = operation_security if operation_security is not None else spec_security
+    return isinstance(security, list) and bool(security)
+
+
+def audit_spec(
+    spec: dict[str, Any],
+    *,
+    error_schema_suffixes: tuple[str, ...] = DEFAULT_ERROR_SCHEMA_SUFFIXES,
+    list_pagination_exemptions: set[str] | None = None,
+    enforce_auth: bool = False,
+) -> AuditResult:
+    violations: list[str] = []
+    op_ids: dict[str, list[str]] = {}
+    ops = operations(spec)
+    list_pagination_exemptions = list_pagination_exemptions or set()
+    spec_security = spec.get("security")
+
+    if enforce_auth and not has_bearer_security_scheme(spec):
+        violations.append(
+            "components.securitySchemes: missing HTTP bearer security scheme"
+        )
+
+    for method, path, op in ops:
+        where = f"{method} {path}"
+        oid = op.get("operationId")
+
+        if not oid:
+            violations.append(f"{where}: missing operationId")
+        else:
+            if not is_public_operation(path, oid) and not PROJECTS_OPERATION_ID.match(oid):
+                violations.append(
+                    f"{where}: operationId {oid!r} is not projects.<collection>[.<subcollection>].<verb>"
+                )
+            op_ids.setdefault(oid, []).append(where)
+
+        if enforce_auth and not is_public_operation(path, oid):
+            if not operation_requires_security(spec_security, op.get("security")):
+                violations.append(
+                    f"{where}: authenticated operation lacks OpenAPI security"
+                )
+
+        responses = op.get("responses", {})
+        is_health = oid in {"health", "getHealth"} or path.rstrip("/").endswith("/health")
+        if not is_health and not uses_transport_native_errors(path, oid):
+            err_codes = [code for code in responses if code.startswith(("4", "5"))]
+            if not err_codes:
+                violations.append(f"{where}: no documented 4xx/5xx error response")
+            for code in err_codes:
+                ref = schema_ref(spec, responses[code])
+                if not ref.endswith(error_schema_suffixes):
+                    violations.append(
+                        f"{where}: error {code} body is not shared error schema "
+                        f"(got {ref or 'none'})"
+                    )
+
+        for code, body in responses.items():
+            if not code.startswith("2"):
+                continue
+            if is_public_operation(path, oid):
+                continue
+            schema = body.get("content", {}).get("application/json", {}).get("schema", {})
+            if (
+                "$ref" not in schema
+                and schema.get("type") == "object"
+                and "properties" in schema
+            ):
+                violations.append(
+                    f"{where}: success {code} uses inline anonymous object"
+                )
+
+    for oid, wheres in op_ids.items():
+        if len(wheres) > 1:
+            violations.append(f"operationId {oid!r} is duplicated: {wheres}")
+
+    for method, path, op in ops:
+        oid = op.get("operationId", "")
+        if (oid.startswith("list") or oid.endswith(".list")) and oid not in list_pagination_exemptions:
+            params = parameter_names(spec, op)
+            if "page_size" not in params or "page_token" not in params:
+                violations.append(f"{method} {path}: list op {oid!r} lacks pagination")
+
+    return AuditResult(
+        operation_count=len(ops),
+        unique_operation_id_count=len(op_ids),
+        schema_count=len(spec.get("components", {}).get("schemas", {})),
+        violations=violations,
+    )
+
+
+def main(argv: list[str] | None = None) -> int:
+    args = sys.argv[1:] if argv is None else argv
+    if not args:
+        print(
+            "usage: audit-openapi-shape.py [--enforce-auth] <openapi.json>",
+            file=sys.stderr,
+        )
+        return 2
+    enforce_auth = False
+    if "--enforce-auth" in args:
+        enforce_auth = True
+        args = [arg for arg in args if arg != "--enforce-auth"]
+    if not args:
+        print(
+            "usage: audit-openapi-shape.py [--enforce-auth] <openapi.json>",
+            file=sys.stderr,
+        )
+        return 2
+
+    result = audit_spec(load_spec(args[0]), enforce_auth=enforce_auth)
+    print(
+        f"audited {result.operation_count} operations, "
+        f"{result.unique_operation_id_count} unique operationIds, "
+        f"{result.schema_count} schemas"
+    )
+    if result.violations:
+        print(f"\n{len(result.violations)} SHAPE VIOLATIONS:")
+        for violation in result.violations:
+            print(f"  - {violation}")
+        return 1
+    print("PASS: OpenAPI shape matches ecosystem profile")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

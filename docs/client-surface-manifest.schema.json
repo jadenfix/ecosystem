@@ -1,0 +1,262 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://jadenfix.github.io/ecosystem/client-surface-manifest.schema.json",
+  "title": "Tempera Client Surface Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "surface_version",
+    "service",
+    "contract",
+    "auth",
+    "sdk",
+    "cli",
+    "errors"
+  ],
+  "properties": {
+    "surface_version": {
+      "type": "string",
+      "const": "2026-07-07"
+    },
+    "service": {
+      "type": "string",
+      "minLength": 1
+    },
+    "contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "path", "drift_check"],
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "openapi",
+            "json_rpc_manifest",
+            "mcp_catalog",
+            "json_schema",
+            "http_route_manifest"
+          ]
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "drift_check": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "auth": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["scheme", "token_field", "precedence"],
+      "properties": {
+        "scheme": {
+          "type": "string",
+          "enum": ["bearer", "none"]
+        },
+        "header": {
+          "type": "string"
+        },
+        "value_format": {
+          "type": "string"
+        },
+        "token_field": {
+          "type": "string",
+          "enum": ["token"]
+        },
+        "env_token": {
+          "type": "string",
+          "pattern": "^[A-Z][A-Z0-9_]*_TOKEN$"
+        },
+        "compat_headers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "compat_env": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Z][A-Z0-9_]*_API_KEY$"
+          },
+          "uniqueItems": true
+        },
+        "precedence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["flag", "token_file", "env"]
+          },
+          "prefixItems": [
+            {
+              "const": "flag"
+            },
+            {
+              "const": "token_file"
+            },
+            {
+              "const": "env"
+            }
+          ],
+          "minItems": 3,
+          "maxItems": 3,
+          "uniqueItems": true
+        }
+      }
+    },
+    "sdk": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["config_fields", "error_type", "operation_names"],
+      "properties": {
+        "config_fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z][a-z0-9_]*$"
+          },
+          "prefixItems": [
+            {
+              "const": "base_url"
+            },
+            {
+              "const": "token"
+            },
+            {
+              "const": "timeout_ms"
+            }
+          ],
+          "minItems": 3,
+          "uniqueItems": true
+        },
+        "error_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "operation_names": {
+          "type": "string",
+          "enum": ["contract"]
+        }
+      }
+    },
+    "cli": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["global_flags", "env", "output_modes", "operation_names"],
+      "properties": {
+        "global_flags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "prefixItems": [
+            {
+              "const": "--base-url"
+            },
+            {
+              "const": "--token"
+            },
+            {
+              "const": "--token-file"
+            },
+            {
+              "const": "--timeout-ms"
+            },
+            {
+              "const": "--output"
+            },
+            {
+              "const": "--json"
+            }
+          ],
+          "minItems": 6,
+          "uniqueItems": true
+        },
+        "env": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "output_modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["json", "text"]
+          },
+          "minItems": 2,
+          "maxItems": 2,
+          "uniqueItems": true
+        },
+        "operation_names": {
+          "type": "string",
+          "enum": ["contract", "documented_aliases"]
+        }
+      }
+    },
+    "errors": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fields"],
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["code", "message", "status", "details", "request_id", "retryable"]
+          },
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true
+        }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "anyOf": [
+          {
+            "pattern": "^[a-z][a-zA-Z0-9]*$"
+          },
+          {
+            "pattern": "^projects(\\.[a-z][a-zA-Z0-9]*){2,}$"
+          }
+        ]
+      },
+      "uniqueItems": true
+    },
+    "mcp": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["path", "drift_check", "tool_names", "auth", "errors"],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "drift_check": {
+          "type": "string",
+          "minLength": 1
+        },
+        "tool_names": {
+          "type": "string",
+          "enum": ["contract", "catalog", "documented_composites"]
+        },
+        "auth": {
+          "type": "string",
+          "const": "shared"
+        },
+        "errors": {
+          "type": "string",
+          "enum": ["structured_content", "transport_native"]
+        }
+      }
+    }
+  }
+}

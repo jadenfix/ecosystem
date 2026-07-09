@@ -27,8 +27,8 @@ engineering across the ecosystem, not repo-specific preference drift.
 
 Run the pipeline in four stages:
 
-1. `meta`: checks the root manifest, declared binaries, architecture policy, and
-   repo/package metadata.
+1. `meta`: checks the root manifest, declared binaries, architecture policy,
+   API/MCP contract style and conflicts, and repo/package metadata.
 2. `repo`: runs each repo's own format, lint, test, package, and contract checks
    from `ecosystem.toml`.
 3. `e2e`: runs capability scenarios across binaries and contract fixtures.
@@ -60,6 +60,10 @@ duplicates.
 ## Optimal Defaults
 
 - Keep meta checks fast and deterministic.
+- Treat `scripts/check-api-contracts.py --service data-engine` as the reference
+  API proof while migrations are active, and the full
+  `scripts/check-api-contracts.py` report as the cross-repo worklist for Palette,
+  cradle, and tempo public contract convergence.
 - Run heavyweight repo tests only after meta checks pass.
 - Run E2E tests from built binaries or release artifacts, not copied source.
 - Prefer contract fixtures for cross-repo assertions unless a live binary path is

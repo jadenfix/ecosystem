@@ -63,6 +63,34 @@ Use these defaults unless a repo-local task says otherwise:
 - Do one repo per PR unless the change is pure documentation.
 - Prefer complete migrations over partial churn: manifest updates, lockfiles,
   formatting, lint inheritance, docs, and verification should land together.
+- Keep public surfaces in sync by default. When a route, JSON-RPC method, schema,
+  SDK method, MCP tool, CLI command, fixture, README table, or generated client
+  changes, update every derived or mirrored surface in the same slice and add or
+  run the drift check that proves they still agree. Prefer generated or
+  fixture-pinned contracts over hand-maintained parallel descriptions. Treat
+  auth headers, env vars, CLI flags, timeout names, output formats, idempotency
+  fields, and SDK error shapes as public surface too. New client-facing HTTP
+  auth should prefer `Authorization: Bearer <token>` with any legacy
+  `x-<service>-api-key` header kept only as a documented compatibility alias
+  backed by the same verifier. If a repo exposes CLI and SDK clients, their
+  config names, auth precedence, timeout behavior, JSON output mode, and error
+  fields should match the shared API/SDK/MCP shape profile unless the PR records
+  a tested repo-local exception. For any client-facing repo that adds or changes
+  SDK, CLI, MCP, auth, or error behavior, add or update a client-surface manifest
+  matching `docs/client-surface-manifest.schema.json` and run
+  `scripts/audit-client-surface.py` or the repo-local copy of that check.
+- Do not let CLI, SDK, MCP, docs, examples, and manifests drift apart. Public
+  client-facing changes are not complete until every mirrored surface uses the
+  same canonical operation names, `base_url`/`token`/`timeout_ms` client config,
+  `--base-url`/`--token`/`--token-file`/`--timeout-ms`/`--output`/`--json` CLI
+  flags, service-prefixed `<SERVICE>_TOKEN` env vars, shared Bearer auth
+  semantics, and normalized `code`/`message`/`status`/`details`/`request_id`/
+  `retryable` error fields. Use
+  `python3 scripts/audit-client-surface.py --print-template <service>` when a
+  repo needs a new manifest, then keep that manifest in sync in the same PR as
+  the code, docs, fixtures, and generated clients. The long-term target is that
+  these repos can share one SDK transport/auth/error core; every repo-local
+  exception should be visible, tested, and temporary.
 - If an agent is already active on a PR, its next sequence of turns should first
   reconcile that repo/PR with the ecosystem pipeline before adding unrelated
   product scope. Treat `scripts/ecosystem-pipeline.sh report` as the handoff
@@ -106,8 +134,15 @@ Delete each item only after it is complete and verified.
 - [ ] Finish repo-local rename migrations so package names, binary names,
   generated clients, docs, fixtures, and local checkout folders converge on the
   Tempera product names above. Do not rename GitHub repositories through
-  automation unless the user explicitly asks for remote repo renames.
+  automation unless the user explicitly asks for remote repo renames. Use
+  `python3 scripts/check-local-checkouts.py --root <ecosystem-workspace>` to
+  audit legacy checkout names and print safe alias/remote commands before any
+  filesystem rename.
 - [ ] Enforce `docs/architecture-uniformity.md` across every repo. Remove
   repo-local exceptions unless they have benchmark, security, or product evidence.
+- [ ] Make `scripts/check-api-contracts.py` pass for the full configured API
+  registry. `data-engine` is the reference; Palette, cradle, and tempo remain
+  migration targets until their OpenAPI/MCP surfaces use the shared
+  project-scoped operation, error, pagination, idempotency, and conflict rules.
 - [ ] Promote `scripts/ecosystem-pipeline.sh gate` to the required CI path once
   `report` mode has no failures.
