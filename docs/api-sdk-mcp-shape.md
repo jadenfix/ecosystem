@@ -186,7 +186,7 @@ For a future shared SDK core, this means every service can be described as:
   "base_url": "http://127.0.0.1:7300",
   "auth": {"scheme": "bearer", "compat_headers": ["x-beatbox-api-key"]},
   "contract": "sdks/openapi.json",
-  "operations": ["getHealth", "execute", "createJob"]
+  "operations": ["health", "projects.executions.execute", "projects.jobs.create"]
 }
 ```
 

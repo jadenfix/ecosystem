@@ -32,6 +32,7 @@ CLI_FLAGS = [
 ERROR_FIELDS = ["status", "code", "message"]
 OPTIONAL_ERROR_FIELDS = {"request_id", "details"}
 LOWER_CAMEL = re.compile(r"^[a-z][a-zA-Z0-9]*$")
+PROJECTS_OPERATION_ID = re.compile(r"^projects(?:\.[a-z][a-zA-Z0-9]*){2,}$")
 SNAKE = re.compile(r"^[a-z][a-z0-9_]*$")
 ENV_TOKEN = re.compile(r"^[A-Z][A-Z0-9_]*_TOKEN$")
 ENV_API_KEY = re.compile(r"^[A-Z][A-Z0-9_]*_API_KEY$")
@@ -218,9 +219,12 @@ def audit_manifest(manifest: dict[str, Any]) -> AuditResult:
             violations.append("operations: expected array when present")
         else:
             for operation in operations:
-                if not isinstance(operation, str) or not LOWER_CAMEL.match(operation):
+                if not isinstance(operation, str) or not (
+                    LOWER_CAMEL.match(operation)
+                    or PROJECTS_OPERATION_ID.match(operation)
+                ):
                     violations.append(
-                        f"operations: {operation!r} is not a lower-camel operation name"
+                        f"operations: {operation!r} is not a contract operation name"
                     )
 
     mcp = manifest.get("mcp")

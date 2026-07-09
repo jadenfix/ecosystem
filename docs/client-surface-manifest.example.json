@@ -44,5 +44,11 @@
     "auth": "shared",
     "errors": "transport_native"
   },
-  "operations": ["getHealth", "execute", "createJob", "getJob", "cancelJob"]
+  "operations": [
+    "health",
+    "projects.executions.execute",
+    "projects.jobs.create",
+    "projects.jobs.get",
+    "projects.jobs.cancel"
+  ]
 }
