@@ -41,6 +41,11 @@ During migration, run in `report` mode so agents get the full drift list without
 stopping at the first failure. After the queues are done, CI should run the same
 pipeline in `gate` mode and block drift.
 
+The E2E stage executes `run-ecosystem-e2e.py`. Listing capabilities with
+`--list` is discovery only and cannot satisfy the gate. Until execution is
+wired, the stage correctly fails instead of reporting a passing E2E run.
+Run pipeline regression tests with `python3 -m unittest discover -s tests -v`.
+
 If a repo already has an active PR, the next agent cycle on that PR should treat
 pipeline compatibility as the first task. Do not expand unrelated feature scope
 until the PR either moves the repo toward the uniform target or explicitly records

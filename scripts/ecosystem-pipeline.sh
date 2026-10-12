@@ -38,7 +38,7 @@ run_repo() {
 }
 
 run_e2e() {
-  run_step e2e-scenarios python3 "$ROOT/scripts/run-ecosystem-e2e.py" --list
+  run_step e2e-scenarios python3 "$ROOT/scripts/run-ecosystem-e2e.py"
 }
 
 case "$MODE" in
