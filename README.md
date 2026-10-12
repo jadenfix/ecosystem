@@ -60,6 +60,10 @@ After the migration queues are complete, every repo should agree on:
 
 ## Commands
 
+Check out the product repositories next to `ecosystem`. For CI or isolated
+worktrees, set `ECOSYSTEM_REPOS_ROOT` to the directory containing those product
+checkouts. The control-plane manifest is always read from this repository.
+
 ```sh
 scripts/ecosystem-pipeline.sh report
 scripts/ecosystem-pipeline.sh gate
@@ -74,3 +78,7 @@ scripts/ecosystem-smoke.sh
 `check-ecosystem-uniformity.py` is expected to fail until the repo-local
 migration tasks are completed. That failure is useful: it is the remaining work
 list made executable.
+
+The E2E stage executes scenario checks; listing their names is not verification.
+It currently fails because live cross-product scenarios are not wired. A green
+metadata check must not be used to authorize a live product demo.

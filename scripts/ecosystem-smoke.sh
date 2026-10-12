@@ -9,4 +9,4 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 python3 "$ROOT/scripts/check-ecosystem-binaries.py"
 python3 "$ROOT/scripts/check-ecosystem-uniformity.py"
 python3 "$ROOT/scripts/check-architecture-uniformity.py"
-python3 "$ROOT/scripts/run-ecosystem-e2e.py" --list
+python3 "$ROOT/scripts/run-ecosystem-e2e.py"
