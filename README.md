@@ -24,6 +24,11 @@ its own PR.
 
 ## What This Owns
 
+The [public repository readiness audit](docs/public-repo-readiness-2026-10-12.md)
+tracks all 83 public non-fork projects, verified functional PRs, exact tested
+source trees, and outstanding recording gates. It distinguishes a working
+scoped workflow from an unverified complete product.
+
 - `ecosystem.toml`: repo registry, target toolchains, storage policy, expected
   binaries, and verification commands.
 - `AGENTS.md`: migration rules for coding agents.
@@ -79,6 +84,7 @@ scripts/ecosystem-smoke.sh
 migration tasks are completed. That failure is useful: it is the remaining work
 list made executable.
 
-The E2E stage executes scenario checks; listing their names is not verification.
-It currently fails because live cross-product scenarios are not wired. A green
-metadata check must not be used to authorize a live product demo.
+The smoke gate executes scenario checks; listing their names is not verification.
+It currently fails because live cross-product scenarios are not wired. The same
+pipeline correction is tracked separately in [PR #4](https://github.com/jadenfix/ecosystem/pull/4).
+A green metadata check must not be used to authorize a live product demo.

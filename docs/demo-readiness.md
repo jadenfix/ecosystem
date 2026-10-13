@@ -26,6 +26,8 @@ Failed tests or unimplemented advertised functionality keep that workflow on
 hold until the code is fixed and retested. Partial test coverage only authorizes
 the specific verified lane, not an untested cloud, hardware, or live API lane.
 
-`scripts/ecosystem-pipeline.sh e2e` now fails while live cross-product scenario
-execution is unwired. `run-ecosystem-e2e.py --list` remains an inventory command.
+`scripts/ecosystem-smoke.sh` now fails while live cross-product scenario
+execution is unwired. The pipeline correction is coordinated in
+[PR #4](https://github.com/jadenfix/ecosystem/pull/4).
+`run-ecosystem-e2e.py --list` remains an inventory command.
 Neither a scenario list nor metadata checks establish end-to-end readiness.

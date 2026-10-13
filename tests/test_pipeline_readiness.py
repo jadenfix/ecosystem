@@ -2,7 +2,6 @@
 
 import os
 from pathlib import Path
-import subprocess
 import sys
 import tempfile
 import unittest
@@ -23,14 +22,6 @@ class CheckoutTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             with patch.dict(os.environ, {"ECOSYSTEM_REPOS_ROOT": directory}):
                 self.assertEqual(repo_path(ROOT, "tempo"), Path(directory) / "tempo")
-
-    def test_e2e_pipeline_does_not_pass_by_listing_scenarios(self):
-        result = subprocess.run(["bash", str(ROOT / "scripts/ecosystem-pipeline.sh"), "e2e"],
-                                capture_output=True, text=True)
-        self.assertEqual(result.returncode, 1)
-        self.assertIn("live ecosystem E2E execution is not wired yet", result.stdout)
-        self.assertNotIn("ecosystem pipeline passed", result.stdout)
-
 
 if __name__ == "__main__":
     unittest.main()

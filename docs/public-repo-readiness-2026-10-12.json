@@ -1,0 +1,1736 @@
+{
+  "audit_date_utc": "2026-10-13",
+  "scope": "83 public, non-fork jadenfix repositories; excluded forks and private repositories",
+  "portfolio_end_to_end_complete": false,
+  "changes_are_review_branches_not_merged_releases": true,
+  "media_created_in_this_session": false,
+  "coordination": "Shared ownership and tested-tree handoffs with two other functional sessions; no media worker/video skill identified.",
+  "repositories": [
+    {
+      "repository": "jadenfix/1115_hack",
+      "classification": "application",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "a13dcdcc00ffbe4fc909aa95d7508906096dfcb7",
+      "tracked_files": 33,
+      "authored_source_files": 20,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "ast.parse(1115/app/__init__.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/activities.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/agent_wall.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/clients/__init__.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/clients/anthropic_client.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/clients/browser_use.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/clients/freepik.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/clients/linkup.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/clients/smartbuckets.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/config.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/main.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/models.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/storage.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/worker.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(1115/app/workflows.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "cd 1115 && python -m unittest discover -s tests -v",
+          "result": "pass"
+        }
+      ],
+      "remaining_blockers": [
+        "Full Temporal/provider workflow unverified; requires Temporal and provider credentials. Compose Temporal auto-setup lacks required database."
+      ],
+      "recording_gate": "Ready for actual frontend/CLI capture at tested SHA; full deployment/provider workflows explicitly excluded",
+      "published_change": {
+        "repository": "jadenfix/1115_hack",
+        "url": "https://github.com/jadenfix/1115_hack/pull/2",
+        "number": 2,
+        "sha": "4b739116eb439fae25c4daea83e35913e4a45007",
+        "tree": "d153d4b9d0a085ec45d56008f42e9b8801f0ce4b",
+        "local_tested_sha": "a13dcdcc00ffbe4fc909aa95d7508906096dfcb7",
+        "title": "Share research snapshots between API and worker with safe atomic storage"
+      }
+    },
+    {
+      "repository": "jadenfix/145",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "a2aad6cc8f9f5df85d7c7129537ca75d0834f97f",
+      "tracked_files": 4,
+      "authored_source_files": 2,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/145-Project-",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "92aeddedffc268a48a3b01a83f3a6f8d93b9559a",
+      "tracked_files": 7,
+      "authored_source_files": 4,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/8257-tools",
+      "classification": "source",
+      "status": "lint/build/15 unit tests/16 desktop-mobile E2E tests passed",
+      "inspected_sha": "115c2524a6e62e897aa236b71bfb8030b62de7f1",
+      "tracked_files": 24,
+      "authored_source_files": 12,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "npm ci --ignore-scripts --no-audit --no-fund",
+          "status": "passed"
+        },
+        {
+          "command": "npm run lint",
+          "status": "passed"
+        },
+        {
+          "command": "npm run test",
+          "status": "passed",
+          "tests": 15
+        },
+        {
+          "command": "npm run build",
+          "status": "passed"
+        },
+        {
+          "command": "npx playwright install chromium",
+          "status": "blocked",
+          "reason": "five attempts downloaded truncated/invalid zip; local browser unavailable"
+        },
+        {
+          "command": "GitHub Actions run38325169302: npm run check",
+          "result": "15 unit +16 Playwright desktop/mobile tests; lint/build pass"
+        }
+      ],
+      "remaining_blockers": [],
+      "recording_gate": "fixture frontend interaction lane only; no real blockchain/network/signing/payment integrations",
+      "published_change": {
+        "repository": "jadenfix/8257-tools",
+        "url": "https://github.com/jadenfix/8257-tools/pull/2",
+        "number": 2,
+        "sha": "c11d2e2950cfbc731b2a29ecfd764401f7cab4de",
+        "tree": "910ea1965dc2cf2d83da87b86c3dd159e92197a3",
+        "local_tested_sha": "115c2524a6e62e897aa236b71bfb8030b62de7f1",
+        "title": "Fix gateway predicate evaluation and reproducible frontend checks"
+      }
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_I",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "15964919b23f6b7319ff11511c57d2a9039603d2",
+      "tracked_files": 53,
+      "authored_source_files": 9,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_II",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "0dd8f7c005f75c1ed5531abb2b9846bc879cfab2",
+      "tracked_files": 6,
+      "authored_source_files": 5,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_III",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "3e45c96920f838c2760e6228fe5f7f064e18dbc7",
+      "tracked_files": 6,
+      "authored_source_files": 4,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/agentic_ai_HF",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "70951ca71e25da95928e534ce0b08396d3998d24",
+      "tracked_files": 2,
+      "authored_source_files": 1,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/AI_and_Machine_Learning",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "759e19eacf86402019bd628ff99aaebfa2b7497d",
+      "tracked_files": 7,
+      "authored_source_files": 6,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "ast.parse(crimeee.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(graph.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(ml1.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(model_selection.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(ncaa.py)",
+          "result": "pass; syntax only"
+        },
+        {
+          "command": "ast.parse(worldbankimport1.py)",
+          "result": "pass; syntax only"
+        }
+      ],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/AICH",
+      "classification": "documentation",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "507cde9fab7bfbec3e52d416933b05ac46428651",
+      "tracked_files": 1,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Documentation only; no executable implementation. Do not film architecture claims as working functionality."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/alpaca",
+      "classification": "source",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "f2ad3c6f37b3753a6314351751d4b89c4221095b",
+      "tracked_files": 210,
+      "authored_source_files": 170,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "python -m unittest discover -s scripts/data/tests -p test_walkforward.py",
+          "status": "passed",
+          "tests": 9
+        },
+        {
+          "command": "python scripts/backtest/smoke.py --out audit/alpaca-smoke.json",
+          "status": "passed",
+          "baselines": 4,
+          "held_out_bars": 468
+        },
+        {
+          "command": "python -m pytest scripts/data/tests -q",
+          "status": "blocked",
+          "reason": "yfinance missing during collection"
+        },
+        {
+          "command": "cargo test --workspace",
+          "status": "blocked",
+          "reason": "disk exhaustion; removed only our generated target; lean scoped check in progress"
+        },
+        {
+          "command": "cargo check -p algo-bin-live -j 2 (debug symbols disabled)",
+          "status": "blocked",
+          "reason": "shared disk again reached 100% while compiling dependencies; generated target removed"
+        },
+        {
+          "command": "cargo --config profile.dev.package.*.opt-level=0 check -p algo-bin-live -j 4 (debug symbols disabled)",
+          "status": "passed"
+        },
+        {
+          "command": "cargo --config profile.dev.package.*.opt-level=0 --config profile.test.package.*.opt-level=0 test -p algo-bin-live -j 4 (debug symbols disabled)",
+          "status": "passed",
+          "tests": 7
+        },
+        {
+          "command": "algo-live --mode paper with explicit offline dummy credentials",
+          "status": "passed",
+          "expected_exit_code": 1,
+          "stderr": "Error: account snapshot failed: not implemented",
+          "network_calls": 0
+        }
+      ],
+      "remaining_blockers": [
+        "live market-data transport is a skeleton",
+        "Rust workspace end-to-end verification incomplete",
+        "Alpaca REST broker methods are also NotImplemented"
+      ],
+      "recording_gate": "verified seeded offline research only; both live market transport and broker remain unfinished",
+      "published_change": {
+        "repository": "jadenfix/alpaca",
+        "url": "https://github.com/jadenfix/alpaca/pull/2",
+        "number": 2,
+        "sha": "d8b49e64f080b2117f4a5f60735723e200f2b6d5",
+        "tree": "2420e0cb165176adc210a23ca72b9ebdb7e3dfbc",
+        "local_tested_sha": "f2ad3c6f37b3753a6314351751d4b89c4221095b",
+        "title": "Harden offline walk-forward research and add reproducible evidence"
+      }
+    },
+    {
+      "repository": "jadenfix/android-simulator",
+      "classification": "source",
+      "status": "archived_tests_pass",
+      "inspected_sha": "b390e0a8c0c16b9416a1a46a3df751c868576a5f",
+      "tracked_files": 36,
+      "authored_source_files": 19,
+      "committed_media": [],
+      "checks": {
+        "python -m pytest -q": "19 tests, 4 subtests passed"
+      },
+      "remaining_blockers": [
+        "Archived successor tempera-dev/tempera-android",
+        "Hardware emulator E2E requires Apple Silicon macOS"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites"
+    },
+    {
+      "repository": "jadenfix/arrha",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "f5e08ed32b8963ac7020d50eb64de648c408d41b",
+      "tracked_files": 423,
+      "authored_source_files": 264,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "python -m pytest -q sdks/python/tests",
+          "exit_code": 2,
+          "result": "aether_sdk source not on import path; corrected in follow-up command"
+        },
+        {
+          "command": "PYTHONPATH=sdks/python/src python -m pytest -q sdks/python/tests",
+          "exit_code": 0,
+          "result": "21 passed",
+          "scope": "SDK request/model behavior, not node/devnet"
+        }
+      ],
+      "remaining_blockers": "Explorer and wallet are mock UI per CLAUDE.md; do not represent production blockchain, consensus/security or live settlement as validated by SDK tests.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/backpacking-eastern-sierra",
+      "classification": "source",
+      "status": "core_tests_and_build_pass",
+      "inspected_sha": "2c0dbfd79f4f0a2ef94a23acb5a0a21d566f68b8",
+      "tracked_files": 55,
+      "authored_source_files": 19,
+      "committed_media": [],
+      "checks": {
+        "node --import tsx --test src/lib/*.test.ts": "11 passed",
+        "node --import tsx scripts/validate-data.ts": "7 routes, 33 route features, 425 trail features validated",
+        "npm run build": "pass"
+      },
+      "remaining_blockers": [
+        "Browser interaction and current agency conditions not verified",
+        "tsx CLI blocked by IPC EPERM; node import bypass succeeds"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites"
+    },
+    {
+      "repository": "jadenfix/Bayesian-Neural-Network-for-CIFAR-10-Image-Classification",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "93395247d9d052926b7ba80fb0c473b0fc904428",
+      "tracked_files": 3,
+      "authored_source_files": 2,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/Bayesian__Stats",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "ba6d58f7ef255e3cd38d5ff071c1aad735750028",
+      "tracked_files": 3,
+      "authored_source_files": 2,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/business-documents",
+      "classification": "source",
+      "status": "dependency_install_environment_blocked",
+      "inspected_sha": "905bd37e407f95d64066d5e11b5b42c4d82f5bd7",
+      "tracked_files": 59,
+      "authored_source_files": 46,
+      "committed_media": [],
+      "checks": {
+        "npm install --ignore-scripts --no-audit --no-fund": "ENOSPC, removed incomplete reproducible node_modules"
+      },
+      "remaining_blockers": [
+        "Workflow Inngest/provider/blob backend not tested"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites"
+    },
+    {
+      "repository": "jadenfix/categorization_embeddings_sementic_search",
+      "classification": "source",
+      "status": "portable configuration fixed; offline loading/ranking verified",
+      "inspected_sha": "d30b5c77b6a2574f8d44327fe519fb246552c473",
+      "tracked_files": 35,
+      "authored_source_files": 23,
+      "committed_media": [],
+      "checks": [
+        "python -m pytest -q tests/test_local_pipeline.py"
+      ],
+      "remaining_blockers": [
+        "Live embedding/search/LLM require external credentials and not invoked",
+        "Historical precision claim not established for new venues"
+      ],
+      "recording_gate": "local stored-results/candidate-ranking only",
+      "published_change": {
+        "repository": "jadenfix/categorization_embeddings_sementic_search",
+        "url": "https://github.com/jadenfix/categorization_embeddings_sementic_search/pull/2",
+        "number": 2,
+        "sha": "181598c2467768aeb2043fa443c413f6d7e00c6c",
+        "tree": "80c056e6718c700ea50b48cb8d79743e230dd671",
+        "local_tested_sha": "d30b5c77b6a2574f8d44327fe519fb246552c473",
+        "title": "Make venue pipeline configuration portable across checkouts"
+      }
+    },
+    {
+      "repository": "jadenfix/causal_machinelearning",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "81992d0c868e6cc715203aef13e5f5097bc66a4f",
+      "tracked_files": 3,
+      "authored_source_files": 2,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/core-domains",
+      "classification": "documentation",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "ba5d009fedae493ef04fe4f6cb2ba066aec78563",
+      "tracked_files": 1,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Deprecated redirect to tempera-dev/logistics-data; exclude from product/media expectations."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/cpp_fundamentals",
+      "classification": "source",
+      "status": "ready",
+      "inspected_sha": "2bcc426a04639b36a95b454e3dae6d90268e1b9d",
+      "tracked_files": 6,
+      "authored_source_files": 2,
+      "committed_media": [],
+      "checks": "FIFO, partial fills, market exhaustion, cancellation, nonfinite/negative price regression and demo passed",
+      "remaining_blockers": "Educational single-thread exchange uses floating-point prices; no latency claim",
+      "recording_gate": "allow verified lane only",
+      "published_change": {
+        "repository": "jadenfix/cpp_fundamentals",
+        "url": "https://github.com/jadenfix/cpp_fundamentals/pull/3",
+        "number": 3,
+        "sha": "c953ff839895ceecb2f59763cec5c3636bfccdd9",
+        "tree": "45d1dc75f5ff8157528475719b71dea3f59c5476",
+        "local_tested_sha": "2bcc426a04639b36a95b454e3dae6d90268e1b9d",
+        "title": "Reject invalid limit prices and verify matching behavior"
+      }
+    },
+    {
+      "repository": "jadenfix/cradle",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "390013fc1e1f432b8fa1ffc494f88d05c14aa7fc",
+      "tracked_files": 165,
+      "authored_source_files": 34,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "python -m pytest -q sdks/python/tests",
+          "exit_code": 0,
+          "result": "36 passed, 46 subtests; one PytestUnhandledThreadExceptionWarning during socket teardown",
+          "scope": "SDK local HTTP fixture tests, not Rust daemon execution"
+        }
+      ],
+      "remaining_blockers": "Python/JavaScript/native/browser lanes are intentionally fail-closed; do not depict them as runnable.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/CreditAssignment",
+      "classification": "source",
+      "status": "local collection verified",
+      "inspected_sha": "11d4afa156f3ffae05f7a81792ff4cbe03cb4740",
+      "tracked_files": 120,
+      "authored_source_files": 49,
+      "committed_media": [],
+      "checks": [
+        "PYTHONPATH=src python -m pytest -q",
+        "PYTHONPATH=src python -m creditlab.cli.main validate-config --config configs/diagnostic_smoke.yaml",
+        "PYTHONPATH=src python -m creditlab.cli.main collect --config configs/diagnostic_smoke.yaml (run_866b9d14cd43)"
+      ],
+      "remaining_blockers": [
+        "Real ALFWorld/cloud/teacher paths not invoked"
+      ],
+      "recording_gate": "local diagnostic benchmark only"
+    },
+    {
+      "repository": "jadenfix/CreditAssignment-LongHorizon",
+      "classification": "source",
+      "status": "minimum-Flax compatibility fixed; unit/integration pass",
+      "inspected_sha": "87e9eddd1ae00b8beff786ebba94049709938e6d",
+      "tracked_files": 107,
+      "authored_source_files": 73,
+      "committed_media": [],
+      "checks": [
+        "PYTHONPATH=src JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 python -m pytest -q tests/unit",
+        "PYTHONPATH=src JAX_PLATFORMS=cpu OMP_NUM_THREADS=1 python -m pytest -q tests/integration",
+        "ruff check src tests",
+        "ruff format --check src tests",
+        "pyright src/cts/backends/nano_lm.py src/cts/models/projection.py"
+      ],
+      "remaining_blockers": [
+        "Full pyright reports20 errors and6 missing optional dependency warnings in unchanged modules/tests",
+        "Optional HF/Tunix/MaxText/cloud backends not invoked"
+      ],
+      "recording_gate": "local NanoLM/replay fixtures only",
+      "published_change": {
+        "repository": "jadenfix/CreditAssignment-LongHorizon",
+        "url": "https://github.com/jadenfix/CreditAssignment-LongHorizon/pull/2",
+        "number": 2,
+        "sha": "4c7777fa548a40b9e2038e1f50420833e12aabb6",
+        "tree": "2aad63875cc0f1bb4a02c19fa83ae8f9f72f5730",
+        "local_tested_sha": "87e9eddd1ae00b8beff786ebba94049709938e6d",
+        "title": "Keep local model containers compatible with the declared Flax minimum"
+      }
+    },
+    {
+      "repository": "jadenfix/Daytuh",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "caa21e46673dfc2434625262a0ca1a6ecea13ae8",
+      "tracked_files": 12,
+      "authored_source_files": 6,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/DF",
+      "classification": "source",
+      "status": "lazy_vision_provider_fix_tested; full CI still blocked",
+      "inspected_sha": "a439839b3a5306ab79bc0cba0edeaaa0e83a6540",
+      "tracked_files": 154,
+      "authored_source_files": 83,
+      "committed_media": [],
+      "checks": [
+        "6 provider initialization/request tests pass",
+        "Original lazy-provider Next build completed23 static pages",
+        "ESLint compatibility repaired;92 existing lint findings block full CI",
+        "Playwright browser install reordered before E2E;provider E2E unverified"
+      ],
+      "remaining_blockers": [
+        "ESLint now executes but92 existing source findings remain.",
+        "Provider-backed E2E not verified."
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites",
+      "published_change": {
+        "repository": "jadenfix/DF",
+        "url": "https://github.com/jadenfix/DF/pull/1",
+        "number": 1,
+        "sha": "860ab49eecfa5ec1f612fb4c9e2fb2bc1a91ac99",
+        "tree": "87ce6f338c0972ab5a514eb4b8f275b253f08515",
+        "local_tested_sha": "1ae191d9a7737530d1297337c1cb391bb649463a",
+        "title": "Defer vision provider credentials until inference requests"
+      }
+    },
+    {
+      "repository": "jadenfix/document_parsing_product_demo",
+      "classification": "source",
+      "status": "local_fix_superseded_by_external_PR1_pending_comparison",
+      "inspected_sha": "c900d2eea4d7278d43f31ecd49feff3c299922fb",
+      "tracked_files": 2040,
+      "authored_source_files": 8,
+      "committed_media": [],
+      "checks": {
+        "python -m pytest -q tests/test_app.py": "4 passed; PDF isolation, selection scoping, mocked provider full workflow"
+      },
+      "remaining_blockers": [
+        "External provider availability and accuracy unverified",
+        "HTTP subprocess E2E not run because shell socket bind restricted"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites"
+    },
+    {
+      "repository": "jadenfix/dreamForge",
+      "classification": "source",
+      "status": "frontend_build_pass_api_tests_failed",
+      "inspected_sha": "7d908c7223e694316e39b8fe86776fa977e5367e",
+      "tracked_files": 53,
+      "authored_source_files": 40,
+      "committed_media": [
+        "nebula.gif",
+        "public/nebula.gif"
+      ],
+      "checks": {
+        "npm run build": "pass after disk cleanup",
+        "npm test -- --runInBand": "47 tests pass, API suite fails removed Anthropic shims import"
+      },
+      "remaining_blockers": [
+        "API/provider integrations unverified"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites"
+    },
+    {
+      "repository": "jadenfix/DRL4MM",
+      "classification": "source",
+      "status": "Bellman target regression verified; historical E2E blocked",
+      "inspected_sha": "d734a5aa6175ff7c46b70bcbf588fb7a2cf1d891",
+      "tracked_files": 24,
+      "authored_source_files": 18,
+      "committed_media": [],
+      "checks": [
+        "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 python -m pytest -q tests -W error::UserWarning"
+      ],
+      "remaining_blockers": [
+        "No actual historical-market full-session E2E validated",
+        "Separate order-integrity changes must land",
+        "Synthetic data cannot authorize market training validity or media under Rules.md"
+      ],
+      "recording_gate": "BLOCKED: Rules.md requires real historical full-session order replay",
+      "published_change": {
+        "repository": "jadenfix/DRL4MM",
+        "url": "https://github.com/jadenfix/DRL4MM/pull/3",
+        "number": 3,
+        "sha": "11bf991d276908f02225a9a9d96fb94f1d2b9579",
+        "tree": "7f762abd115760fedfb6712b4773b8c8dc10b3ea",
+        "local_tested_sha": "d734a5aa6175ff7c46b70bcbf588fb7a2cf1d891",
+        "title": "Fix TD3 target broadcasting across replay transitions"
+      }
+    },
+    {
+      "repository": "jadenfix/dynamic_stochastic_modeling",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "6ee231500040260feaa3b6e446aea5f678b7e44b",
+      "tracked_files": 9,
+      "authored_source_files": 8,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/ecosystem",
+      "classification": "source",
+      "status": "checkout resolution fixed; 2 regression tests pass; actual uniformity/cross-product E2E still fails",
+      "inspected_sha": "c145db8ab7ba907bf0b395f8398cca22d4c60711",
+      "tracked_files": 19,
+      "authored_source_files": 7,
+      "committed_media": [],
+      "checks": [
+        "python -m unittest discover -s tests -v: 2 passed",
+        "binary check resolves seven sibling repos; Arrha lacks two declared binaries",
+        "uniformity/architecture retain concrete preexisting failures"
+      ],
+      "remaining_blockers": [],
+      "recording_gate": "held; live cross-product scenarios unwired"
+    },
+    {
+      "repository": "jadenfix/EmotiFuse",
+      "classification": "source",
+      "status": "audio/model pipeline repaired",
+      "inspected_sha": "307d90efd61a01a0545c588a1a12e6087633cb6c",
+      "tracked_files": 22,
+      "authored_source_files": 17,
+      "committed_media": [],
+      "checks": [
+        "OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 NUMBA_CACHE_DIR=/dev/shm/numba-python-projects python -m pytest -q tests",
+        "python -m emotifuse.smoke --output /tmp/emotifuse-smoke.json"
+      ],
+      "remaining_blockers": [
+        "No trained emotion checkpoint bundled; recognition accuracy not validated",
+        "Full speech encoder weights need available pretrained model"
+      ],
+      "recording_gate": "synthetic random-weight model smoke only",
+      "published_change": {
+        "repository": "jadenfix/EmotiFuse",
+        "url": "https://github.com/jadenfix/EmotiFuse/pull/1",
+        "number": 1,
+        "sha": "97cb2bd8cbf4619c9c28f3489e662cdd1bc2bd0e",
+        "tree": "1475215329b37d5dbbe4107f8183aeae17865cb2",
+        "local_tested_sha": "307d90efd61a01a0545c588a1a12e6087633cb6c",
+        "title": "Repair the full audio model path and add a download-free smoke"
+      }
+    },
+    {
+      "repository": "jadenfix/eth",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "37361b31a83a9bd19161494a7a5119f4e1b3c9c4",
+      "tracked_files": 329,
+      "authored_source_files": 181,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "python -m pytest -q tests/unit/test_services.py",
+          "exit_code": 1,
+          "result": "23 failures; missing dependencies (structlog, psutil etc.) and pytest-asyncio; environment failures do not establish production defects"
+        }
+      ],
+      "remaining_blockers": "Root scripts invoke services/api_gateway npm commands, but that folder has only a proto file and no package.json. UI test script missing. Python dependencies absent and full cloud/local E2E not established.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/eth-tools",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "90ec155252163c3ff5501e0f33d9e5cd497ac97c",
+      "tracked_files": 2,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/eval_mvp",
+      "classification": "source",
+      "status": "unit suite passed",
+      "inspected_sha": "6d16dc5246da64bf19604de967e9698e0814441c",
+      "tracked_files": 38,
+      "authored_source_files": 26,
+      "committed_media": [],
+      "checks": [
+        "python -m pytest -q"
+      ],
+      "remaining_blockers": [
+        "Docker/Harbor full benchmark validation not run"
+      ],
+      "recording_gate": "blocked pending verified runnable path"
+    },
+    {
+      "repository": "jadenfix/financial_cpp",
+      "classification": "source",
+      "status": "checkout_blocked",
+      "inspected_sha": null,
+      "tracked_files": 264,
+      "authored_source_files": 64,
+      "committed_media": [],
+      "checks": "Interrupted clone; no test result",
+      "remaining_blockers": "Preserve partial checkout as requested; do not reset/delete",
+      "recording_gate": "hold"
+    },
+    {
+      "repository": "jadenfix/financial_cpp_copy",
+      "classification": "source",
+      "status": "research_lane_ready",
+      "inspected_sha": "2b8a21ece4af75f4dd285edebe496f7f2425483d",
+      "tracked_files": 140,
+      "authored_source_files": 40,
+      "committed_media": [],
+      "checks": "Ring regression passed; full app compiled; multi-dataset 30 rows per CSV completed and loaded real packaged bars",
+      "remaining_blockers": "30-row verification is a smoke run, not profitability/evaluation evidence; historical build artifacts remain tracked",
+      "recording_gate": "allow verified lane only",
+      "published_change": {
+        "repository": "jadenfix/financial_cpp_copy",
+        "url": "https://github.com/jadenfix/financial_cpp_copy/pull/1",
+        "number": 1,
+        "sha": "e07bedd87edd7b7a80a9775101a3e9451bd7c609",
+        "tree": "37d0693350d62a86bd4cb3234a609e9ec6be44cd",
+        "local_tested_sha": "2b8a21ece4af75f4dd285edebe496f7f2425483d",
+        "title": "Fix backward iteration over rolling market history"
+      }
+    },
+    {
+      "repository": "jadenfix/FullStack-Bench",
+      "classification": "source",
+      "status": "83 scoped admission/budget/quality/replay/receipt tests passed",
+      "inspected_sha": "2bec5dd7b729c0f58752e4fcb521e4ebc2665b5e",
+      "tracked_files": 1221,
+      "authored_source_files": 209,
+      "committed_media": [],
+      "checks": [
+        "Isolated declared-runtime installation plus dirhash/ruff;83 tests pass on test_admission,test_budget_proxy,test_quality,test_independent_replay,test_gate_receipts."
+      ],
+      "remaining_blockers": [
+        "Full harness suite,Harbor/model execution,Docker/Postgres isolation and benchmark task signoff not verified."
+      ],
+      "recording_gate": "held; scoped harness logic only,not full benchmark performance"
+    },
+    {
+      "repository": "jadenfix/gemhub",
+      "classification": "documentation",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "00713d224f8c879b2d626813ca74d0a12d45213f",
+      "tracked_files": 1,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Documentation only; no executable implementation. Do not film architecture claims as working functionality."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/hackathon",
+      "classification": "source",
+      "status": "offline energy cycle repaired and verified",
+      "inspected_sha": "1f3167965f69d846e690fff540f57fac77f9da8b",
+      "tracked_files": 148,
+      "authored_source_files": 93,
+      "committed_media": [],
+      "checks": [
+        "PYTHONPATH=/tmp/python-projects-deps:./hackathon OMP_NUM_THREADS=1 python -m pytest -q hackathon/tests/test_offline_cycle.py",
+        "PYTHONPATH=/tmp/python-projects-deps python hackathon/main.py --mode gridpilot --simulate 1"
+      ],
+      "remaining_blockers": [
+        "Real market performance not verified",
+        "Dashboard and broad legacy API-dependent tests not validated"
+      ],
+      "recording_gate": "synthetic offline CLI forecast/bid/allocation/cooling/dispatch cycle only",
+      "published_change": {
+        "repository": "jadenfix/hackathon",
+        "url": "https://github.com/jadenfix/hackathon/pull/1",
+        "number": 1,
+        "sha": "53a3ce18d8708c948ab6a94e050c7a8b5a484799",
+        "tree": "cb10d393516f16901b96372d0fa1f93cc9a3820e",
+        "local_tested_sha": "1f451466feb5c460e6c3f02a319a34697e87cc03",
+        "title": "Keep energy simulation offline and correct the 1 MW default capacity"
+      }
+    },
+    {
+      "repository": "jadenfix/HumanVoiceAI",
+      "classification": "source",
+      "status": "frontend_build_pass",
+      "inspected_sha": "3b40f00612a51059e96df4e492e401128f5688ad",
+      "tracked_files": 124,
+      "authored_source_files": 69,
+      "committed_media": [],
+      "checks": {
+        "npm run build (human-voice-ai-frontend)": "pass after disk cleanup"
+      },
+      "remaining_blockers": [
+        "Python/audio emotion model E2E not tested",
+        "API generates random emotion confidence from file size; Streamlit health check does not execute voice model"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites"
+    },
+    {
+      "repository": "jadenfix/InftyThink",
+      "classification": "source",
+      "status": "CLI and tiny model forward/gradient verified",
+      "inspected_sha": "830122049026880fe5670479be4bcf903d4fe9f4",
+      "tracked_files": 82,
+      "authored_source_files": 44,
+      "committed_media": [],
+      "checks": "No repository tests found; tiny CausalLM outputs(1,4,32), loss3.49134,11 finite gradient leaves",
+      "remaining_blockers": [
+        "HuggingFace tokenizer/dataset and trained reasoning experiments not run"
+      ],
+      "recording_gate": "blocked for full reasoning/training until checkpoint/data experiment verified"
+    },
+    {
+      "repository": "jadenfix/insurance-front-site",
+      "classification": "documentation",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "bf8ad547155787584eb71b17bca6584cd4c283ea",
+      "tracked_files": 1,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Documentation only; no executable implementation. Do not film architecture claims as working functionality."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/InvoiceFlowAgent",
+      "classification": "source",
+      "status": "frontend_workflow_repair_tested; full CI still blocked",
+      "inspected_sha": "a7b07bded2fd9879367a5170ec73715e9b99ba88",
+      "tracked_files": 354,
+      "authored_source_files": 198,
+      "committed_media": [],
+      "checks": [
+        "format,lint,18 component/integration tests,and production build pass",
+        "95%coverage threshold retained;actual22.84%lines/statements,50%functions,74.19%branches",
+        "Backend fatal Python lint0 errors;full lint208 findings;Black15 files"
+      ],
+      "remaining_blockers": [
+        "Coverage remains below existing95% gate.",
+        "Backend lint208 findings and Black15 files.",
+        "Browser E2E targets/config absent; security upload actions outdated."
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites",
+      "published_change": {
+        "repository": "jadenfix/InvoiceFlowAgent",
+        "url": "https://github.com/jadenfix/InvoiceFlowAgent/pull/2",
+        "number": 2,
+        "sha": "dbd402b2ffa4ab4ae01bab35040bdac914e8dc94",
+        "tree": "3ea78eab69bd664dfd2637669618a27a64b1efb1",
+        "local_tested_sha": "de2d406a07a32b893618b534adecf3ac558138e7",
+        "title": "Restore styled and reachable invoice exception review workflow"
+      }
+    },
+    {
+      "repository": "jadenfix/jadenfix",
+      "classification": "documentation",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "520c0ad4813e50595c64d4ff185646e65384f800",
+      "tracked_files": 3,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Documentation only; no executable implementation. Do not film architecture claims as working functionality."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/jadenfix.github.io",
+      "classification": "frontend",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "4e68cc94c02313859bdb5442937ed7844a151c1f",
+      "tracked_files": 49,
+      "authored_source_files": 25,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "npm ci --ignore-scripts --no-audit --no-fund",
+          "result": "pass"
+        },
+        {
+          "command": "npm run lint",
+          "result": "pass"
+        },
+        {
+          "command": "npm run build",
+          "result": "pass"
+        }
+      ],
+      "remaining_blockers": [],
+      "recording_gate": "Ready for actual frontend/CLI capture at tested SHA; full deployment/provider workflows explicitly excluded",
+      "published_change": {
+        "repository": "jadenfix/jadenfix.github.io",
+        "url": "https://github.com/jadenfix/jadenfix.github.io/pull/2",
+        "number": 2,
+        "sha": "60573558b25aa82eca33384eec3133b35ae091c1",
+        "tree": "4800656586ae6dc43ce0e94e80a43c89d1efaa16",
+        "local_tested_sha": "4e68cc94c02313859bdb5442937ed7844a151c1f",
+        "title": "Fix portfolio navigation, lifecycle cleanup and live demo links"
+      }
+    },
+    {
+      "repository": "jadenfix/JaneStreetTradingComp",
+      "classification": "empty",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": null,
+      "tracked_files": 0,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "No tracked source files or initial commit; no runnable project. Product intent required."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/KILN",
+      "classification": "source",
+      "status": "environment_blocked",
+      "inspected_sha": "36f2c6c33a32f65e1fcf92cf8993e8e04652a9f8",
+      "tracked_files": 26,
+      "authored_source_files": 11,
+      "committed_media": [],
+      "checks": "Dependency extraction failed ENOSPC; disposable partial node_modules removed",
+      "remaining_blockers": "Build/routes/frontend interactions unverified; validator page uses static JSX claims",
+      "recording_gate": "hold"
+    },
+    {
+      "repository": "jadenfix/machine_learning",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "5879a7b5996f87a672eee66a0736dc1da420ef17",
+      "tracked_files": 9,
+      "authored_source_files": 3,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "ast.parse(python/blank.py)",
+          "result": "pass; syntax only"
+        }
+      ],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/masters_thesis_cold_runs",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "d42d7d5d0757965860d2096bf580a7dfefe04953",
+      "tracked_files": 2,
+      "authored_source_files": 1,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "classification": "frontend",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "d91810046086ccf4eca65f7cb41113cdf16ef844",
+      "tracked_files": 35,
+      "authored_source_files": 16,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "npm ci --ignore-scripts --no-audit --no-fund",
+          "result": "pass"
+        },
+        {
+          "command": "npm run build",
+          "result": "pass"
+        },
+        {
+          "command": "CI=true npm test -- --watchAll=false --runInBand --no-cache",
+          "result": "pass"
+        }
+      ],
+      "remaining_blockers": [],
+      "recording_gate": "Ready for actual frontend/CLI capture at tested SHA; full deployment/provider workflows explicitly excluded",
+      "published_change": {
+        "repository": "jadenfix/matteoshafer.github.io",
+        "url": "https://github.com/jadenfix/matteoshafer.github.io/pull/1",
+        "number": 1,
+        "sha": "b6e4082b5aa624fc1ccdd4364275da038d45e429",
+        "tree": "bf0508e96e08509b63540a9ee9f39dc3fc0f59a2",
+        "local_tested_sha": "d91810046086ccf4eca65f7cb41113cdf16ef844",
+        "title": "Repair archived portfolio routing, Pages deployment and research regression test"
+      }
+    },
+    {
+      "repository": "jadenfix/mft_crypto_research",
+      "classification": "source",
+      "status": "notebook_only_unverified",
+      "inspected_sha": "aeb655d90936bdcd0b88099832684b6b324afba6",
+      "tracked_files": 8,
+      "authored_source_files": 7,
+      "committed_media": [],
+      "checks": "All seven parse as JSON and code-cell syntax after notebook magic filtering",
+      "remaining_blockers": "GPU/CUDA/data downloads required; no clean reusable CLI or E2E smoke pipeline",
+      "recording_gate": "hold"
+    },
+    {
+      "repository": "jadenfix/MiniGPTEngine-CPP",
+      "classification": "source",
+      "status": "kernel_ready_full_model_blocked",
+      "inspected_sha": "d189d3b76bc1818a1a5c50a65d6f3d748f97bde4",
+      "tracked_files": 106,
+      "authored_source_files": 52,
+      "committed_media": [],
+      "checks": "Portable eight-head causal attention reference numeric tests passed",
+      "remaining_blockers": "Historical generation uses canned responses/manual vocabulary; trained model pipeline missing",
+      "recording_gate": "allow verified lane only",
+      "published_change": {
+        "repository": "jadenfix/MiniGPTEngine-CPP",
+        "url": "https://github.com/jadenfix/MiniGPTEngine-CPP/pull/1",
+        "number": 1,
+        "sha": "cea84c0de2c1aac30fd3719d860836654c544109",
+        "tree": "91ff9c46109c038e36282021b5d1f6d596af2f82",
+        "local_tested_sha": "d189d3b76bc1818a1a5c50a65d6f3d748f97bde4",
+        "title": "Implement portable causal attention reference kernel"
+      }
+    },
+    {
+      "repository": "jadenfix/NLP",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "6733ec4556b2372a6f925df3bd3d8e60383e229d",
+      "tracked_files": 6,
+      "authored_source_files": 4,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "python demo.py",
+          "result": "pass"
+        },
+        {
+          "command": "python -m unittest -v",
+          "result": "pass"
+        }
+      ],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "Ready for actual frontend/CLI capture at tested SHA; full deployment/provider workflows explicitly excluded",
+      "published_change": {
+        "repository": "jadenfix/NLP",
+        "url": "https://github.com/jadenfix/NLP/pull/1",
+        "number": 1,
+        "sha": "fad68434053720f777d57907b52a792f00851f17",
+        "tree": "08cad3a2e871b7ae5cec5da31d8cbedffeda9eed",
+        "local_tested_sha": "6733ec4556b2372a6f925df3bd3d8e60383e229d",
+        "title": "Make existing notebook n-gram models runnable offline and fix boundary/unknown handling"
+      }
+    },
+    {
+      "repository": "jadenfix/OrbitAgents",
+      "classification": "source",
+      "status": "typecheck/build/7 tests passed;13 existing lint warnings",
+      "inspected_sha": "4105153f7983cf7fa58091eab0b426330d88c808",
+      "tracked_files": 181,
+      "authored_source_files": 77,
+      "committed_media": [],
+      "checks": {
+        "npm run type-check": "pass",
+        "npm test -- --runInBand --no-cache": "7 tests pass, 3 suites",
+        "npm run build": "pass; existing large bundle warning",
+        "npm run lint": "fails zero-warning threshold with 13 pre-existing warnings; no errors"
+      },
+      "remaining_blockers": [
+        "Orbit lint still fails --max-warnings=0 with 13 warnings",
+        "Live auth, browser workers, query services and Mapbox credentials unverified",
+        "Production dashboard bundle retains large-chunk warning"
+      ],
+      "recording_gate": "blocked pending actual browser interaction and required live services",
+      "published_change": {
+        "repository": "jadenfix/OrbitAgents",
+        "url": "https://github.com/jadenfix/OrbitAgents/pull/2",
+        "number": 2,
+        "sha": "de4b19c2a5acac57751209dee7d8e28f7c41e4f7",
+        "tree": "ac0c66bf159e5cc3bd3e83c784f17c0745160e6a",
+        "local_tested_sha": "27eef2498a61798e7d49f8bf74adfbb5aedcb5dd",
+        "title": "Restore frontend type checking and real authentication flow"
+      }
+    },
+    {
+      "repository": "jadenfix/palette",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+      "tracked_files": 3757,
+      "authored_source_files": 2154,
+      "committed_media": [
+        "bins/beaterd/tests/fixtures/gate2-compose-browser-demo.webm",
+        "docs/demos/gate2-browser-demo.webm",
+        "docs/demos/gate2-compose-browser-demo.webm"
+      ],
+      "checks": [
+        {
+          "command": "python -m pytest -q scripts/tests",
+          "exit_code": 0,
+          "result": "75 passed, 11 subtests",
+          "scope": "script/governance regression tests"
+        },
+        {
+          "command": "node --test tests/render.test.mjs tests/routes.test.mjs tests/analyze.test.mjs",
+          "cwd": "web/dashboard",
+          "exit_code": 1,
+          "result": "3 route tests pass; 2 suites fail imports because TypeScript dependency not installed"
+        }
+      ],
+      "remaining_blockers": "Dashboard route tests document pending routes including sessions, datasets, analytics, prompts, review, studio and evolution; dependency installation/build absent.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-",
+      "classification": "source",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "2897b1b9968da6b00deecc9313cabd2ca8c71d50",
+      "tracked_files": 4,
+      "authored_source_files": 1,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [],
+      "recording_gate": "held; no complete workflow verification"
+    },
+    {
+      "repository": "jadenfix/python_crypto_trading_engine",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "39d66f4971d2d394af93ff1d23d8fe335d028b7d",
+      "tracked_files": 2,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/random_cpp_doesnt_work",
+      "classification": "source",
+      "status": "blocked",
+      "inspected_sha": "ac3d3002b4e66e66b5d77fb066ddf235fd86091f",
+      "tracked_files": 62,
+      "authored_source_files": 45,
+      "committed_media": [],
+      "checks": "Compilation failed with absent csv2 headers, InferenceEngine.h, DRLInferenceEngine.cpp and wrong FeatureCalculator header path",
+      "remaining_blockers": "CMake names nonexistent sources; incomplete DRL stubs and data root relative to build dir",
+      "recording_gate": "hold"
+    },
+    {
+      "repository": "jadenfix/remi",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "c13e597e33b8dbeee8b8f1cc392fe7ee7996469e",
+      "tracked_files": 24,
+      "authored_source_files": 14,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": "Core live remember/query/rebuild checks require Cargo; repository metadata still points to beater-memory and rust-version 1.93.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/ReplayKit",
+      "classification": "source",
+      "status": "exclusive collaborating-session owner; final tested release awaited",
+      "inspected_sha": "ccb636f123dcc96beabef830539f7e3b241b7a4d",
+      "tracked_files": 85,
+      "authored_source_files": 48,
+      "committed_media": [],
+      "checks": {
+        "npm run lint": "pass",
+        "npm test": "69 pass",
+        "npm run build": "pass"
+      },
+      "remaining_blockers": [
+        "Changes in a separate functional session; this report does not claim its current branch is fully verified."
+      ],
+      "recording_gate": "held until owning session publishes exact final revision and evidence"
+    },
+    {
+      "repository": "jadenfix/resume",
+      "classification": "empty",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "9f5b79f18affbe8a7008bacb04863744686f795c",
+      "tracked_files": 0,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "No tracked source files or initial commit; no runnable project. Product intent required."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/rl",
+      "classification": "source",
+      "status": "partial_verification",
+      "inspected_sha": "7a4c81cefa54ed8b1780935d467f80737af1dff2",
+      "tracked_files": 95,
+      "authored_source_files": 45,
+      "committed_media": [],
+      "checks": "SDK4, collector PII3, gateway routing/logging3 pass; gateway suite4 pass1 httpx API mismatch",
+      "remaining_blockers": "Existing external PR1 covers indentation fix; distributed Postgres/MinIO stack and trainer not verified",
+      "recording_gate": "hold"
+    },
+    {
+      "repository": "jadenfix/roe-ai-",
+      "classification": "frontend",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "26d8e6db3289cfa3a3535d7a9507ba95e958884a",
+      "tracked_files": 15,
+      "authored_source_files": 5,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "npm ci --ignore-scripts --no-audit --no-fund",
+          "result": "pass"
+        },
+        {
+          "command": "npm run lint",
+          "result": "pass"
+        },
+        {
+          "command": "npm run build",
+          "result": "pass"
+        }
+      ],
+      "remaining_blockers": [
+        "Presentation frontend, not a functioning risk engine. ROI/business figures are presentation claims."
+      ],
+      "recording_gate": "Ready for actual frontend/CLI capture at tested SHA; full deployment/provider workflows explicitly excluded",
+      "published_change": {
+        "repository": "jadenfix/roe-ai-",
+        "url": "https://github.com/jadenfix/roe-ai-/pull/1",
+        "number": 1,
+        "sha": "e83c8bd86ed24f7089244705895865cdba292f05",
+        "tree": "43b2445195a4766e227f3551f271ae7d8b88969e",
+        "local_tested_sha": "26d8e6db3289cfa3a3535d7a9507ba95e958884a",
+        "title": "Fix presentation JSX motion lint compatibility"
+      }
+    },
+    {
+      "repository": "jadenfix/ruby",
+      "classification": "source",
+      "status": "clean install,zero-warning lint,and strict production build pass",
+      "inspected_sha": "e5e4f3f9b36733df06a9c54f7154d556687df040",
+      "tracked_files": 108,
+      "authored_source_files": 30,
+      "committed_media": [],
+      "checks": {
+        "npm ci --ignore-scripts --no-audit --no-fund": "pass",
+        "npm run lint": "pass",
+        "CI=true npm run build": "pass"
+      },
+      "remaining_blockers": [
+        "Live Ruby API and marketplace mutation workflows unverified",
+        "Create Gem, Sandbox and Benchmarks remain coming-soon interfaces",
+        "No existing frontend tests found"
+      ],
+      "recording_gate": "blocked pending actual browser interaction and required live services",
+      "published_change": {
+        "repository": "jadenfix/ruby",
+        "url": "https://github.com/jadenfix/ruby/pull/1",
+        "number": 1,
+        "sha": "ce67ec02afe3ae0e47bde162cca040746f845fc8",
+        "tree": "3cbbed4061c61772f6d195f7e5fba85e30665d8e",
+        "local_tested_sha": "02110f1e9ee49c4e1bf2a48ee720abfb71abcca6",
+        "title": "Restore reproducible TypeScript frontend production build"
+      }
+    },
+    {
+      "repository": "jadenfix/rusty",
+      "classification": "source",
+      "status": "24 Rust core tests passed on Rust 1.99 override",
+      "inspected_sha": "1bffef122f549a859953b3cd2b47952a39d0b177",
+      "tracked_files": 232,
+      "authored_source_files": 125,
+      "committed_media": [
+        "docs/demo/compact.gif",
+        "docs/demo/focus.gif",
+        "docs/demo/goal.gif",
+        "docs/demo/hero.gif",
+        "docs/demo/models.gif",
+        "docs/demo/swarm.gif"
+      ],
+      "checks": [
+        "cargo +stable metadata --no-deps --format-version 1: passed",
+        "cargo +stable test --locked --offline --lib -- --skip cloud::: 24 passed,15 filtered"
+      ],
+      "remaining_blockers": "cargo xtask qa and live/eval provider behavior untested here; demo/shop contains intentional benchmark bugs and is not a completion target.",
+      "recording_gate": "held; full agent/model/provider/tool E2E not verified"
+    },
+    {
+      "repository": "jadenfix/satellite_deeplearning",
+      "classification": "empty",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": null,
+      "tracked_files": 0,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "No tracked source files or initial commit; no runnable project. Product intent required."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/simulation-theory",
+      "classification": "source",
+      "status": "11 scoped tests passed; full suite interrupted during expensive exact solver after 19 minutes",
+      "inspected_sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+      "tracked_files": 239,
+      "authored_source_files": 156,
+      "committed_media": [],
+      "checks": [
+        "python -m pytest tests/test_physics.py tests/test_algorithmic.py tests/test_bayesian.py tests/test_anthropic.py -q: 11 passed"
+      ],
+      "remaining_blockers": "Full suite unresolved; coordinate root session before recording",
+      "recording_gate": "scoped research results only; full claim registry and solver suite not verified"
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "classification": "source",
+      "status": "exclusive collaborating-session owner; final tested release awaited",
+      "inspected_sha": "35f0782f2e21b2c9e3f7dad835ff56ebaaf86896",
+      "tracked_files": 6518,
+      "authored_source_files": 38,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Changes in a separate functional session; this report does not claim its current branch is fully verified."
+      ],
+      "recording_gate": "held until owning session publishes exact final revision and evidence"
+    },
+    {
+      "repository": "jadenfix/solanatools",
+      "classification": "source",
+      "status": "offline replay verified",
+      "inspected_sha": "aed4153e87b3570cf927b55fc7e8203ae7968eb9",
+      "tracked_files": 25147,
+      "authored_source_files": 307,
+      "committed_media": [],
+      "checks": [
+        "cd solana-bot && python -m pytest -q tests/unit tests/integration",
+        "cd solana-bot && python main.py --demo --output /tmp/solana-replay.json"
+      ],
+      "remaining_blockers": [
+        "Live execution and actual market feed incomplete",
+        "Broader portfolio/platform trees incomplete; 70 duplicate files contain nul not found"
+      ],
+      "recording_gate": "offline synthetic spot replay only",
+      "published_change": {
+        "repository": "jadenfix/solanatools",
+        "url": "https://github.com/jadenfix/solanatools/pull/1",
+        "number": 1,
+        "sha": "54dffc7537038f404af5757891b6edc23ed96f1c",
+        "tree": "60f3f1316a7191ab6b1319f4d499a12a3c3b277a",
+        "local_tested_sha": "aed4153e87b3570cf927b55fc7e8203ae7968eb9",
+        "title": "Make the RSI bot runnable with offline spot replay and a reconciled ledger"
+      }
+    },
+    {
+      "repository": "jadenfix/space-simulation-engine",
+      "classification": "source",
+      "status": "ready",
+      "inspected_sha": "1b960ec995b2c1f718090b294ebcf345518d5e73",
+      "tracked_files": 185,
+      "authored_source_files": 81,
+      "committed_media": [],
+      "checks": "4070 C checks, 29 Python integration tests, all 11 CLI examples passed",
+      "remaining_blockers": "Scientific model assumptions remain explicit; no unvalidated sail claims",
+      "recording_gate": "allow verified lane only"
+    },
+    {
+      "repository": "jadenfix/startup",
+      "classification": "source",
+      "status": "exclusive collaborating-session owner; final tested release awaited",
+      "inspected_sha": "9ebee7c9bb1dc44db40ab21aba03d51fd360b66a",
+      "tracked_files": 28,
+      "authored_source_files": 27,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Changes in a separate functional session; this report does not claim its current branch is fully verified."
+      ],
+      "recording_gate": "held until owning session publishes exact final revision and evidence"
+    },
+    {
+      "repository": "jadenfix/stochastic-site",
+      "classification": "source",
+      "status": "exclusive collaborating-session owner; final tested release awaited",
+      "inspected_sha": "11a4b023b17823c44d7d4aca0f7e710a8aaacc8b",
+      "tracked_files": 31,
+      "authored_source_files": 21,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "Changes in a separate functional session; this report does not claim its current branch is fully verified."
+      ],
+      "recording_gate": "held until owning session publishes exact final revision and evidence"
+    },
+    {
+      "repository": "jadenfix/stochastic512",
+      "classification": "empty",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": null,
+      "tracked_files": 0,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "No tracked source files or initial commit; no runnable project. Product intent required."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/supervised_fine_tuning",
+      "classification": "source",
+      "status": "gpu_verification_blocked",
+      "inspected_sha": "06b5822b08899aeff7075bfce34d9ff4ddbf0004",
+      "tracked_files": 2,
+      "authored_source_files": 1,
+      "committed_media": [],
+      "checks": "Notebook repaired/parse valid, formatter behavior checked; trained adapter and tokenizer save wired",
+      "remaining_blockers": "GPU training, adapter reload, held-out eval not rerun; old TRL API/unpinned dependencies need compatibility review",
+      "recording_gate": "hold",
+      "published_change": {
+        "repository": "jadenfix/supervised_fine_tuning",
+        "url": "https://github.com/jadenfix/supervised_fine_tuning/pull/1",
+        "number": 1,
+        "sha": "79d014e755ccec6c5c0644f71bd555be5ba32af6",
+        "tree": "ba20858182a753764d75e9da7d2b6c13e9477cbe",
+        "local_tested_sha": "06b5822b08899aeff7075bfce34d9ff4ddbf0004",
+        "title": "Format Alpaca data and persist fine-tuned adapters"
+      }
+    },
+    {
+      "repository": "jadenfix/temp.js",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "1e870305948256f2e86ca2042f7d69563e7fb3ad",
+      "tracked_files": 107,
+      "authored_source_files": 38,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": "Live API kill-9/resume gate explicitly pending supported funded provider; pinned Git deps use former repo names; compile and runtime not verified.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/tempo",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+      "tracked_files": 161,
+      "authored_source_files": 70,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "bash scripts/check-observation-boundary.sh",
+          "exit_code": 0,
+          "scope": "static source boundary guard"
+        },
+        {
+          "command": "bash scripts/check-no-solver.sh",
+          "exit_code": 0,
+          "scope": "static no-solver guard including self-test"
+        },
+        {
+          "command": "bash scripts/check-denial-sentinels.sh",
+          "exit_code": 127,
+          "scope": "blocked: cargo command not found"
+        }
+      ],
+      "remaining_blockers": "Servo native promotion, live sandbox canary, private-account and Windows IPC gates remain pending; Rust binaries were not built.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/tempOS",
+      "classification": "source",
+      "status": "verification_blocked",
+      "inspected_sha": "6f45f9c0464a31b7940669abc2bcc5ea2683f736",
+      "tracked_files": 242,
+      "authored_source_files": 97,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "python3 scripts/check-optimization-docs.py",
+          "exit_code": 0,
+          "result": "optimization docs OK",
+          "scope": "documentation consistency only"
+        }
+      ],
+      "remaining_blockers": "README explicitly calls this early implementation, not bootable OS or usable end-user runtime. Toolchain 1.93.1 behind root 1.96.1 policy.",
+      "recording_gate": "held; recorded checks do not establish full product E2E"
+    },
+    {
+      "repository": "jadenfix/trading",
+      "classification": "source",
+      "status": "paper_control_layer_verified",
+      "inspected_sha": "03e42f14165f977e756e66d65f9e4bbcc2fa8f14",
+      "tracked_files": 5105,
+      "authored_source_files": 3851,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "node --test observability-platform/tests/*.test.mjs",
+          "cwd": "/workspace/scratch/100e79c20fa2/worktrees/trading-dashboard",
+          "exit_code": 0,
+          "result": "14 passed, 0 failed, 0 skipped",
+          "scope": "real subprocess HTTP broker/control lifecycle, serving UI/assets, fixtures/auth/cleanup, renderer XSS regression tests"
+        },
+        {
+          "command": "node --check observability-platform/paper-demo.mjs",
+          "exit_code": 0
+        },
+        {
+          "command": "git diff --check",
+          "exit_code": 0
+        },
+        {
+          "command": "headless Playwright UI approve walkthrough",
+          "exit_code": 1,
+          "result": "Browser executable missing; no rendered browser or screenshot evidence; no UI visual correctness claim"
+        }
+      ],
+      "remaining_blockers": "Trading connectors, Rust strategies, exchange order placement, performance and live profitability are not validated by these tests.",
+      "recording_gate": "held; recorded checks do not establish full product E2E",
+      "published_change": {
+        "repository": "jadenfix/trading",
+        "url": "https://github.com/jadenfix/trading/pull/23",
+        "number": 23,
+        "sha": "7f5b78cf23052860e484b096762d552c472a409d",
+        "tree": "ba0a87e619e17db7090adae2986abbe601342545",
+        "local_tested_sha": "de200825b58361c76ea612f1ab9f59e811643d51",
+        "title": "Add an isolated paper dashboard walkthrough and escape status markup"
+      }
+    },
+    {
+      "repository": "jadenfix/trading_research",
+      "classification": "source",
+      "status": "python_lane_ready_native_blocked",
+      "inspected_sha": "6b0cf7d67d47dfe7b883318a1c947741bb212c2b",
+      "tracked_files": 1451,
+      "authored_source_files": 84,
+      "committed_media": [],
+      "checks": "Basic script reports4/4 passed with explicit Python fallback; pytest collection blocked by yfinance",
+      "remaining_blockers": "C++ extension unavailable: python_bindings missing; Rust engine requires absent cargo; no multi-engine latency evidence",
+      "recording_gate": "allow verified lane only"
+    },
+    {
+      "repository": "jadenfix/trading_website",
+      "classification": "source",
+      "status": "frontend_build_fix_tested",
+      "inspected_sha": "02c44829100a4ddea825cbd9c5880c5246d0cc07",
+      "tracked_files": 150,
+      "authored_source_files": 101,
+      "committed_media": [],
+      "checks": {
+        "npm run build (frontend)": "pass"
+      },
+      "remaining_blockers": [
+        "Backend Mongo/native addon/datasets not verified",
+        "Research/codegen/collaboration contain mock/coming-soon content"
+      ],
+      "recording_gate": "blocked_pending_actual_browser_e2e_or_live_prerequisites",
+      "published_change": {
+        "repository": "jadenfix/trading_website",
+        "url": "https://github.com/jadenfix/trading_website/pull/4",
+        "number": 4,
+        "sha": "bec2b3854e803c1135f0f29fe09cdabddeea576e",
+        "tree": "5d6dd4410366c28f663187d6eaad021e3dad5b56",
+        "local_tested_sha": "02c44829100a4ddea825cbd9c5880c5246d0cc07",
+        "title": "Restore TypeScript checked frontend production build"
+      }
+    },
+    {
+      "repository": "jadenfix/WS",
+      "classification": "research/coursework",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": "2fa605670ec7861e2cd8694a4bbc61d8f36f4853",
+      "tracked_files": 2,
+      "authored_source_files": 1,
+      "committed_media": [],
+      "checks": [
+        {
+          "command": "ast.parse(Crime-Web-Scraping.py)",
+          "result": "pass; syntax only"
+        }
+      ],
+      "remaining_blockers": [
+        "Historical notebooks/scripts; experiments not executed. Missing datasets, credentials or dependency reconstruction may prevent reproduction. No production completion claim."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    },
+    {
+      "repository": "jadenfix/xgbitcoin",
+      "classification": "empty",
+      "status": "structure inspected; runtime unverified",
+      "inspected_sha": null,
+      "tracked_files": 0,
+      "authored_source_files": 0,
+      "committed_media": [],
+      "checks": [],
+      "remaining_blockers": [
+        "No tracked source files or initial commit; no runnable project. Product intent required."
+      ],
+      "recording_gate": "blocked until final tested SHA and real browser or research demonstration"
+    }
+  ],
+  "published_functional_pr_count": 23
+}
