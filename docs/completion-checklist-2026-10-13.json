@@ -1,23 +1,23 @@
 {
-  "generated_at": "2026-10-13T04:11:09.716Z",
+  "generated_at": "2026-10-13T05:20:00.000Z",
   "scope": "all public non-fork jadenfix repositories; preserve archived status",
   "inventory_count": 83,
   "counts": {
     "repos": 83,
     "archived": 0,
-    "with_file_candidates": 3,
-    "workflow_candidate_repos": 2,
+    "with_file_candidates": 5,
+    "workflow_candidate_repos": 4,
     "decorative_only": 1,
     "remote_only": 2,
-    "no_candidates_or_references": 78,
-    "verified_current_main_demos": 0,
+    "no_candidates_or_references": 76,
+    "verified_current_main_demos": 2,
     "tree_errors": 0,
     "api_truncated": 0
   },
   "completion_rule": "Core E2E at recorded source SHA plus actual workflow GIF/video inspected against that source. Unit tests, merged PRs, decorative assets, and uninspected links do not establish completion.",
   "coordination_receipt": "https://github.com/jadenfix/ecosystem/pull/3#issuecomment-6138057326",
   "limitations": [
-    "No GIF/video viewed or replayed; zero independently verified current-main demonstrations.",
+    "Two current-main workflow demonstrations were independently verified after integration; remaining assets/references retain their prior uninspected status.",
     "solanatools required split subtree fetches after whole-tree transport failures; excluded committed solana_trading_platform/venv dependency environment.",
     "Recognized README media links include GIF/video file extensions, YouTube, Vimeo, Loom and GitHub user-attachments; arbitrary external hosts may be omitted."
   ],
@@ -1582,39 +1582,43 @@
     },
     {
       "repository": "jadenfix/8257-tools",
-      "source_sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+      "source_sha": "7c52e4b12ddd871d5292efc35f6b58c089251e80",
       "default_branch": "main",
       "archived": false,
-      "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
-      "media_paths": [],
+      "media_status": "verified_current_main_workflow_demo",
+      "media_notes": "Actual fixture frontend workflow GIF/MP4 independently inspected; corrected bytes and declared SHA-256 digests match current main.",
+      "media_paths": [
+        "docs/demo/gateway.gif",
+        "docs/demo/gateway.mp4",
+        "docs/demo/poster.png"
+      ],
       "e2e_status": "Fixture frontend flow independently verified desktop/mobile; no live blockchain/payment/provider integration",
       "e2e_commands": [
         "npm ci/lint/test/build:15 unit tests pass",
         "Desktop/Pixel5 real browser workflow16 cases pass; parent independent rerun16 pass",
         "Corrected-head hosted38348374588/38348368209:checksum,linter,15unit,build,16browser all pass"
       ],
-      "recorded_source_sha": null,
-      "demo_verified": false,
+      "recorded_source_sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+      "demo_verified": true,
       "pinned_main_ci": {
-        "checked_sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+        "checked_sha": "7c52e4b12ddd871d5292efc35f6b58c089251e80",
         "run_count": 1,
         "inspected_count": 1,
-        "scope": "Actions only; not deployment or E2E proof",
+        "scope": "Post-merge Actions plus independent artifact verification; not live blockchain/payment/provider proof",
         "latest_by_workflow": [
           {
             "name": "Verify gateway playground",
-            "id": 38328813374,
+            "id": 38350321193,
             "status": "completed",
             "conclusion": "success",
-            "url": "https://github.com/jadenfix/8257-tools/actions/runs/38328813374"
+            "url": "https://github.com/jadenfix/8257-tools/actions/runs/38350321193"
           }
         ]
       },
       "active_work": {
-        "owner": "session3eef/media_inventory; session100e79 sole merger",
-        "scope": "Completed source-guarded actual frontend GIF/MP4 with corrected uploads and CI artifact checksums",
-        "integration": "PR4 ready at corrected55f91af0; main verification pending"
+        "owner": "session3eef/media_inventory; integrated by sole merger session100e79",
+        "scope": "Source-guarded actual frontend GIF/MP4 with corrected uploads and CI artifact checksums",
+        "integration": "PR4 merged at main7c52e4b1; post-main run38350321193 success"
       },
       "staged_demo": {
         "pr": "https://github.com/jadenfix/8257-tools/pull/4",
@@ -1627,7 +1631,7 @@
           "docs/demo/gateway.mp4"
         ],
         "scope": "39-second sampled actual frontend walkthrough, fixture wallets/simulated calls/sample metrics",
-        "integration_status": "unmerged; corrected artifact integrity and hosted gates pass; sole merger must integrate and verify main",
+        "integration_status": "merged at main7c52e4b12ddd871d5292efc35f6b58c089251e80; post-main workflow success; corrected media blobs verified",
         "receipt": "https://github.com/jadenfix/8257-tools/pull/4#issuecomment-6138507564",
         "rejected_head": "d12b028d201bf1c9def4504352b0b648851a0bae",
         "rejection_reason": "Corrupted GIF/MP4 transport caught by independent blob hashes and failed decode; corrected at new head",
@@ -1637,6 +1641,10 @@
           "Both media fully decode; capture.json SHA256 checks pass",
           "New checksum CI gate rejects original corrupt upload",
           "Corrected-head hosted38348374588/38348368209:success"
+        ],
+        "integrated_main_sha": "7c52e4b12ddd871d5292efc35f6b58c089251e80",
+        "post_main_runs": [
+          38350321193
         ]
       }
     },
@@ -1801,60 +1809,65 @@
     },
     {
       "repository": "jadenfix/space-simulation-engine",
-      "source_sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+      "source_sha": "d8057ab15c973f529507e91b359bd38b09acec9e",
       "default_branch": "main",
       "archived": false,
-      "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
-      "media_paths": [],
+      "media_status": "verified_current_main_workflow_demo",
+      "media_notes": "Actual native plasma convergence/conservation receipt GIF/MP4 independently inspected and matched to current-main blobs.",
+      "media_paths": [
+        "demo/plasma-convergence.gif",
+        "demo/plasma-convergence.mp4",
+        "demo/plasma-results.json"
+      ],
       "e2e_status": "Canonical C numerical-assurance workflow verified; synthetic periodic benchmark, no propulsion/device-validation claim",
       "e2e_commands": [
         "make -C assurance -j2 test:20 native programs passed",
         "Separate UBSan build:20 programs passed, exit0",
         "Hosted strict/sanitizers/replay/analyzers/native38347540162/38347537149 passed"
       ],
-      "recorded_source_sha": null,
-      "demo_verified": false,
+      "recorded_source_sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+      "demo_verified": true,
       "pinned_main_ci": {
-        "checked_sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+        "checked_sha": "d8057ab15c973f529507e91b359bd38b09acec9e",
         "run_count": 4,
         "inspected_count": 4,
-        "scope": "Actions only; not deployment or E2E proof",
+        "scope": "Post-merge native/PDE/robustness/assurance workflows; synthetic benchmark, not device validation",
         "latest_by_workflow": [
           {
             "name": "spacewind-pde-assurance",
-            "id": 38328636581,
+            "id": 38350218939,
             "status": "completed",
             "conclusion": "success",
-            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636581"
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38350218939"
           },
           {
             "name": "spacewind-robustness-assurance",
-            "id": 38328636571,
+            "id": 38350218890,
             "status": "completed",
             "conclusion": "success",
-            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636571"
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38350218890"
           },
           {
             "name": "spacewind-assurance",
-            "id": 38328636603,
+            "id": 38350218898,
             "status": "completed",
             "conclusion": "success",
-            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636603"
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38350218898"
           },
           {
             "name": "native-spacewind",
-            "id": 38328636648,
+            "id": 38350218874,
             "status": "completed",
             "conclusion": "success",
-            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636648"
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38350218874"
           }
         ]
       },
       "active_work": {
-        "owner": "session3eef/minigpt_demo independent current-main verification and additive demo; existing PR4 remains owner-controlled",
+        "owner": "session3eef/minigpt_demo; integrated by sole merger session100e79",
         "source_head": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
-        "scope": "Completed full canonical-main strict and UBSan20-program verification plus source-guarded benchmark GIF/MP4. Current-main YAML valid and existing conditioning resolves old-parent failure; no duplicate solver/workflow repair. PR4 conflicts with main and remains owner-controlled.",
+        "scope": "Canonical strict/UBSan20-program verification plus source-guarded plasma benchmark GIF/MP4. Stale PR4 remains owner-controlled and conflicts with current main.",
+        "integration": "PR5 merged at maind8057ab1; all20 applicable post-main jobs successful",
         "held_pr": "https://github.com/jadenfix/space-simulation-engine/pull/4"
       },
       "staged_demo": {
@@ -1874,8 +1887,15 @@
           "Parent recomputed plotted errors from actual native JSON; six cases pass",
           "All applicable push/PR workflows success"
         ],
-        "integration_status": "unmerged; sole merger required; stale solver PR4 conflicts with fixes already on main",
-        "receipt": "https://github.com/jadenfix/space-simulation-engine/pull/5#issuecomment-6138408422"
+        "integration_status": "merged at maind8057ab15c973f529507e91b359bd38b09acec9e; all20 applicable post-main jobs successful",
+        "receipt": "https://github.com/jadenfix/space-simulation-engine/pull/5#issuecomment-6138408422",
+        "integrated_main_sha": "d8057ab15c973f529507e91b359bd38b09acec9e",
+        "post_main_runs": [
+          38350218874,
+          38350218890,
+          38350218898,
+          38350218939
+        ]
       }
     },
     {
