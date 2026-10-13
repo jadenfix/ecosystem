@@ -10,14 +10,14 @@ This addendum supersedes pending states in the earlier merge review where explic
 | jadenfix/smartpaydoc | [#1](https://github.com/jadenfix/smartpaydoc/pull/1) | `23864359e2ef26495359ffc776e6c93cc031692e` | Provider-free HTTP/browser/installed CLI; live providers skipped |
 | jadenfix/matteoshafer.github.io | [#3](https://github.com/jadenfix/matteoshafer.github.io/pull/3) | `5b0e2af9c03fdb9a196e82aa54ed0050a6568d85` | Six-route desktop/mobile production UI; local polish verified |
 
-SmartPayDoc is running at https://smartpaydoc-green.vercel.app . Vercel metadata attests deployed commit d5c4b842961f51d91812097a64e6ff0c9eafbd8e; its tree is identical to integrated main23864359. New exact-head statuses and source checks pass. AI providers remain unconfigured and three live-provider tests are intentionally skipped.
+[SmartPayDoc](https://smartpaydoc-green.vercel.app) is running. Vercel metadata attests deployed commit d5c4b842961f51d91812097a64e6ff0c9eafbd8e; its tree is identical to integrated main23864359. New exact-head statuses and source checks pass. AI providers remain unconfigured and three live-provider tests are intentionally skipped.
 
-The archive is hosted at https://jadenfix.github.io/matteoshafer.github.io/ . Pages hosting was enabled and a fresh workflow dispatch passed; actual live six-route desktop/mobile browser checks passed. A four-file navy/teal design, readable cards, compact phone navigation and keyboard skip link were merged afterward; its local production checks pass and new post-merge deployment confirmation is pending.
+The [research archive](https://jadenfix.github.io/matteoshafer.github.io/) is hosted. Pages hosting was enabled and a fresh workflow dispatch passed; actual live six-route desktop/mobile browser checks passed. A four-file navy/teal design, readable cards, compact phone navigation and keyboard skip link were merged afterward; its new push deployment at main5b0e2af9 and actual live12-route browser checks pass. All12 served repository JS/CSS source-map contents match the reviewed files. Hosted JS filename differs locally; no identical-bundle claim.
 
 | Repair | Current gate |
 |---|---|
 | OrbitAgents #4 | All hosted source checks pass, including47 auth tests, strict lint/type gates, actual HTTP persistence, Terraform and security scanning. Both Vercel deployments fail; keep draft. Terraform plan's existing continue-on-error is not a cloud deployment attestation. |
-| DF #1 | Full60-test unit harness fixed without scenario exclusion. Actual main landmarks/mobile navigation/44px targets fixed;48 local browser cases pass. Fresh full96-case cross-browser CI rerunning; two Vercel deployments fail. |
+| DF #1 | Full60-test unit harness fixed without scenario exclusion. Actual main landmarks/mobile navigation/44px targets fixed;48 local browser cases pass. Fresh full96-case cross-browser CI:95 pass and one Firefox navigation timeout, under diagnosis; two Vercel deployments fail. |
 | business-documents #1 | Dangling symlink escape repaired; nine boundary tests pass and controls fail old source. Vercel remains unresolved. |
 | KILN #1 | Inert mobile menu repaired; actual component desktop/phone interaction checks pass. Full current Next build/deployment still required. |
 | HumanVoiceAI #5 | Upload-size/random emotion predictions and random feature importance removed; explicit503 until real inference exists.30 Python/5 endpoint tests pass; full frontend/model/deployment gates remain. |

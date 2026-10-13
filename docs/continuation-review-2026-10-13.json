@@ -121,7 +121,15 @@
     "previous_live_verdict": "Actual live Chrome: six routes x desktop/mobile, refresh/navigation/assets/normal avatar/forced fallback pass.",
     "design_main": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
     "design_tree": "14f580cb904500e5719b1daf633684d3037da82f",
-    "design_verification": "Four-file coherent navy/teal design; Jest/build and local production Chrome 12 route checks plus active navigation/skip focus pass; screenshot review. Fresh post-merge hosting confirmation pending."
+    "design_verification": "New design is deployed at exact main5b0e2af9. Fresh push run38334892881 passes. Actual live Chrome six routes x1440/390, refresh/navigation/active route/skip focus/avatar fallback pass with no errors/overflow. All12 served repository JS/CSS sources match reviewed checkout via source maps.",
+    "hosted_source_proof": {
+      "head": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+      "run": 38334892881,
+      "js": "main.471643c3.js",
+      "css": "main.15beb085.css",
+      "all12_repo_source_map_files_match": true,
+      "note": "Hosted JS bundle filename differs from local build; source contents match exactly. No identical-bundle claim."
+    }
   },
   "repairs": [
     {
@@ -166,7 +174,7 @@
       "sha": "db2338804461c9a0cac17842cc2d196070c1fbb5",
       "tree": "fc54083a52bc69996ad86c733fee1bc67758473f",
       "verification": "60 Jest tests;48 local Chromium desktop/mobile/tablet cases; six-project96-case hosted matrix rerunning.",
-      "hold": "Two existing Vercel deployments fail; full fresh hosted browser matrix pending."
+      "hold": "Fresh full hosted browser matrix:95passed/1 Firefox navigation timeout; held for diagnosis. Two Vercel projects fail."
     },
     {
       "repository": "jadenfix/OrbitAgents",
