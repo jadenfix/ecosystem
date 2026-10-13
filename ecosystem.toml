@@ -96,7 +96,7 @@ commands = [
 [pipeline.stages.e2e]
 description = "Capability-level scenarios across built binaries and contract fixtures. These are required before declaring the ecosystem uniform."
 commands = [
-  "python3 scripts/run-ecosystem-e2e.py --list",
+  "python3 scripts/run-ecosystem-e2e.py",
 ]
 
 [capabilities.trace_observability]
@@ -130,6 +130,7 @@ binaries = ["beater-osd", "beaterosctl"]
 contracts = ["capability-grant", "policy-decision", "receipt", "audit-journal"]
 
 [capabilities.memory]
+e2e_command = ["bash", "scripts/e2e-memory.sh"]
 owner = "remi"
 product = "remi"
 binaries = ["beater-memory"]
