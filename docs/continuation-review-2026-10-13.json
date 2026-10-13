@@ -1,0 +1,265 @@
+{
+  "review_date_utc": "2026-10-13",
+  "scope": "Continuation of public non-fork repository review; no full portfolio or media readiness claim.",
+  "merges": [
+    {
+      "repository": "jadenfix/random_cpp_doesnt_work",
+      "pr": 2,
+      "head": "6eea2a83b825dc9bd94517a8be61db1f4d73dbb5",
+      "result": {
+        "sha": "fa218464bc873b9081680d878d29beb1f8fa6618",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "pr": 3,
+      "head": "d5c4b842961f51d91812097a64e6ff0c9eafbd8e",
+      "base_branch": "codex/functional-smartpaydoc-workflow",
+      "result": {
+        "sha": "80ec31e466d70a71ce806c60b3d6a189adce5aaf",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/remi",
+      "pr": 50,
+      "head": "e69ae2ba84ce3fb8149483b9d91792b7c946da5d",
+      "result": {
+        "sha": "605e111de67b2c5f1ee4bcf27be11df38d349f72",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "pr": 1,
+      "head": "80ec31e466d70a71ce806c60b3d6a189adce5aaf",
+      "tree": "59bd6fe209bb8ed35d3e595e071c099956df9cd5",
+      "result": {
+        "sha": "23864359e2ef26495359ffc776e6c93cc031692e",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "pr": 3,
+      "head": "6ea9d2c66807ec954588f3e60615716f274f2a53",
+      "tree": "14f580cb904500e5719b1daf633684d3037da82f",
+      "result": {
+        "sha": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    }
+  ],
+  "verified_merges": [
+    {
+      "repository": "jadenfix/random_cpp_doesnt_work",
+      "pr": 2,
+      "head": "6eea2a83b825dc9bd94517a8be61db1f4d73dbb5",
+      "result": {
+        "sha": "fa218464bc873b9081680d878d29beb1f8fa6618",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      },
+      "tree": "2fc3af5ea27623b3253579237572cbd891568987",
+      "reviewed_head_parent": true
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "pr": 3,
+      "head": "d5c4b842961f51d91812097a64e6ff0c9eafbd8e",
+      "base_branch": "codex/functional-smartpaydoc-workflow",
+      "result": {
+        "sha": "80ec31e466d70a71ce806c60b3d6a189adce5aaf",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      },
+      "tree": "59bd6fe209bb8ed35d3e595e071c099956df9cd5",
+      "reviewed_head_parent": true
+    },
+    {
+      "repository": "jadenfix/remi",
+      "pr": 50,
+      "head": "e69ae2ba84ce3fb8149483b9d91792b7c946da5d",
+      "result": {
+        "sha": "605e111de67b2c5f1ee4bcf27be11df38d349f72",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      },
+      "tree": "8f60ebdb89945b9a9ffe4ff8d2954a0b518382af",
+      "reviewed_head_parent": true
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "pr": 1,
+      "head": "80ec31e466d70a71ce806c60b3d6a189adce5aaf",
+      "tree": "59bd6fe209bb8ed35d3e595e071c099956df9cd5",
+      "result": {
+        "sha": "23864359e2ef26495359ffc776e6c93cc031692e",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      },
+      "reviewed_head_parent": true
+    }
+  ],
+  "smartpaydoc": {
+    "production_url": "https://smartpaydoc-green.vercel.app",
+    "deployment_id": "dpl_CBVvbUuxg5vBk6rcBCQj4s7v1Pm7",
+    "deployed_sha": "d5c4b842961f51d91812097a64e6ff0c9eafbd8e",
+    "tree": "59bd6fe209bb8ed35d3e595e071c099956df9cd5",
+    "main": "23864359e2ef26495359ffc776e6c93cc031692e",
+    "verification": "30 tests; real HTTP fixture workflow; separately installed wheel/CLI; desktop/mobile Chromium with optional CDN blocked; all scoped post-main checks pass. Three live-provider tests skipped; AI credentials unconfigured."
+  },
+  "archive": {
+    "production_url": "https://jadenfix.github.io/matteoshafer.github.io/",
+    "previous_live_main": "45a672b47055139dd18d602dc7ab71c656efc0e3",
+    "previous_live_verdict": "Actual live Chrome: six routes x desktop/mobile, refresh/navigation/assets/normal avatar/forced fallback pass.",
+    "design_main": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+    "design_tree": "14f580cb904500e5719b1daf633684d3037da82f",
+    "design_verification": "Four-file coherent navy/teal design; Jest/build and local production Chrome 12 route checks plus active navigation/skip focus pass; screenshot review. Fresh post-merge hosting confirmation pending."
+  },
+  "repairs": [
+    {
+      "repository": "jadenfix/business-documents",
+      "pr": 1,
+      "sha": "131d47e5f7a483959e3d1068d50a404cfc6695bc",
+      "tree": "4c751d58d80e441e059e990ab7cb8cef8d8ce3e6",
+      "verification": "Nine real filesystem boundary tests; dangling symlink negative controls fail old source.",
+      "hold": "Unexplained Vercel failure; current complete application build/browser not repeated."
+    },
+    {
+      "repository": "jadenfix/DF",
+      "sha": "57fca5e5946d7ace78e7435cd62f7b5df77ec1ae",
+      "tree": "63b084aa11be9aa077fbf6a491fbf4d561ac4494",
+      "name": "continue-DF-publish",
+      "hold": "See individual PR evidence for unresolved CI/deployment/full workflow gates."
+    },
+    {
+      "repository": "jadenfix/KILN",
+      "sha": "a07a2b636dcfaa59f1213b02b929bf149678ecf7",
+      "tree": "579dacfe0d2520af7e9abb486ac2497337ec3137",
+      "name": "kiln-navigation-publish",
+      "hold": "See individual PR evidence for unresolved CI/deployment/full workflow gates."
+    },
+    {
+      "repository": "jadenfix/HumanVoiceAI",
+      "sha": "f3d81bf3ac432f336bb44b995c7eeb5903824b82",
+      "tree": "c54a67c816032675829187919a2a9156917d4268",
+      "name": "humanvoice-frontend-integrity-publish",
+      "hold": "See individual PR evidence for unresolved CI/deployment/full workflow gates."
+    },
+    {
+      "repository": "jadenfix/ruby",
+      "sha": "a05970c051b957ebc990f52d40cfc2e4685ac601",
+      "tree": "ae22942c5541364cef6d2acb6ced04841ee1e88b",
+      "name": "ruby-cli-package-publish",
+      "hold": "See individual PR evidence for unresolved CI/deployment/full workflow gates."
+    },
+    {
+      "repository": "jadenfix/DF",
+      "pr": 1,
+      "sha": "db2338804461c9a0cac17842cc2d196070c1fbb5",
+      "tree": "fc54083a52bc69996ad86c733fee1bc67758473f",
+      "verification": "60 Jest tests;48 local Chromium desktop/mobile/tablet cases; six-project96-case hosted matrix rerunning.",
+      "hold": "Two existing Vercel deployments fail; full fresh hosted browser matrix pending."
+    },
+    {
+      "repository": "jadenfix/OrbitAgents",
+      "sha": "2f3c7fac8c7d03e76dc07f3014f9f2486bf30be9",
+      "tree": "85db9e3920f21df12963dd6b60e88a278761526b",
+      "pr": 4,
+      "status": {
+        "head": "2f3c7fac8c7d03e76dc07f3014f9f2486bf30be9",
+        "checks": [
+          {
+            "name": "Docker Build",
+            "status": "completed",
+            "conclusion": "skipped"
+          },
+          {
+            "name": "Vercel Preview Comments",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Auth Service Tests",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Frontend Build",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Frontend Tests",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Terraform Plan",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Python Lint (Auth Service)",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "auth",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Terraform Lint",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "Frontend Lint",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "GitGuardian Security Checks",
+            "status": "completed",
+            "conclusion": "success"
+          },
+          {
+            "name": "auth",
+            "status": "completed",
+            "conclusion": "success"
+          }
+        ],
+        "statuses": [
+          {
+            "context": "Vercel – orbitagents",
+            "state": "failure",
+            "target_url": "https://vercel.com/jaden-fix-s-projects/orbitagents/3eaDgFmRrfKst5cw6gvfMg2X3uMr"
+          },
+          {
+            "context": "Vercel – orbit-agents",
+            "state": "failure",
+            "target_url": "https://vercel.com/jaden-fix-s-projects/orbit-agents/7RxqK9wUrFLyK7BLNE8h3L4QMhRs"
+          }
+        ]
+      },
+      "hold": "All source checks now pass; two existing Vercel projects fail. Remaining query/search/agent/Mapbox/cloud lanes unverified."
+    }
+  ],
+  "other_holds": {
+    "InvoiceFlowAgent": "Actual RabbitMQ readiness race confirmed from real Compose CI logs: ping succeeds before AMQP listener. Evidence/repair handoff sent to pipeline owner. Original coverage/backend gates remain.",
+    "dreamForge": "68 scoped tests pass; security audit still7high/21moderate. No blanket advisory suppression.",
+    "HumanVoiceAI": "Actual frontend fabricated emotion/confidence; fail-closed integrity repair published. Real speech model, full frontend and hosted gates remain.",
+    "ruby": "Source-only gem packaging repaired; Ruby/Bundler/extension/container/deployment gates remain.",
+    "tempo": "Actual scheduled Servo audit ran and failed on real vulnerable/unmaintained/yanked dependencies. Invocation fix does not make audit pass.",
+    "advanced_econometrics_II": "Required original inputs absent; full study not executable."
+  },
+  "recording_gate": "Final integrated commit/tree and actual verified lane only. Show real frontend where present; fixture execution is not learned-model quality, financial performance, or production-provider evidence. No videos/GIFs created in this pass."
+}
