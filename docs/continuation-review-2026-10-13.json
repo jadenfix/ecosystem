@@ -105,6 +105,17 @@
         "message": "Pull Request successfully merged"
       },
       "reviewed_head_parent": true
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "pr": 3,
+      "head": "6ea9d2c66807ec954588f3e60615716f274f2a53",
+      "tree": "14f580cb904500e5719b1daf633684d3037da82f",
+      "result": {
+        "sha": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
     }
   ],
   "smartpaydoc": {
@@ -173,8 +184,8 @@
       "pr": 1,
       "sha": "db2338804461c9a0cac17842cc2d196070c1fbb5",
       "tree": "fc54083a52bc69996ad86c733fee1bc67758473f",
-      "verification": "60 Jest tests;48 local Chromium desktop/mobile/tablet cases; six-project96-case hosted matrix rerunning.",
-      "hold": "Fresh full hosted browser matrix:95passed/1 Firefox navigation timeout; held for diagnosis. Two Vercel projects fail."
+      "verification": "60 Jest tests;48 local Chromium cases. Unchanged-head hosted rerun38334737449 attempt2 passes all96 browser cases and build.",
+      "hold": "Two existing Vercel projects fail. Initial attempt had one Firefox navigation timeout; unchanged source passes rerun, but cause remains unclassified and should be monitored."
     },
     {
       "repository": "jadenfix/OrbitAgents",
@@ -269,5 +280,12 @@
     "tempo": "Actual scheduled Servo audit ran and failed on real vulnerable/unmaintained/yanked dependencies. Invocation fix does not make audit pass.",
     "advanced_econometrics_II": "Required original inputs absent; full study not executable."
   },
-  "recording_gate": "Final integrated commit/tree and actual verified lane only. Show real frontend where present; fixture execution is not learned-model quality, financial performance, or production-provider evidence. No videos/GIFs created in this pass."
+  "recording_gate": "Final integrated commit/tree and actual verified lane only. Show real frontend where present; fixture execution is not learned-model quality, financial performance, or production-provider evidence. No videos/GIFs created in this pass.",
+  "DF_final_ci": {
+    "status": "completed",
+    "conclusion": "success",
+    "attempt": 2,
+    "head": "db2338804461c9a0cac17842cc2d196070c1fbb5",
+    "run": 38334737449
+  }
 }

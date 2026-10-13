@@ -17,7 +17,7 @@ The [research archive](https://jadenfix.github.io/matteoshafer.github.io/) is ho
 | Repair | Current gate |
 |---|---|
 | OrbitAgents #4 | All hosted source checks pass, including47 auth tests, strict lint/type gates, actual HTTP persistence, Terraform and security scanning. Both Vercel deployments fail; keep draft. Terraform plan's existing continue-on-error is not a cloud deployment attestation. |
-| DF #1 | Full60-test unit harness fixed without scenario exclusion. Actual main landmarks/mobile navigation/44px targets fixed;48 local browser cases pass. Fresh full96-case cross-browser CI:95 pass and one Firefox navigation timeout, under diagnosis; two Vercel deployments fail. |
+| DF #1 | Full60-test unit harness fixed without scenario exclusion. Actual main landmarks/mobile navigation/44px targets fixed;48 local browser cases pass. Fresh unchanged-head CI rerun passes all96 cross-browser cases and build. Initial attempt had one unclassified Firefox navigation timeout; retain that reliability note. Two Vercel deployments still fail. |
 | business-documents #1 | Dangling symlink escape repaired; nine boundary tests pass and controls fail old source. Vercel remains unresolved. |
 | KILN #1 | Inert mobile menu repaired; actual component desktop/phone interaction checks pass. Full current Next build/deployment still required. |
 | HumanVoiceAI #5 | Upload-size/random emotion predictions and random feature importance removed; explicit503 until real inference exists.30 Python/5 endpoint tests pass; full frontend/model/deployment gates remain. |
