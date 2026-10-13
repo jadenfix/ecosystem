@@ -825,17 +825,19 @@
       "tracked_files": 140,
       "authored_source_files": 40,
       "committed_media": [],
-      "checks": "Ring regression passed; full app compiled; multi-dataset 30 rows per CSV completed and loaded real packaged bars",
+      "checks": "Consolidated exact head: make all test and make smoke passed locally plus GitHub Actions run38325980582; portable source build and bounded100-row integration.",
       "remaining_blockers": "30-row verification is a smoke run, not profitability/evaluation evidence; historical build artifacts remain tracked",
       "recording_gate": "allow verified lane only",
       "published_change": {
         "repository": "jadenfix/financial_cpp_copy",
         "url": "https://github.com/jadenfix/financial_cpp_copy/pull/1",
         "number": 1,
-        "sha": "e07bedd87edd7b7a80a9775101a3e9451bd7c609",
-        "tree": "37d0693350d62a86bd4cb3234a609e9ec6be44cd",
-        "local_tested_sha": "2b8a21ece4af75f4dd285edebe496f7f2425483d",
-        "title": "Fix backward iteration over rolling market history"
+        "sha": "215ad638283910bb4b72f730d03e751df3f255a0",
+        "tree": "a05fbc2db23331d4837ffa8de5de47c96f534b73",
+        "local_tested_sha": "215ad638283910bb4b72f730d03e751df3f255a0",
+        "title": "Fix backward iteration over rolling market history",
+        "initial_local_tested_sha": "2b8a21ece4af75f4dd285edebe496f7f2425483d",
+        "consolidation_verification": "make all test; make smoke: passed locally and GitHub Actions run38325980582"
       }
     },
     {
@@ -1680,9 +1682,7 @@
       "tracked_files": 150,
       "authored_source_files": 101,
       "committed_media": [],
-      "checks": {
-        "npm run build (frontend)": "pass"
-      },
+      "checks": "Consolidated exact head: TypeScript/Vite production build passed locally plus GitHub Actions run38326137593; backend/browser E2E still held.",
       "remaining_blockers": [
         "Backend Mongo/native addon/datasets not verified",
         "Research/codegen/collaboration contain mock/coming-soon content"
@@ -1692,10 +1692,12 @@
         "repository": "jadenfix/trading_website",
         "url": "https://github.com/jadenfix/trading_website/pull/4",
         "number": 4,
-        "sha": "bec2b3854e803c1135f0f29fe09cdabddeea576e",
-        "tree": "5d6dd4410366c28f663187d6eaad021e3dad5b56",
-        "local_tested_sha": "02c44829100a4ddea825cbd9c5880c5246d0cc07",
-        "title": "Restore TypeScript checked frontend production build"
+        "sha": "e6dbb7f118772c065789c5c7b7a6997e6f54b965",
+        "tree": "2f9aaf250c63644f441bf222bd5dde10590c92f8",
+        "local_tested_sha": "e6dbb7f118772c065789c5c7b7a6997e6f54b965",
+        "title": "Restore TypeScript checked frontend production build",
+        "initial_local_tested_sha": "02c44829100a4ddea825cbd9c5880c5246d0cc07",
+        "consolidation_verification": "TypeScript/Vite build passed locally and GitHub Actions run38326137593"
       }
     },
     {

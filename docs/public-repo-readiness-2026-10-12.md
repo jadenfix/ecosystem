@@ -17,10 +17,10 @@ Functional changes are proposed on separate review branches. No merge, release, 
 | jadenfix/NLP | [#1](https://github.com/jadenfix/NLP/pull/1) | `08cad3a2e871b7ae5cec5da31d8cbedffeda9eed` |
 | jadenfix/8257-tools | [#2](https://github.com/jadenfix/8257-tools/pull/2) | `910ea1965dc2cf2d83da87b86c3dd159e92197a3` |
 | jadenfix/cpp_fundamentals | [#3](https://github.com/jadenfix/cpp_fundamentals/pull/3) | `45d1dc75f5ff8157528475719b71dea3f59c5476` |
-| jadenfix/financial_cpp_copy | [#1](https://github.com/jadenfix/financial_cpp_copy/pull/1) | `37d0693350d62a86bd4cb3234a609e9ec6be44cd` |
+| jadenfix/financial_cpp_copy | [#1](https://github.com/jadenfix/financial_cpp_copy/pull/1) | `a05fbc2db23331d4837ffa8de5de47c96f534b73` |
 | jadenfix/MiniGPTEngine-CPP | [#1](https://github.com/jadenfix/MiniGPTEngine-CPP/pull/1) | `91ff9c46109c038e36282021b5d1f6d596af2f82` |
 | jadenfix/supervised_fine_tuning | [#1](https://github.com/jadenfix/supervised_fine_tuning/pull/1) | `ba20858182a753764d75e9da7d2b6c13e9477cbe` |
-| jadenfix/trading_website | [#4](https://github.com/jadenfix/trading_website/pull/4) | `5d6dd4410366c28f663187d6eaad021e3dad5b56` |
+| jadenfix/trading_website | [#4](https://github.com/jadenfix/trading_website/pull/4) | `2f9aaf250c63644f441bf222bd5dde10590c92f8` |
 | jadenfix/InvoiceFlowAgent | [#2](https://github.com/jadenfix/InvoiceFlowAgent/pull/2) | `3ea78eab69bd664dfd2637669618a27a64b1efb1` |
 | jadenfix/DRL4MM | [#3](https://github.com/jadenfix/DRL4MM/pull/3) | `7f762abd115760fedfb6712b4773b8c8dc10b3ea` |
 | jadenfix/categorization_embeddings_sementic_search | [#2](https://github.com/jadenfix/categorization_embeddings_sementic_search/pull/2) | `80c056e6718c700ea50b48cb8d79743e230dd671` |
