@@ -12,6 +12,9 @@ Machine-readable evidence and limitations: [completion-checklist-2026-10-13.json
 
 Two new reviewable demos have been independently reproduced and inspected: [DRL4MM replay](https://github.com/jadenfix/DRL4MM/pull/7) and [MiniGPTEngine causal attention](https://github.com/jadenfix/MiniGPTEngine-CPP/pull/3). Both include actual GIF/MP4 files, generators and source provenance; exact-head checks pass. Both remain unmerged. MiniGPTEngine's full trained-model inference remains unfinished. These staged demonstrations do not alter the pinned current-main inventory counts above.
 
+
+Pinned-main CI sweep: 44 repositories have Actions run records, 39 have none. Run presence does not establish E2E or deployment success. Palette, tempo, HumanVoiceAI and InvoiceFlowAgent contain failed runs at their pinned source; existing owner repairs are reconciled rather than duplicated. [CI evidence](completion-ci-2026-10-13.json) records inspected runs and pagination limits. Palette #593's exact-head live five-language round trips pass; C/C++ skipped. Space #4 conflicts with newer main and needs owner reconciliation before approval. Gateway actual desktop/mobile16-case verification passed; capture is underway.
+
 | Repository | Pinned source | Core E2E evidence | Demo audit | Staged demo |
 |---|---|---|---|---|
 | [trading](https://github.com/jadenfix/trading) | [561ed312](https://github.com/jadenfix/trading/commit/561ed312578a0002b254412a823f32f2c2d2ebd8) | evidence reconciliation pending | no project gif video candidate or readme reference | pending |

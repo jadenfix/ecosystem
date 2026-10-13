@@ -1,0 +1,1795 @@
+{
+  "generated_at": "2026-10-13T04:30:38.248Z",
+  "scope": "Pinned main revisions from completion-checklist; latest30 run records per repository. No live deployment or E2E completeness inferred.",
+  "count": 83,
+  "with_runs": 44,
+  "without_runs": 39,
+  "api_errors": 0,
+  "repositories": [
+    {
+      "repository": "jadenfix/ecosystem",
+      "sha": "cbc2f128aef0809a12e9d09f0c052aefabe33456",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/solanatools",
+      "sha": "9927efa416675fda27ca279643cb823869fb49fb",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/cradle",
+      "sha": "390013fc1e1f432b8fa1ffc494f88d05c14aa7fc",
+      "total": 2,
+      "runs": [
+        {
+          "id": 28860570410,
+          "name": "ci",
+          "sha": "390013fc1e1f432b8fa1ffc494f88d05c14aa7fc",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/cradle/actions/runs/28860570410",
+          "attempt": 1,
+          "created_at": "2026-07-07T10:49:53Z"
+        },
+        {
+          "id": 28860570442,
+          "name": "sdk-ci",
+          "sha": "390013fc1e1f432b8fa1ffc494f88d05c14aa7fc",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/cradle/actions/runs/28860570442",
+          "attempt": 1,
+          "created_at": "2026-07-07T10:49:53Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/trading",
+      "sha": "561ed312578a0002b254412a823f32f2c2d2ebd8",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38330187348,
+          "name": "non-agent-tests",
+          "sha": "561ed312578a0002b254412a823f32f2c2d2ebd8",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/trading/actions/runs/38330187348",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:02:13Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_I",
+      "sha": "3fbebbdd20ebcd33fd9d1ad11f5eb74a92065589",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38330817761,
+          "name": "Original coursework code",
+          "sha": "3fbebbdd20ebcd33fd9d1ad11f5eb74a92065589",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/advanced_econometrics_I/actions/runs/38330817761",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:10:00Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/Bayesian-Neural-Network-for-CIFAR-10-Image-Classification",
+      "sha": "93395247d9d052926b7ba80fb0c473b0fc904428",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/JaneStreetTradingComp",
+      "sha": "841489241fc643b291822b01b46e987628c30afe",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/palette",
+      "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+      "total": 25,
+      "runs": [
+        {
+          "id": 38329172685,
+          "name": "merge-e2e",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "workflow_dispatch",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/palette/actions/runs/38329172685",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:49:56Z"
+        },
+        {
+          "id": 38329172430,
+          "name": "gate2-browser-proof",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "workflow_dispatch",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/38329172430",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:49:55Z"
+        },
+        {
+          "id": 32660018877,
+          "name": "github_actions in /. - Update #1536933381",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/32660018877",
+          "attempt": 1,
+          "created_at": "2026-08-23T19:03:30Z"
+        },
+        {
+          "id": 31966435334,
+          "name": "github_actions in /. - Update #1527107607",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/31966435334",
+          "attempt": 1,
+          "created_at": "2026-08-16T19:03:32Z"
+        },
+        {
+          "id": 31330610658,
+          "name": "github_actions in /. - Update #1515423898",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/31330610658",
+          "attempt": 1,
+          "created_at": "2026-08-09T19:02:43Z"
+        },
+        {
+          "id": 30762488561,
+          "name": "github_actions in /. - Update #1500641156",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/30762488561",
+          "attempt": 1,
+          "created_at": "2026-08-02T19:02:47Z"
+        },
+        {
+          "id": 30216023525,
+          "name": "github_actions in /. - Update #1483756012",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/30216023525",
+          "attempt": 1,
+          "created_at": "2026-07-26T19:02:50Z"
+        },
+        {
+          "id": 29700619044,
+          "name": "github_actions in /. - Update #1466654835",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29700619044",
+          "attempt": 1,
+          "created_at": "2026-07-19T19:27:06Z"
+        },
+        {
+          "id": 29221296157,
+          "name": "local-dev-docs",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296157",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296237,
+          "name": "offline-self-host-docs",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296237",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296253,
+          "name": "hosting-docs",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296253",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296301,
+          "name": "action-pins",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296301",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296252,
+          "name": "sdk-parity",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296252",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296257,
+          "name": "feature-matrix-contract",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296257",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296217,
+          "name": "backend",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296217",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296176,
+          "name": "merge-e2e",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296176",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296208,
+          "name": "container-images",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296208",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296177,
+          "name": "storage-backends",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296177",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296231,
+          "name": "browser",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296231",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296218,
+          "name": "eval-gate-action",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296218",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296204,
+          "name": "gate1-live-smoke",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296204",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296241,
+          "name": "frontend",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296241",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296223,
+          "name": "gate2-proof-contract",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296223",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296201,
+          "name": "sdk-contract",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296201",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        },
+        {
+          "id": 29221296262,
+          "name": "gate2-browser-proof",
+          "sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/palette/actions/runs/29221296262",
+          "attempt": 1,
+          "created_at": "2026-07-13T03:15:17Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-",
+      "sha": "bc503584d827e19004501a219edfdb92db902bf1",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38330823338,
+          "name": "Markov fitting core",
+          "sha": "bc503584d827e19004501a219edfdb92db902bf1",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-/actions/runs/38330823338",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:10:04Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/tempo",
+      "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+      "total": 141,
+      "runs": [
+        {
+          "id": 34865281505,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34865281505",
+          "attempt": 1,
+          "created_at": "2026-09-14T15:55:01Z"
+        },
+        {
+          "id": 34848216487,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34848216487",
+          "attempt": 1,
+          "created_at": "2026-09-14T13:16:23Z"
+        },
+        {
+          "id": 34760885999,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34760885999",
+          "attempt": 1,
+          "created_at": "2026-09-13T13:48:50Z"
+        },
+        {
+          "id": 34756546178,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34756546178",
+          "attempt": 1,
+          "created_at": "2026-09-13T12:14:24Z"
+        },
+        {
+          "id": 34694908068,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34694908068",
+          "attempt": 1,
+          "created_at": "2026-09-12T12:53:24Z"
+        },
+        {
+          "id": 34690433776,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34690433776",
+          "attempt": 1,
+          "created_at": "2026-09-12T11:12:21Z"
+        },
+        {
+          "id": 34605357607,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34605357607",
+          "attempt": 1,
+          "created_at": "2026-09-11T13:37:20Z"
+        },
+        {
+          "id": 34595493564,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34595493564",
+          "attempt": 1,
+          "created_at": "2026-09-11T11:44:40Z"
+        },
+        {
+          "id": 34483949590,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34483949590",
+          "attempt": 1,
+          "created_at": "2026-09-10T13:38:56Z"
+        },
+        {
+          "id": 34472936324,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34472936324",
+          "attempt": 1,
+          "created_at": "2026-09-10T11:45:01Z"
+        },
+        {
+          "id": 34359124257,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34359124257",
+          "attempt": 1,
+          "created_at": "2026-09-09T13:45:24Z"
+        },
+        {
+          "id": 34347361084,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34347361084",
+          "attempt": 1,
+          "created_at": "2026-09-09T11:47:08Z"
+        },
+        {
+          "id": 34233380278,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34233380278",
+          "attempt": 1,
+          "created_at": "2026-09-08T13:40:05Z"
+        },
+        {
+          "id": 34222033865,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34222033865",
+          "attempt": 1,
+          "created_at": "2026-09-08T11:41:38Z"
+        },
+        {
+          "id": 34136409476,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34136409476",
+          "attempt": 1,
+          "created_at": "2026-09-07T15:04:54Z"
+        },
+        {
+          "id": 34124761557,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34124761557",
+          "attempt": 1,
+          "created_at": "2026-09-07T12:58:09Z"
+        },
+        {
+          "id": 34034489591,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34034489591",
+          "attempt": 1,
+          "created_at": "2026-09-06T12:54:27Z"
+        },
+        {
+          "id": 34029818140,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/34029818140",
+          "attempt": 1,
+          "created_at": "2026-09-06T11:17:34Z"
+        },
+        {
+          "id": 33966962402,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33966962402",
+          "attempt": 1,
+          "created_at": "2026-09-05T12:45:49Z"
+        },
+        {
+          "id": 33961818418,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33961818418",
+          "attempt": 1,
+          "created_at": "2026-09-05T10:52:47Z"
+        },
+        {
+          "id": 33878786976,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33878786976",
+          "attempt": 1,
+          "created_at": "2026-09-04T13:34:05Z"
+        },
+        {
+          "id": 33869109930,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33869109930",
+          "attempt": 1,
+          "created_at": "2026-09-04T11:41:09Z"
+        },
+        {
+          "id": 33762188833,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33762188833",
+          "attempt": 1,
+          "created_at": "2026-09-03T13:37:34Z"
+        },
+        {
+          "id": 33750914801,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33750914801",
+          "attempt": 1,
+          "created_at": "2026-09-03T11:39:50Z"
+        },
+        {
+          "id": 33637397893,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33637397893",
+          "attempt": 1,
+          "created_at": "2026-09-02T13:42:42Z"
+        },
+        {
+          "id": 33625790231,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33625790231",
+          "attempt": 1,
+          "created_at": "2026-09-02T11:40:04Z"
+        },
+        {
+          "id": 33517878863,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33517878863",
+          "attempt": 1,
+          "created_at": "2026-09-01T14:10:37Z"
+        },
+        {
+          "id": 33505139224,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33505139224",
+          "attempt": 1,
+          "created_at": "2026-09-01T11:57:49Z"
+        },
+        {
+          "id": 33417695357,
+          "name": "ci",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33417695357",
+          "attempt": 1,
+          "created_at": "2026-08-31T17:05:46Z"
+        },
+        {
+          "id": 33402142854,
+          "name": "audit",
+          "sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/tempo/actions/runs/33402142854",
+          "attempt": 1,
+          "created_at": "2026-08-31T14:21:25Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/arrha",
+      "sha": "f5e08ed32b8963ac7020d50eb64de648c408d41b",
+      "total": 1,
+      "runs": [
+        {
+          "id": 28846818245,
+          "name": "Aether CI",
+          "sha": "f5e08ed32b8963ac7020d50eb64de648c408d41b",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/arrha/actions/runs/28846818245",
+          "attempt": 1,
+          "created_at": "2026-07-07T06:39:25Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/remi",
+      "sha": "c13e597e33b8dbeee8b8f1cc392fe7ee7996469e",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/dynamic_stochastic_modeling",
+      "sha": "649b3ef34216f97de2dce719c07a9052f44cd6e5",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329223140,
+          "name": "Research execution",
+          "sha": "649b3ef34216f97de2dce719c07a9052f44cd6e5",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/dynamic_stochastic_modeling/actions/runs/38329223140",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:50:30Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/jadenfix",
+      "sha": "520c0ad4813e50595c64d4ff185646e65384f800",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/145",
+      "sha": "29b84a9440b47099065f7b0a1f6e85a718c0c54f",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38330829044,
+          "name": "Markov fitting core",
+          "sha": "29b84a9440b47099065f7b0a1f6e85a718c0c54f",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/145/actions/runs/38330829044",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:10:08Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/tempOS",
+      "sha": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+      "total": 2,
+      "runs": [
+        {
+          "id": 38329072013,
+          "name": "final-integrity",
+          "sha": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempOS/actions/runs/38329072013",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:48:41Z"
+        },
+        {
+          "id": 38329071997,
+          "name": "CI",
+          "sha": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/tempOS/actions/runs/38329071997",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:48:41Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/stochastic512",
+      "sha": "11b8807af31a8b5a547c88b4a0dc558a8f6c65be",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/NLP",
+      "sha": "01c7a0ff921614949f62f55337b574dda5e541ba",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/DRL4MM",
+      "sha": "81752dff261636ec96c940de82b22bfeff731fcb",
+      "total": 2,
+      "runs": [
+        {
+          "id": 38330312311,
+          "name": "historical-replay",
+          "sha": "81752dff261636ec96c940de82b22bfeff731fcb",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/DRL4MM/actions/runs/38330312311",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:03:48Z"
+        },
+        {
+          "id": 38329180622,
+          "name": "historical-replay",
+          "sha": "81752dff261636ec96c940de82b22bfeff731fcb",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/DRL4MM/actions/runs/38329180622",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:50:01Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_III",
+      "sha": "10c043a6e70018392191265dd7eb28eeefe0d8ba",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329218714,
+          "name": "Research execution",
+          "sha": "10c043a6e70018392191265dd7eb28eeefe0d8ba",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/advanced_econometrics_III/actions/runs/38329218714",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:50:27Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/AI_and_Machine_Learning",
+      "sha": "9f7e7ac6365ab8eeb00b416aa1ab9be0f03238ab",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/jadenfix.github.io",
+      "sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329754869,
+          "name": "Deploy to GitHub Pages",
+          "sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/jadenfix.github.io/actions/runs/38329754869",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:57:02Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/145-Project-",
+      "sha": "54a42bc96f21fde24a7dec895ca8a6489c1ce86f",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38330834964,
+          "name": "Markov fitting core",
+          "sha": "54a42bc96f21fde24a7dec895ca8a6489c1ce86f",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/145-Project-/actions/runs/38330834964",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:10:12Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_II",
+      "sha": "0dd8f7c005f75c1ed5531abb2b9846bc879cfab2",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/startup",
+      "sha": "a6678317023263def54258333c0a337aaa980953",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329898048,
+          "name": "delivery-workflow",
+          "sha": "a6678317023263def54258333c0a337aaa980953",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/startup/actions/runs/38329898048",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:58:50Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/causal_machinelearning",
+      "sha": "1b8c9b1604f31332409694e02b2c9e83731441ca",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329228012,
+          "name": "Research execution",
+          "sha": "1b8c9b1604f31332409694e02b2c9e83731441ca",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/causal_machinelearning/actions/runs/38329228012",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:50:34Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/WS",
+      "sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/temp.js",
+      "sha": "1e870305948256f2e86ca2042f7d69563e7fb3ad",
+      "total": 1,
+      "runs": [
+        {
+          "id": 28860655878,
+          "name": "CI",
+          "sha": "1e870305948256f2e86ca2042f7d69563e7fb3ad",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/temp.js/actions/runs/28860655878",
+          "attempt": 1,
+          "created_at": "2026-07-07T10:51:31Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/financial_cpp",
+      "sha": "8a2331f03203b01c615d8e13952cd44cfb28ae96",
+      "total": 2,
+      "runs": [
+        {
+          "id": 38337546488,
+          "name": "Graph Update: pip in /python_ml #1623999527",
+          "sha": "8a2331f03203b01c615d8e13952cd44cfb28ae96",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/financial_cpp/actions/runs/38337546488",
+          "attempt": 1,
+          "created_at": "2026-10-13T02:34:48Z"
+        },
+        {
+          "id": 38337537882,
+          "name": "Native C++ Python model bridge",
+          "sha": "8a2331f03203b01c615d8e13952cd44cfb28ae96",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/financial_cpp/actions/runs/38337537882",
+          "attempt": 1,
+          "created_at": "2026-10-13T02:34:42Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/document_parsing_product_demo",
+      "sha": "829c109fe92657df480f2f7d04a95722dbdc432e",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/CreditAssignment",
+      "sha": "11d4afa156f3ffae05f7a81792ff4cbe03cb4740",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/Bayesian__Stats",
+      "sha": "7952324b0e0a50081f4939b5f07409561652bbff",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329236212,
+          "name": "Research execution",
+          "sha": "7952324b0e0a50081f4939b5f07409561652bbff",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/Bayesian__Stats/actions/runs/38329236212",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:50:40Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/rusty",
+      "sha": "4ebc4f71f0027298afa99c1ee2ee66d2a0a8f86f",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38344385525,
+          "name": "ci",
+          "sha": "4ebc4f71f0027298afa99c1ee2ee66d2a0a8f86f",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/rusty/actions/runs/38344385525",
+          "attempt": 1,
+          "created_at": "2026-10-13T04:00:36Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/EmotiFuse",
+      "sha": "ec4d91205dcf435fed988712a3374ffb04fd8f2f",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/simulation-theory",
+      "sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+      "total": 4,
+      "runs": [
+        {
+          "id": 32008393367,
+          "name": "tests",
+          "sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "url": "https://github.com/jadenfix/simulation-theory/actions/runs/32008393367",
+          "attempt": 1,
+          "created_at": "2026-08-17T08:01:23Z"
+        },
+        {
+          "id": 32007705874,
+          "name": "tests",
+          "sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "url": "https://github.com/jadenfix/simulation-theory/actions/runs/32007705874",
+          "attempt": 1,
+          "created_at": "2026-08-17T07:52:15Z"
+        },
+        {
+          "id": 31898320650,
+          "name": "tests",
+          "sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "cancelled",
+          "url": "https://github.com/jadenfix/simulation-theory/actions/runs/31898320650",
+          "attempt": 1,
+          "created_at": "2026-08-15T17:26:41Z"
+        },
+        {
+          "id": 31898157863,
+          "name": "tests",
+          "sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/simulation-theory/actions/runs/31898157863",
+          "attempt": 1,
+          "created_at": "2026-08-15T17:23:15Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "sha": "23864359e2ef26495359ffc776e6c93cc031692e",
+      "total": 2,
+      "runs": [
+        {
+          "id": 38333640721,
+          "name": "Graph Update: pip in /. #1623946498",
+          "sha": "23864359e2ef26495359ffc776e6c93cc031692e",
+          "event": "dynamic",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/smartpaydoc/actions/runs/38333640721",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:45:24Z"
+        },
+        {
+          "id": 38333632954,
+          "name": "SmartPayDoc workflow",
+          "sha": "23864359e2ef26495359ffc776e6c93cc031692e",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/smartpaydoc/actions/runs/38333632954",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:45:18Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/HumanVoiceAI",
+      "sha": "3b40f00612a51059e96df4e492e401128f5688ad",
+      "total": 2,
+      "runs": [
+        {
+          "id": 17311850972,
+          "name": "CI/CD Pipeline",
+          "sha": "3b40f00612a51059e96df4e492e401128f5688ad",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/HumanVoiceAI/actions/runs/17311850972",
+          "attempt": 1,
+          "created_at": "2025-08-29T01:09:09Z"
+        },
+        {
+          "id": 17282799232,
+          "name": "CI/CD Pipeline",
+          "sha": "3b40f00612a51059e96df4e492e401128f5688ad",
+          "event": "schedule",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/HumanVoiceAI/actions/runs/17282799232",
+          "attempt": 1,
+          "created_at": "2025-08-28T01:09:03Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/mft_crypto_research",
+      "sha": "aeb655d90936bdcd0b88099832684b6b324afba6",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/AICH",
+      "sha": "4453513aa60a6c8f3f373c3a31c471108ffcec6c",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/OrbitAgents",
+      "sha": "4105153f7983cf7fa58091eab0b426330d88c808",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/DF",
+      "sha": "b2c7104f44672c37affe0350ea5a05069002e174",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/stochastic-site",
+      "sha": "9e8928d03fce03d2265bcd664a5fae5f95fff384",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329902243,
+          "name": "Regime research workflow",
+          "sha": "9e8928d03fce03d2265bcd664a5fae5f95fff384",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/stochastic-site/actions/runs/38329902243",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:58:54Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/insurance-front-site",
+      "sha": "bf8ad547155787584eb71b17bca6584cd4c283ea",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/trading_website",
+      "sha": "561099f4fdbd63707a905b9bde3c1fa3bdb24cde",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38330394849,
+          "name": "Frontend production build",
+          "sha": "561099f4fdbd63707a905b9bde3c1fa3bdb24cde",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/trading_website/actions/runs/38330394849",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:04:48Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/eth",
+      "sha": "37361b31a83a9bd19161494a7a5119f4e1b3c9c4",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/random_cpp_doesnt_work",
+      "sha": "fa218464bc873b9081680d878d29beb1f8fa6618",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38332576004,
+          "name": "Backtester",
+          "sha": "fa218464bc873b9081680d878d29beb1f8fa6618",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/random_cpp_doesnt_work/actions/runs/38332576004",
+          "attempt": 1,
+          "created_at": "2026-10-13T01:31:58Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/core-domains",
+      "sha": "ba5d009fedae493ef04fe4f6cb2ba066aec78563",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/cpp_fundamentals",
+      "sha": "359df6ef3f52d32a622d131a51725401673e4682",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38328628561,
+          "name": "Matching engine",
+          "sha": "359df6ef3f52d32a622d131a51725401673e4682",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/cpp_fundamentals/actions/runs/38328628561",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:43:11Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/supervised_fine_tuning",
+      "sha": "15a300dccaeed4824dd9539a043ced14d6acf8af",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/eth-tools",
+      "sha": "90ec155252163c3ff5501e0f33d9e5cd497ac97c",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/InvoiceFlowAgent",
+      "sha": "6121b569f500f2062acfecc11db0784c5afac4f5",
+      "total": 2,
+      "runs": [
+        {
+          "id": 38329063203,
+          "name": "Settings startup compatibility",
+          "sha": "6121b569f500f2062acfecc11db0784c5afac4f5",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/InvoiceFlowAgent/actions/runs/38329063203",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:48:34Z"
+        },
+        {
+          "id": 38329062205,
+          "name": ".github/workflows/ci-cd.yml",
+          "sha": "6121b569f500f2062acfecc11db0784c5afac4f5",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "failure",
+          "url": "https://github.com/jadenfix/InvoiceFlowAgent/actions/runs/38329062205",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:48:33Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/gemhub",
+      "sha": "00713d224f8c879b2d626813ca74d0a12d45213f",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/masters_thesis_cold_runs",
+      "sha": "d42d7d5d0757965860d2096bf580a7dfefe04953",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/FullStack-Bench",
+      "sha": "bdea95ee73f4317ac7813039f649363554ef5010",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38344274682,
+          "name": "ci",
+          "sha": "bdea95ee73f4317ac7813039f649363554ef5010",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/FullStack-Bench/actions/runs/38344274682",
+          "attempt": 1,
+          "created_at": "2026-10-13T03:59:16Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/hackathon",
+      "sha": "ce49b2db7de7eb868a7437798d8a616006912431",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/8257-tools",
+      "sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38328813374,
+          "name": "Verify gateway playground",
+          "sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/8257-tools/actions/runs/38328813374",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:45:27Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/business-documents",
+      "sha": "905bd37e407f95d64066d5e11b5b42c4d82f5bd7",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/agentic_ai_HF",
+      "sha": "138773cb289de37a35eed46c454d0e61e31b6ff2",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/roe-ai-",
+      "sha": "1a0828ead4b8c0250cb3d3817fc6cc43398f3e13",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/alpaca",
+      "sha": "70fa82c7cc83a15d4125acf4d98bb0fb8f9b630a",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38328820235,
+          "name": "Offline research regression",
+          "sha": "70fa82c7cc83a15d4125acf4d98bb0fb8f9b630a",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/alpaca/actions/runs/38328820235",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:45:32Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/android-simulator",
+      "sha": "b390e0a8c0c16b9416a1a46a3df751c868576a5f",
+      "total": 1,
+      "runs": [
+        {
+          "id": 32007059979,
+          "name": "ci",
+          "sha": "b390e0a8c0c16b9416a1a46a3df751c868576a5f",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/android-simulator/actions/runs/32007059979",
+          "attempt": 1,
+          "created_at": "2026-08-17T07:43:22Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/space-simulation-engine",
+      "sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+      "total": 4,
+      "runs": [
+        {
+          "id": 38328636581,
+          "name": "spacewind-pde-assurance",
+          "sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636581",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:43:17Z"
+        },
+        {
+          "id": 38328636571,
+          "name": "spacewind-robustness-assurance",
+          "sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636571",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:43:17Z"
+        },
+        {
+          "id": 38328636603,
+          "name": "spacewind-assurance",
+          "sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636603",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:43:17Z"
+        },
+        {
+          "id": 38328636648,
+          "name": "native-spacewind",
+          "sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636648",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:43:17Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/python_crypto_trading_engine",
+      "sha": "79d9baa7e21bf72af41fd288f20dd45e8fba85bd",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38328835873,
+          "name": "Offline research pipeline",
+          "sha": "79d9baa7e21bf72af41fd288f20dd45e8fba85bd",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/python_crypto_trading_engine/actions/runs/38328835873",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:45:43Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/resume",
+      "sha": "2ec60543a40e68ea19e17333d3eff1071a7a07c2",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/dreamForge",
+      "sha": "7d908c7223e694316e39b8fe86776fa977e5367e",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/backpacking-eastern-sierra",
+      "sha": "2c0dbfd79f4f0a2ef94a23acb5a0a21d566f68b8",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38217772896,
+          "name": "Validate atlas",
+          "sha": "2c0dbfd79f4f0a2ef94a23acb5a0a21d566f68b8",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/backpacking-eastern-sierra/actions/runs/38217772896",
+          "attempt": 1,
+          "created_at": "2026-10-12T07:26:45Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/xgbitcoin",
+      "sha": "62bf2cb424878a60ddb9020d6cf410abf4fe8a1a",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "sha": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38334892881,
+          "name": "Deploy React to GitHub Pages",
+          "sha": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/matteoshafer.github.io/actions/runs/38334892881",
+          "attempt": 1,
+          "created_at": "2026-10-13T02:01:11Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/ruby",
+      "sha": "e5e4f3f9b36733df06a9c54f7154d556687df040",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/Daytuh",
+      "sha": "caa21e46673dfc2434625262a0ca1a6ecea13ae8",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/InftyThink",
+      "sha": "f0920f654c162cf3e1982a7c0fa01503ce1847a0",
+      "total": 2,
+      "runs": [
+        {
+          "id": 38337554244,
+          "name": "Math evaluation",
+          "sha": "f0920f654c162cf3e1982a7c0fa01503ce1847a0",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/InftyThink/actions/runs/38337554244",
+          "attempt": 1,
+          "created_at": "2026-10-13T02:34:54Z"
+        },
+        {
+          "id": 38337554246,
+          "name": "Tiny model computational smoke",
+          "sha": "f0920f654c162cf3e1982a7c0fa01503ce1847a0",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/InftyThink/actions/runs/38337554246",
+          "attempt": 1,
+          "created_at": "2026-10-13T02:34:54Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/financial_cpp_copy",
+      "sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38328633209,
+          "name": "Portable backtester validation",
+          "sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/financial_cpp_copy/actions/runs/38328633209",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:43:14Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/1115_hack",
+      "sha": "24d422953eff842b650a22a8c1c63964ce8ee0c7",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/ReplayKit",
+      "sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+      "total": 3,
+      "runs": [
+        {
+          "id": 38329773484,
+          "name": "Docker",
+          "sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/ReplayKit/actions/runs/38329773484",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:57:16Z"
+        },
+        {
+          "id": 38329773454,
+          "name": "Web",
+          "sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/ReplayKit/actions/runs/38329773454",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:57:16Z"
+        },
+        {
+          "id": 38329773464,
+          "name": "Rust",
+          "sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/ReplayKit/actions/runs/38329773464",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:57:16Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/machine_learning",
+      "sha": "a987dc67f3e96086917a21832f0cf9cb95b11221",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329232231,
+          "name": "Research execution",
+          "sha": "a987dc67f3e96086917a21832f0cf9cb95b11221",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/machine_learning/actions/runs/38329232231",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:50:37Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/CreditAssignment-LongHorizon",
+      "sha": "133b94fa5999fc2e408abc7ecf077d289329bd44",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329761033,
+          "name": "ci",
+          "sha": "133b94fa5999fc2e408abc7ecf077d289329bd44",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/CreditAssignment-LongHorizon/actions/runs/38329761033",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:57:06Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/categorization_embeddings_sementic_search",
+      "sha": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/KILN",
+      "sha": "36f2c6c33a32f65e1fcf92cf8993e8e04652a9f8",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/satellite_deeplearning",
+      "sha": "16f6ef3d86dac5ab9c0d16080ecfbcefefd30c1b",
+      "total": 0,
+      "runs": []
+    },
+    {
+      "repository": "jadenfix/MiniGPTEngine-CPP",
+      "sha": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329748458,
+          "name": "Portable attention validation",
+          "sha": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/MiniGPTEngine-CPP/actions/runs/38329748458",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:56:58Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/eval_mvp",
+      "sha": "d36c9aa6607dc1aeb3516f009c5317fc4772b4f0",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329107045,
+          "name": "verify-benchmark",
+          "sha": "d36c9aa6607dc1aeb3516f009c5317fc4772b4f0",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/eval_mvp/actions/runs/38329107045",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:49:06Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/rl",
+      "sha": "1257d7e041e67284f0615e9b56170bbaa079e5de",
+      "total": 1,
+      "runs": [
+        {
+          "id": 38329750910,
+          "name": "Service regression tests",
+          "sha": "1257d7e041e67284f0615e9b56170bbaa079e5de",
+          "event": "push",
+          "status": "completed",
+          "conclusion": "success",
+          "url": "https://github.com/jadenfix/rl/actions/runs/38329750910",
+          "attempt": 1,
+          "created_at": "2026-10-13T00:56:59Z"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/trading_research",
+      "sha": "6b0cf7d67d47dfe7b883318a1c947741bb212c2b",
+      "total": 0,
+      "runs": []
+    }
+  ]
+}

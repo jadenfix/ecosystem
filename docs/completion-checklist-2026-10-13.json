@@ -33,7 +33,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "561ed312578a0002b254412a823f32f2c2d2ebd8",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "non-agent-tests",
+            "id": 38330187348,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/trading/actions/runs/38330187348"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/tempo",
@@ -46,7 +61,29 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+        "run_count": 141,
+        "inspected_count": 30,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "ci",
+            "id": 34865281505,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/tempo/actions/runs/34865281505"
+          },
+          {
+            "name": "audit",
+            "id": 34848216487,
+            "status": "completed",
+            "conclusion": "failure",
+            "url": "https://github.com/jadenfix/tempo/actions/runs/34848216487"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/solanatools",
@@ -59,7 +96,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "9927efa416675fda27ca279643cb823869fb49fb",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/cradle",
@@ -72,7 +116,29 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "390013fc1e1f432b8fa1ffc494f88d05c14aa7fc",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "ci",
+            "id": 28860570410,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/cradle/actions/runs/28860570410"
+          },
+          {
+            "name": "sdk-ci",
+            "id": 28860570442,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/cradle/actions/runs/28860570442"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/palette",
@@ -89,7 +155,182 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "567513976774ff1c13f5487b0c654753d558bcd2",
+        "run_count": 25,
+        "inspected_count": 25,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "merge-e2e",
+            "id": 38329172685,
+            "status": "completed",
+            "conclusion": "failure",
+            "url": "https://github.com/jadenfix/palette/actions/runs/38329172685"
+          },
+          {
+            "name": "gate2-browser-proof",
+            "id": 38329172430,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/38329172430"
+          },
+          {
+            "name": "github_actions in /. - Update #1536933381",
+            "id": 32660018877,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/32660018877"
+          },
+          {
+            "name": "github_actions in /. - Update #1527107607",
+            "id": 31966435334,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/31966435334"
+          },
+          {
+            "name": "github_actions in /. - Update #1515423898",
+            "id": 31330610658,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/31330610658"
+          },
+          {
+            "name": "github_actions in /. - Update #1500641156",
+            "id": 30762488561,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/30762488561"
+          },
+          {
+            "name": "github_actions in /. - Update #1483756012",
+            "id": 30216023525,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/30216023525"
+          },
+          {
+            "name": "github_actions in /. - Update #1466654835",
+            "id": 29700619044,
+            "status": "completed",
+            "conclusion": "failure",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29700619044"
+          },
+          {
+            "name": "local-dev-docs",
+            "id": 29221296157,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296157"
+          },
+          {
+            "name": "offline-self-host-docs",
+            "id": 29221296237,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296237"
+          },
+          {
+            "name": "hosting-docs",
+            "id": 29221296253,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296253"
+          },
+          {
+            "name": "action-pins",
+            "id": 29221296301,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296301"
+          },
+          {
+            "name": "sdk-parity",
+            "id": 29221296252,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296252"
+          },
+          {
+            "name": "feature-matrix-contract",
+            "id": 29221296257,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296257"
+          },
+          {
+            "name": "backend",
+            "id": 29221296217,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296217"
+          },
+          {
+            "name": "container-images",
+            "id": 29221296208,
+            "status": "completed",
+            "conclusion": "failure",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296208"
+          },
+          {
+            "name": "storage-backends",
+            "id": 29221296177,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296177"
+          },
+          {
+            "name": "browser",
+            "id": 29221296231,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296231"
+          },
+          {
+            "name": "eval-gate-action",
+            "id": 29221296218,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296218"
+          },
+          {
+            "name": "gate1-live-smoke",
+            "id": 29221296204,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296204"
+          },
+          {
+            "name": "frontend",
+            "id": 29221296241,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296241"
+          },
+          {
+            "name": "gate2-proof-contract",
+            "id": 29221296223,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296223"
+          },
+          {
+            "name": "sdk-contract",
+            "id": 29221296201,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/palette/actions/runs/29221296201"
+          }
+        ]
+      },
+      "active_work": {
+        "owner": "existing PR593 implementer; session100e79 sole merger",
+        "source_head": "9ae60af2a50746be4b0ae0f3bd0c1c867bd9f027",
+        "scope": "Known current-main generated-client conformance failure repaired by existing593; exact-head deep E2E38331491250 success; no duplicate repair",
+        "integration": "awaiting owner integration and main verification"
+      }
     },
     {
       "repository": "jadenfix/ecosystem",
@@ -102,7 +343,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "cbc2f128aef0809a12e9d09f0c052aefabe33456",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/advanced_econometrics_I",
@@ -115,7 +363,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "3fbebbdd20ebcd33fd9d1ad11f5eb74a92065589",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Original coursework code",
+            "id": 38330817761,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/advanced_econometrics_I/actions/runs/38330817761"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/Bayesian-Neural-Network-for-CIFAR-10-Image-Classification",
@@ -128,7 +391,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "93395247d9d052926b7ba80fb0c473b0fc904428",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/JaneStreetTradingComp",
@@ -141,7 +411,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "841489241fc643b291822b01b46e987628c30afe",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-",
@@ -154,7 +431,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "bc503584d827e19004501a219edfdb92db902bf1",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Markov fitting core",
+            "id": 38330823338,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-/actions/runs/38330823338"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/dynamic_stochastic_modeling",
@@ -167,7 +459,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "649b3ef34216f97de2dce719c07a9052f44cd6e5",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Research execution",
+            "id": 38329223140,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/dynamic_stochastic_modeling/actions/runs/38329223140"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/arrha",
@@ -180,7 +487,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "f5e08ed32b8963ac7020d50eb64de648c408d41b",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Aether CI",
+            "id": 28846818245,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/arrha/actions/runs/28846818245"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/jadenfix",
@@ -193,7 +515,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "520c0ad4813e50595c64d4ff185646e65384f800",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/tempOS",
@@ -206,7 +535,29 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "final-integrity",
+            "id": 38329072013,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/tempOS/actions/runs/38329072013"
+          },
+          {
+            "name": "CI",
+            "id": 38329071997,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/tempOS/actions/runs/38329071997"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/145",
@@ -219,7 +570,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "29b84a9440b47099065f7b0a1f6e85a718c0c54f",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Markov fitting core",
+            "id": 38330829044,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/145/actions/runs/38330829044"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/remi",
@@ -232,7 +598,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "c13e597e33b8dbeee8b8f1cc392fe7ee7996469e",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/stochastic512",
@@ -245,7 +618,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "11b8807af31a8b5a547c88b4a0dc558a8f6c65be",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/NLP",
@@ -258,7 +638,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "01c7a0ff921614949f62f55337b574dda5e541ba",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/DRL4MM",
@@ -295,6 +682,21 @@
         ],
         "integration_status": "unmerged; sole merger100e79 must integrate and verify main",
         "receipt": "https://github.com/jadenfix/DRL4MM/pull/7#issuecomment-6138122455"
+      },
+      "pinned_main_ci": {
+        "checked_sha": "81752dff261636ec96c940de82b22bfeff731fcb",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "historical-replay",
+            "id": 38330312311,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/DRL4MM/actions/runs/38330312311"
+          }
+        ]
       }
     },
     {
@@ -308,7 +710,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "10c043a6e70018392191265dd7eb28eeefe0d8ba",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Research execution",
+            "id": 38329218714,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/advanced_econometrics_III/actions/runs/38329218714"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/145-Project-",
@@ -321,7 +738,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "54a42bc96f21fde24a7dec895ca8a6489c1ce86f",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Markov fitting core",
+            "id": 38330834964,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/145-Project-/actions/runs/38330834964"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/AI_and_Machine_Learning",
@@ -334,7 +766,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "9f7e7ac6365ab8eeb00b416aa1ab9be0f03238ab",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/jadenfix.github.io",
@@ -347,7 +786,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Deploy to GitHub Pages",
+            "id": 38329754869,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/jadenfix.github.io/actions/runs/38329754869"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/causal_machinelearning",
@@ -360,7 +814,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "1b8c9b1604f31332409694e02b2c9e83731441ca",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Research execution",
+            "id": 38329228012,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/causal_machinelearning/actions/runs/38329228012"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/AICH",
@@ -373,7 +842,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "4453513aa60a6c8f3f373c3a31c471108ffcec6c",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/advanced_econometrics_II",
@@ -386,7 +862,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "0dd8f7c005f75c1ed5531abb2b9846bc879cfab2",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/startup",
@@ -400,7 +883,22 @@
       "e2e_commands": [],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "owner": "session5c14b1fccef2 exclusive"
+      "owner": "session5c14b1fccef2 exclusive",
+      "pinned_main_ci": {
+        "checked_sha": "a6678317023263def54258333c0a337aaa980953",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "delivery-workflow",
+            "id": 38329898048,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/startup/actions/runs/38329898048"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/WS",
@@ -413,7 +911,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/financial_cpp",
@@ -426,7 +931,29 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "8a2331f03203b01c615d8e13952cd44cfb28ae96",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Graph Update: pip in /python_ml #1623999527",
+            "id": 38337546488,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/financial_cpp/actions/runs/38337546488"
+          },
+          {
+            "name": "Native C++ Python model bridge",
+            "id": 38337537882,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/financial_cpp/actions/runs/38337537882"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/temp.js",
@@ -439,7 +966,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "1e870305948256f2e86ca2042f7d69563e7fb3ad",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "CI",
+            "id": 28860655878,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/temp.js/actions/runs/28860655878"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/Bayesian__Stats",
@@ -452,7 +994,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "7952324b0e0a50081f4939b5f07409561652bbff",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Research execution",
+            "id": 38329236212,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/Bayesian__Stats/actions/runs/38329236212"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/document_parsing_product_demo",
@@ -465,7 +1022,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "829c109fe92657df480f2f7d04a95722dbdc432e",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/CreditAssignment",
@@ -478,7 +1042,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "11d4afa156f3ffae05f7a81792ff4cbe03cb4740",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/simulation-theory",
@@ -491,7 +1062,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "4e88e771e33bddca3ce3e718da7ed4b531c987d2",
+        "run_count": 4,
+        "inspected_count": 4,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "tests",
+            "id": 32008393367,
+            "status": "completed",
+            "conclusion": "cancelled",
+            "url": "https://github.com/jadenfix/simulation-theory/actions/runs/32008393367"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/EmotiFuse",
@@ -504,7 +1090,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "ec4d91205dcf435fed988712a3374ffb04fd8f2f",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/rusty",
@@ -524,7 +1117,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "4ebc4f71f0027298afa99c1ee2ee66d2a0a8f86f",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "ci",
+            "id": 38344385525,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/rusty/actions/runs/38344385525"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/HumanVoiceAI",
@@ -537,7 +1145,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "3b40f00612a51059e96df4e492e401128f5688ad",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "CI/CD Pipeline",
+            "id": 17311850972,
+            "status": "completed",
+            "conclusion": "failure",
+            "url": "https://github.com/jadenfix/HumanVoiceAI/actions/runs/17311850972"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/smartpaydoc",
@@ -554,7 +1177,29 @@
       "recorded_source_sha": null,
       "demo_verified": false,
       "owner": "session5c14b1fccef2 exclusive",
-      "evidence_url": "https://github.com/jadenfix/ecosystem/blob/main/docs/continuation-review-2026-10-13.md"
+      "evidence_url": "https://github.com/jadenfix/ecosystem/blob/main/docs/continuation-review-2026-10-13.md",
+      "pinned_main_ci": {
+        "checked_sha": "23864359e2ef26495359ffc776e6c93cc031692e",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Graph Update: pip in /. #1623946498",
+            "id": 38333640721,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/smartpaydoc/actions/runs/38333640721"
+          },
+          {
+            "name": "SmartPayDoc workflow",
+            "id": 38333632954,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/smartpaydoc/actions/runs/38333632954"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/OrbitAgents",
@@ -567,7 +1212,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "4105153f7983cf7fa58091eab0b426330d88c808",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/mft_crypto_research",
@@ -580,7 +1232,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "aeb655d90936bdcd0b88099832684b6b324afba6",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/DF",
@@ -593,7 +1252,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "b2c7104f44672c37affe0350ea5a05069002e174",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/stochastic-site",
@@ -607,7 +1273,22 @@
       "e2e_commands": [],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "owner": "session5c14b1fccef2 exclusive"
+      "owner": "session5c14b1fccef2 exclusive",
+      "pinned_main_ci": {
+        "checked_sha": "9e8928d03fce03d2265bcd664a5fae5f95fff384",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Regime research workflow",
+            "id": 38329902243,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/stochastic-site/actions/runs/38329902243"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/trading_website",
@@ -620,7 +1301,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "561099f4fdbd63707a905b9bde3c1fa3bdb24cde",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Frontend production build",
+            "id": 38330394849,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/trading_website/actions/runs/38330394849"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/random_cpp_doesnt_work",
@@ -636,7 +1332,22 @@
         "post-main CMake/CTest run38332576004 success"
       ],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "fa218464bc873b9081680d878d29beb1f8fa6618",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Backtester",
+            "id": 38332576004,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/random_cpp_doesnt_work/actions/runs/38332576004"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/insurance-front-site",
@@ -649,7 +1360,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "bf8ad547155787584eb71b17bca6584cd4c283ea",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/eth",
@@ -662,7 +1380,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "37361b31a83a9bd19161494a7a5119f4e1b3c9c4",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/eth-tools",
@@ -675,7 +1400,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "90ec155252163c3ff5501e0f33d9e5cd497ac97c",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/core-domains",
@@ -688,7 +1420,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "ba5d009fedae493ef04fe4f6cb2ba066aec78563",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/cpp_fundamentals",
@@ -701,7 +1440,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "359df6ef3f52d32a622d131a51725401673e4682",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Matching engine",
+            "id": 38328628561,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/cpp_fundamentals/actions/runs/38328628561"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/supervised_fine_tuning",
@@ -714,7 +1468,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "15a300dccaeed4824dd9539a043ced14d6acf8af",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/InvoiceFlowAgent",
@@ -727,7 +1488,29 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "6121b569f500f2062acfecc11db0784c5afac4f5",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Settings startup compatibility",
+            "id": 38329063203,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/InvoiceFlowAgent/actions/runs/38329063203"
+          },
+          {
+            "name": ".github/workflows/ci-cd.yml",
+            "id": 38329062205,
+            "status": "completed",
+            "conclusion": "failure",
+            "url": "https://github.com/jadenfix/InvoiceFlowAgent/actions/runs/38329062205"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/masters_thesis_cold_runs",
@@ -740,7 +1523,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "d42d7d5d0757965860d2096bf580a7dfefe04953",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/gemhub",
@@ -753,7 +1543,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "00713d224f8c879b2d626813ca74d0a12d45213f",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/FullStack-Bench",
@@ -766,7 +1563,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "bdea95ee73f4317ac7813039f649363554ef5010",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "ci",
+            "id": 38344274682,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/FullStack-Bench/actions/runs/38344274682"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/8257-tools",
@@ -779,7 +1591,27 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Verify gateway playground",
+            "id": 38328813374,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/8257-tools/actions/runs/38328813374"
+          }
+        ]
+      },
+      "active_work": {
+        "owner": "session3eef/media_inventory",
+        "scope": "16 actual desktop/mobile browser checks passed at pinned main; true frontend GIF/MP4 capture underway",
+        "integration": "new additive PR in preparation"
+      }
     },
     {
       "repository": "jadenfix/business-documents",
@@ -792,7 +1624,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "905bd37e407f95d64066d5e11b5b42c4d82f5bd7",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/hackathon",
@@ -805,7 +1644,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "ce49b2db7de7eb868a7437798d8a616006912431",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/agentic_ai_HF",
@@ -818,7 +1664,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "138773cb289de37a35eed46c454d0e61e31b6ff2",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/roe-ai-",
@@ -831,7 +1684,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "1a0828ead4b8c0250cb3d3817fc6cc43398f3e13",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/alpaca",
@@ -844,7 +1704,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "70fa82c7cc83a15d4125acf4d98bb0fb8f9b630a",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Offline research regression",
+            "id": 38328820235,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/alpaca/actions/runs/38328820235"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/android-simulator",
@@ -857,7 +1732,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "b390e0a8c0c16b9416a1a46a3df751c868576a5f",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "ci",
+            "id": 32007059979,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/android-simulator/actions/runs/32007059979"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/dreamForge",
@@ -873,7 +1763,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "7d908c7223e694316e39b8fe86776fa977e5367e",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/space-simulation-engine",
@@ -886,7 +1783,48 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+        "run_count": 4,
+        "inspected_count": 4,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "spacewind-pde-assurance",
+            "id": 38328636581,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636581"
+          },
+          {
+            "name": "spacewind-robustness-assurance",
+            "id": 38328636571,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636571"
+          },
+          {
+            "name": "spacewind-assurance",
+            "id": 38328636603,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636603"
+          },
+          {
+            "name": "native-spacewind",
+            "id": 38328636648,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/space-simulation-engine/actions/runs/38328636648"
+          }
+        ]
+      },
+      "active_work": {
+        "owner": "existing PR4 implementer; session3eef independent review and separate workflow repair",
+        "source_head": "04bf9073bfc9174408eb450bb9ffacbd34b9578a",
+        "scope": "PR4 exact-head20 native binaries and UBSan pass, but PR4 conflicts with newer main solver; independently validating canonical main and repairing invalid workflow YAML in a separate main-based PR. No straight approval or stale demo."
+      }
     },
     {
       "repository": "jadenfix/python_crypto_trading_engine",
@@ -899,7 +1837,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "79d9baa7e21bf72af41fd288f20dd45e8fba85bd",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Offline research pipeline",
+            "id": 38328835873,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/python_crypto_trading_engine/actions/runs/38328835873"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/backpacking-eastern-sierra",
@@ -912,7 +1865,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "2c0dbfd79f4f0a2ef94a23acb5a0a21d566f68b8",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Validate atlas",
+            "id": 38217772896,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/backpacking-eastern-sierra/actions/runs/38217772896"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/resume",
@@ -925,7 +1893,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "2ec60543a40e68ea19e17333d3eff1071a7a07c2",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/xgbitcoin",
@@ -938,7 +1913,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "62bf2cb424878a60ddb9020d6cf410abf4fe8a1a",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/matteoshafer.github.io",
@@ -954,7 +1936,22 @@
       ],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "evidence_url": "https://github.com/jadenfix/ecosystem/blob/main/docs/continuation-review-2026-10-13.md"
+      "evidence_url": "https://github.com/jadenfix/ecosystem/blob/main/docs/continuation-review-2026-10-13.md",
+      "pinned_main_ci": {
+        "checked_sha": "5b0e2af9c03fdb9a196e82aa54ed0050a6568d85",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Deploy React to GitHub Pages",
+            "id": 38334892881,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/matteoshafer.github.io/actions/runs/38334892881"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/ruby",
@@ -967,7 +1964,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "e5e4f3f9b36733df06a9c54f7154d556687df040",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/ReplayKit",
@@ -981,7 +1985,36 @@
       "e2e_commands": [],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "owner": "session5c14b1fccef2 exclusive"
+      "owner": "session5c14b1fccef2 exclusive",
+      "pinned_main_ci": {
+        "checked_sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+        "run_count": 3,
+        "inspected_count": 3,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Docker",
+            "id": 38329773484,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/ReplayKit/actions/runs/38329773484"
+          },
+          {
+            "name": "Web",
+            "id": 38329773454,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/ReplayKit/actions/runs/38329773454"
+          },
+          {
+            "name": "Rust",
+            "id": 38329773464,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/ReplayKit/actions/runs/38329773464"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/Daytuh",
@@ -994,7 +2027,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "caa21e46673dfc2434625262a0ca1a6ecea13ae8",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/financial_cpp_copy",
@@ -1007,7 +2047,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Portable backtester validation",
+            "id": 38328633209,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/financial_cpp_copy/actions/runs/38328633209"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/InftyThink",
@@ -1023,7 +2078,29 @@
         "post-main model/scoring38337554246/38337554244: success"
       ],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "f0920f654c162cf3e1982a7c0fa01503ce1847a0",
+        "run_count": 2,
+        "inspected_count": 2,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Math evaluation",
+            "id": 38337554244,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/InftyThink/actions/runs/38337554244"
+          },
+          {
+            "name": "Tiny model computational smoke",
+            "id": 38337554246,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/InftyThink/actions/runs/38337554246"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/1115_hack",
@@ -1036,7 +2113,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "24d422953eff842b650a22a8c1c63964ce8ee0c7",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/machine_learning",
@@ -1049,7 +2133,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "a987dc67f3e96086917a21832f0cf9cb95b11221",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Research execution",
+            "id": 38329232231,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/machine_learning/actions/runs/38329232231"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/CreditAssignment-LongHorizon",
@@ -1062,7 +2161,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "133b94fa5999fc2e408abc7ecf077d289329bd44",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "ci",
+            "id": 38329761033,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/CreditAssignment-LongHorizon/actions/runs/38329761033"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/satellite_deeplearning",
@@ -1075,7 +2189,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "16f6ef3d86dac5ab9c0d16080ecfbcefefd30c1b",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/categorization_embeddings_sementic_search",
@@ -1088,7 +2209,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/eval_mvp",
@@ -1104,7 +2232,22 @@
       ],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "owner": "session100e79 sole merger"
+      "owner": "session100e79 sole merger",
+      "pinned_main_ci": {
+        "checked_sha": "d36c9aa6607dc1aeb3516f009c5317fc4772b4f0",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "verify-benchmark",
+            "id": 38329107045,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/eval_mvp/actions/runs/38329107045"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/KILN",
@@ -1117,7 +2260,14 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "36f2c6c33a32f65e1fcf92cf8993e8e04652a9f8",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     },
     {
       "repository": "jadenfix/MiniGPTEngine-CPP",
@@ -1154,6 +2304,21 @@
         ],
         "integration_status": "unmerged; kernel demo only, complete-model E2E still blocked",
         "receipt": "https://github.com/jadenfix/MiniGPTEngine-CPP/pull/3#issuecomment-6138145283"
+      },
+      "pinned_main_ci": {
+        "checked_sha": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Portable attention validation",
+            "id": 38329748458,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/MiniGPTEngine-CPP/actions/runs/38329748458"
+          }
+        ]
       }
     },
     {
@@ -1167,7 +2332,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "1257d7e041e67284f0615e9b56170bbaa079e5de",
+        "run_count": 1,
+        "inspected_count": 1,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": [
+          {
+            "name": "Service regression tests",
+            "id": 38329750910,
+            "status": "completed",
+            "conclusion": "success",
+            "url": "https://github.com/jadenfix/rl/actions/runs/38329750910"
+          }
+        ]
+      }
     },
     {
       "repository": "jadenfix/trading_research",
@@ -1180,9 +2360,22 @@
       "e2e_status": "evidence reconciliation pending",
       "e2e_commands": [],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "pinned_main_ci": {
+        "checked_sha": "6b0cf7d67d47dfe7b883318a1c947741bb212c2b",
+        "run_count": 0,
+        "inspected_count": 0,
+        "scope": "Actions only; not deployment or E2E proof",
+        "latest_by_workflow": []
+      }
     }
   ],
-  "followup_at": "2026-10-13T04:20:40Z",
-  "staged_demos": 2
+  "followup_at": "2026-10-13T04:30:38.249Z",
+  "staged_demos": 2,
+  "ci_scan": {
+    "with_runs": 44,
+    "without_runs": 39,
+    "api_errors": 0,
+    "report_path": "completion-ci-2026-10-13.json"
+  }
 }
