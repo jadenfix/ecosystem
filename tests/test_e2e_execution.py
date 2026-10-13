@@ -47,6 +47,12 @@ class ExecutionTests(unittest.TestCase):
         self.assertIn("executed", receipt["results"][0]["log_tail"])
         self.assertEqual(len(receipt["results"][0]["head"]), 40)
 
+    def test_control_plane_script_runs_from_owner_checkout(self):
+        (self.root / "probe.py").write_text("from pathlib import Path; print(Path.cwd().name)")
+        result, receipt = self.execute([sys.executable, "{control_plane}/probe.py"])
+        self.assertEqual(result, 0)
+        self.assertIn("owner", receipt["results"][0]["log_tail"])
+
     def test_unwired_scenario_fails(self):
         result, receipt = self.execute()
         self.assertEqual(result, 1)

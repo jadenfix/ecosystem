@@ -31,11 +31,12 @@ def run_scenarios(data: dict, selected: set[str], *, timeout: float,
         command = spec.get("e2e_command")
         owner = data.get("repos", {}).get(spec["owner"])
         if not command or not isinstance(command, list) or not all(isinstance(arg, str) for arg in command):
-            item["reason"] = "No executable e2e_command declared; listing contracts is not verification"
+            item["reason"] = spec.get("registration_blocker", "No executable e2e_command declared; listing contracts is not verification")
             continue
         if owner is None:
             item["reason"] = "Owner repository is not declared"
             continue
+        command = [arg.replace("{control_plane}", str(root)) for arg in command]
         checkout = repo_path(root, owner["path"])
         item.update(command=command, checkout=str(checkout))
         if not checkout.is_dir():

@@ -100,30 +100,35 @@ commands = [
 ]
 
 [capabilities.trace_observability]
+e2e_command = ["env", "BEATER_DEEP_E2E_REQUIRE_DOCKER=1", "BEATER_DEEP_E2E_SKIP_CONTRACT=0", "BEATER_DEEP_E2E_SKIP_NATIVE_SDKS=0", "BEATER_DEEP_E2E_SKIP_CLIENT_CONFORMANCE=0", "BEATER_DEEP_E2E_SKIP_COMPOSE=0", "bash", "scripts/e2e-merge-gate.sh"]
 owner = "palette"
 product = "Palette"
 binaries = ["beaterd", "beaterctl"]
 contracts = ["OTLP", "OpenAPI", "SDKs", "MCP"]
 
 [capabilities.browser_observation]
+e2e_command = ["python3", "{control_plane}/scripts/scenarios/browser-observation.py"]
 owner = "tempo"
 product = "tempo"
 binaries = ["tempod", "tempo", "tempo-engined-cdp"]
 contracts = ["compiled-observation", "policy", "tool-exec"]
 
 [capabilities.sandbox_execution]
+e2e_command = ["python3", "scripts/native-e2e.py"]
 owner = "cradle"
 product = "cradle"
 binaries = ["beatboxd", "beatbox"]
 contracts = ["sandbox-job", "network-deny", "secret-deny"]
 
 [capabilities.agent_runtime_bridge]
+e2e_command = ["node", "scripts/remote-mcp-provider-gate.cjs"]
 owner = "temp-js"
 product = "temp.js"
 binaries = ["beater", "beater-connect"]
 contracts = ["runtime-bridge", "MCP", "OpenAPI"]
 
 [capabilities.os_admission_receipts]
+e2e_command = ["python3", "scripts/run-beater-osd-http-execute-smoke.py", "--json"]
 owner = "tempOS"
 product = "tempOS"
 binaries = ["beater-osd", "beaterosctl"]
@@ -137,6 +142,7 @@ binaries = ["beater-memory"]
 contracts = ["memory-record", "retrieval"]
 
 [capabilities.settlement_chain]
+registration_blocker = "No transaction-to-receipt-to-indexer workflow is available; existing multivalidator CI is narrower. Do not substitute SDK mocks or unit tests."
 owner = "arrha"
 product = "Arrha"
 binaries = ["aether-node", "aetherctl", "aether-indexer"]
