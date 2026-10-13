@@ -1,0 +1,1841 @@
+{
+  "date": "2026-10-13",
+  "scope": "Public non-fork jadenfix repositories only. Scoped code/workflow merges; not all83 projects complete or videos ready.",
+  "root_merges": [
+    {
+      "repository": "jadenfix/cpp_fundamentals",
+      "pr": 2,
+      "head": "0c36eb6aa9414b14aefbecb9fdbf28a4004c6c3f",
+      "result": {
+        "sha": "359df6ef3f52d32a622d131a51725401673e4682",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/financial_cpp_copy",
+      "pr": 1,
+      "head": "215ad638283910bb4b72f730d03e751df3f255a0",
+      "result": {
+        "sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/space-simulation-engine",
+      "pr": 3,
+      "head": "0100e4e7ee3362bb3e02d0b893acdf725c71172a",
+      "result": {
+        "sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "pr": 1,
+      "head": "b6e4082b5aa624fc1ccdd4364275da038d45e429",
+      "result": {
+        "sha": "2cae2cc5f2c588b17297eb6c7cbe0f841a15b8a6",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/NLP",
+      "pr": 1,
+      "head": "5e4f60af95cafec954d0c8863561e44b76f238dc",
+      "result": {
+        "sha": "01c7a0ff921614949f62f55337b574dda5e541ba",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/AICH",
+      "pr": 1,
+      "head": "a1bbc52564e0b1e2270f23b0c40a7b81db686c1d",
+      "result": {
+        "sha": "4453513aa60a6c8f3f373c3a31c471108ffcec6c",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/8257-tools",
+      "pr": 2,
+      "head": "c11d2e2950cfbc731b2a29ecfd764401f7cab4de",
+      "result": {
+        "sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/alpaca",
+      "pr": 2,
+      "head": "d8b49e64f080b2117f4a5f60735723e200f2b6d5",
+      "result": {
+        "sha": "70fa82c7cc83a15d4125acf4d98bb0fb8f9b630a",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/solanatools",
+      "pr": 1,
+      "head": "922463e8b06363b5f60a231804d9072e1561c787",
+      "result": {
+        "sha": "9927efa416675fda27ca279643cb823869fb49fb",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/hackathon",
+      "pr": 1,
+      "head": "53a3ce18d8708c948ab6a94e050c7a8b5a484799",
+      "result": {
+        "sha": "ce49b2db7de7eb868a7437798d8a616006912431",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/python_crypto_trading_engine",
+      "pr": 1,
+      "head": "489e8d8473ba28e8567ccfda2747d33d3ad7cf62",
+      "result": {
+        "sha": "79d9baa7e21bf72af41fd288f20dd45e8fba85bd",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/MiniGPTEngine-CPP",
+      "pr": 1,
+      "head": "cea84c0de2c1aac30fd3719d860836654c544109",
+      "result": {
+        "sha": "e59d2411ac3cb6f56d1bd3077a9cd1dc45660f5a",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/rl",
+      "pr": 1,
+      "head": "8187254d114bd6c086bf8145baf7d99e1d89f9e2",
+      "result": {
+        "sha": "ddcbd4c2d84dedc97f53ec727eaa2f24b8c8b120",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/random_cpp_doesnt_work",
+      "pr": 1,
+      "head": "f7a17b4a6b9aae2a8ba4c7856a584d53608590da",
+      "result": {
+        "sha": "d242f29a86abb025e53cdd75e459e169d9e6e0a0",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/supervised_fine_tuning",
+      "pr": 1,
+      "head": "79d014e755ccec6c5c0644f71bd555be5ba32af6",
+      "result": {
+        "sha": "15a300dccaeed4824dd9539a043ced14d6acf8af",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/InvoiceFlowAgent",
+      "pr": 1,
+      "head": "02edbef2c0c1805bb764e5d36d4fcd392583dc45",
+      "result": {
+        "sha": "6121b569f500f2062acfecc11db0784c5afac4f5",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/document_parsing_product_demo",
+      "pr": 1,
+      "head": "b6562176bb5c3ae3ade1af99da8340c487512f3f",
+      "result": {
+        "sha": "829c109fe92657df480f2f7d04a95722dbdc432e",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/tempOS",
+      "pr": 187,
+      "head": "9cfceefe4f15cd15d2da81f4432b0cee4e7665f0",
+      "result": {
+        "sha": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_III",
+      "pr": 1,
+      "head": "3354bdf93d4f02f683ed61f2d888a18a9435bb89",
+      "result": {
+        "sha": "10c043a6e70018392191265dd7eb28eeefe0d8ba",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/dynamic_stochastic_modeling",
+      "pr": 1,
+      "head": "7b679eabe575625e902d5eb71e5932000b360edb",
+      "result": {
+        "sha": "649b3ef34216f97de2dce719c07a9052f44cd6e5",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/causal_machinelearning",
+      "pr": 1,
+      "head": "04b7a4b28c2d41d55e23ae925510da60141ff7ad",
+      "result": {
+        "sha": "1b8c9b1604f31332409694e02b2c9e83731441ca",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/machine_learning",
+      "pr": 1,
+      "head": "10d4cdf80304b78e12d0f019f8f73eb2e3a8255e",
+      "result": {
+        "sha": "a987dc67f3e96086917a21832f0cf9cb95b11221",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/Bayesian__Stats",
+      "pr": 1,
+      "head": "3874c12f1b4eff9bf888113049c14613f1dad90d",
+      "result": {
+        "sha": "7952324b0e0a50081f4939b5f07409561652bbff",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/WS",
+      "pr": 1,
+      "head": "f298d2203b45a4e635c6eb8fe9e0d9f4a17deeb8",
+      "result": {
+        "sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/AI_and_Machine_Learning",
+      "pr": 1,
+      "head": "3a5c7b5a63f4cfbb38f500e9533aa4150f1bfdcd",
+      "result": {
+        "sha": "9f7e7ac6365ab8eeb00b416aa1ab9be0f03238ab",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/agentic_ai_HF",
+      "pr": 1,
+      "head": "8a7de9e1a0ec8787556e80d0a514e4f8109178e9",
+      "result": {
+        "sha": "138773cb289de37a35eed46c454d0e61e31b6ff2",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/MiniGPTEngine-CPP",
+      "pr": 2,
+      "head": "a574ba7412957f648bf36e8217bb7c7d93693313",
+      "result": {
+        "sha": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/rl",
+      "pr": 2,
+      "head": "c27a94c3bd60a881532f46435a4d93394d720373",
+      "result": {
+        "sha": "1257d7e041e67284f0615e9b56170bbaa079e5de",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/jadenfix.github.io",
+      "pr": 2,
+      "head": "3107d7849d1adb4e87d3a97cc4918f953bb22f41",
+      "result": {
+        "sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/roe-ai-",
+      "pr": 1,
+      "head": "896b737f9dc0a4b8e4156a495277218d168b2834",
+      "result": {
+        "sha": "1a0828ead4b8c0250cb3d3817fc6cc43398f3e13",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/CreditAssignment-LongHorizon",
+      "pr": 2,
+      "head": "62a5a406e4b408cbe3e2f5860254c132cd966df7",
+      "result": {
+        "sha": "133b94fa5999fc2e408abc7ecf077d289329bd44",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/categorization_embeddings_sementic_search",
+      "pr": 2,
+      "head": "823dfbb4c2e945f3517e41889fffc8623e400332",
+      "result": {
+        "sha": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/EmotiFuse",
+      "pr": 1,
+      "head": "0f6bf62debce9fce8a5de1b0e9c076ad2f129439",
+      "result": {
+        "sha": "ec4d91205dcf435fed988712a3374ffb04fd8f2f",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/ReplayKit",
+      "pr": 12,
+      "head": "0cc3a12da7ba3113708897c0bd3b30e67681af5a",
+      "result": {
+        "sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/startup",
+      "pr": 1,
+      "head": "99c2385f439461d1470ec5f2f7de5ba385a32bea",
+      "result": {
+        "sha": "00f31981060ea94393a1a84033f1acf12ace0974",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/stochastic-site",
+      "pr": 1,
+      "head": "bd00a28c3ad6bb03dcba27c51f45eda9194d7c0a",
+      "result": {
+        "sha": "89c5a87a6a1a710155dc35c2f65acb762ca14439",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/startup",
+      "pr": 2,
+      "head": "0bb6bd4aa3ef58366c70d9ba02a3866c904839f2",
+      "result": {
+        "sha": "a6678317023263def54258333c0a337aaa980953",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/stochastic-site",
+      "pr": 3,
+      "head": "db745a95c803371cdc5f347262141bb2f3d10aef",
+      "result": {
+        "sha": "9e8928d03fce03d2265bcd664a5fae5f95fff384",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/InftyThink",
+      "pr": 1,
+      "head": "0c8cb1b38f4536f87510a11cc89e1c3b57c90dfd",
+      "result": {
+        "sha": "c8731ef6dd9cbea4b01e2fc40be73500ac195658",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/1115_hack",
+      "pr": 1,
+      "head": "b263a2788c256b41372f7976d5c56432a890caf8",
+      "result": {
+        "sha": "24d422953eff842b650a22a8c1c63964ce8ee0c7",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/trading",
+      "pr": 23,
+      "head": "52b3d693d886cf3a479242f239436044675995eb",
+      "result": {
+        "sha": "561ed312578a0002b254412a823f32f2c2d2ebd8",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/trading_website",
+      "pr": 4,
+      "head": "88000b3b178f7928986b7dc9aa62648ada923e65",
+      "result": {
+        "sha": "561099f4fdbd63707a905b9bde3c1fa3bdb24cde",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_I",
+      "pr": 1,
+      "head": "a39208dbd0f0142ff8e025b17d27a9ae65043fdc",
+      "result": {
+        "sha": "3fbebbdd20ebcd33fd9d1ad11f5eb74a92065589",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-",
+      "pr": 1,
+      "head": "f1111c990e3fbca26920346253353689e5dbee94",
+      "result": {
+        "sha": "bc503584d827e19004501a219edfdb92db902bf1",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/145",
+      "pr": 1,
+      "head": "da02e6d0dea15ff398ff62dc26023b8122b0cd09",
+      "result": {
+        "sha": "29b84a9440b47099065f7b0a1f6e85a718c0c54f",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/145-Project-",
+      "pr": 1,
+      "head": "e9b9d6ea725f14d3b584ba0fe5c166037a8ca167",
+      "result": {
+        "sha": "54a42bc96f21fde24a7dec895ca8a6489c1ce86f",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "pr": 2,
+      "head": "a6eb6042ee9b11c1f02e6e0035059a144300e424",
+      "result": {
+        "sha": "45a672b47055139dd18d602dc7ab71c656efc0e3",
+        "merged": true,
+        "message": "Pull Request successfully merged"
+      }
+    }
+  ],
+  "peer_merges": [
+    {
+      "repository": "jadenfix/eval_mvp",
+      "pr": 1,
+      "merged": true,
+      "head": "fa052a03892b4801de9f6619536970f962603f56",
+      "merge_sha": "d36c9aa6607dc1aeb3516f009c5317fc4772b4f0",
+      "tree": "21c98797120a2d712e9222261ef39f196514c837",
+      "head_is_parent": false,
+      "reviewed_tree": "21c98797120a2d712e9222261ef39f196514c837",
+      "merge_tree_matches_reviewed": true
+    },
+    {
+      "repository": "jadenfix/DRL4MM",
+      "pr": 1,
+      "merged": true,
+      "head": "5eb6ff51e54f55dd587656ad7858a395468658ea",
+      "merge_sha": "c3c536632a6dac66581c07eb33bc4f26ce73d662",
+      "tree": "cad4123648561f3e84c0d45abe6973340fecaf1d",
+      "head_is_parent": true
+    },
+    {
+      "repository": "jadenfix/DRL4MM",
+      "pr": 4,
+      "merged": true,
+      "head": "7131e014cdcf7119a4633dca4474044a5e0a662b",
+      "merge_sha": "a201f566dfa475655a981fdb4e9fb9a80e7ffa1c",
+      "tree": "4493fe6b0f72b7ba7864c06eeeaab021dc42e908",
+      "head_is_parent": true
+    },
+    {
+      "repository": "jadenfix/DRL4MM",
+      "pr": 5,
+      "merged": true,
+      "head": "a68fe83ad4f521332d4cac8354d766483656b01b",
+      "merge_sha": "81752dff261636ec96c940de82b22bfeff731fcb",
+      "tree": "8c400228894f2071b076bd6f6a0b66cffc7919fb",
+      "head_is_parent": true
+    },
+    {
+      "repository": "jadenfix/DRL4MM",
+      "pr": 3,
+      "merged": true,
+      "head": "11bf991d276908f02225a9a9d96fb94f1d2b9579",
+      "merge_sha": "8ceb18b5e1c60423d538e1bdbe014de6a64a3c5c",
+      "tree": "8ad8d2a6afd1248b95bd62c7a38f9dbf32387902",
+      "head_is_parent": true
+    }
+  ],
+  "default_branch_verification": [
+    {
+      "repository": "jadenfix/financial_cpp_copy",
+      "merge_sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+      "default_head": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+      "tree": "a05fbc2db23331d4837ffa8de5de47c96f534b73",
+      "matches": true,
+      "checks": [
+        {
+          "name": "test",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/alpaca",
+      "merge_sha": "70fa82c7cc83a15d4125acf4d98bb0fb8f9b630a",
+      "default_head": "70fa82c7cc83a15d4125acf4d98bb0fb8f9b630a",
+      "tree": "2420e0cb165176adc210a23ca72b9ebdb7e3dfbc",
+      "matches": true,
+      "checks": [
+        {
+          "name": "research",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/8257-tools",
+      "merge_sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+      "default_head": "bf87991627645ed7ad6dbc35869ba0238777343d",
+      "tree": "910ea1965dc2cf2d83da87b86c3dd159e92197a3",
+      "matches": true,
+      "checks": [
+        {
+          "name": "check",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/AICH",
+      "merge_sha": "4453513aa60a6c8f3f373c3a31c471108ffcec6c",
+      "default_head": "4453513aa60a6c8f3f373c3a31c471108ffcec6c",
+      "tree": "3e24acfd4632bf2af199393cd96aa19be5ff1c50",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/python_crypto_trading_engine",
+      "merge_sha": "79d9baa7e21bf72af41fd288f20dd45e8fba85bd",
+      "default_head": "79d9baa7e21bf72af41fd288f20dd45e8fba85bd",
+      "tree": "172a95920ee60573e1c22f6f0c6e776a3a0824b5",
+      "matches": true,
+      "checks": [
+        {
+          "name": "test",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/solanatools",
+      "merge_sha": "9927efa416675fda27ca279643cb823869fb49fb",
+      "default_head": "9927efa416675fda27ca279643cb823869fb49fb",
+      "tree": "8241c7d60de1a25698219e5bf9eba32d750b4380",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/hackathon",
+      "merge_sha": "ce49b2db7de7eb868a7437798d8a616006912431",
+      "default_head": "ce49b2db7de7eb868a7437798d8a616006912431",
+      "tree": "cb10d393516f16901b96372d0fa1f93cc9a3820e",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/InvoiceFlowAgent",
+      "merge_sha": "6121b569f500f2062acfecc11db0784c5afac4f5",
+      "default_head": "6121b569f500f2062acfecc11db0784c5afac4f5",
+      "tree": "0824d65f07e3e6b896a9f6d2700d83a55f48409f",
+      "matches": true,
+      "checks": [
+        {
+          "name": "settings",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/random_cpp_doesnt_work",
+      "merge_sha": "d242f29a86abb025e53cdd75e459e169d9e6e0a0",
+      "default_head": "d242f29a86abb025e53cdd75e459e169d9e6e0a0",
+      "tree": "8f03f6a0b60884b3f2532911a8e2c06f94273f5f",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/NLP",
+      "merge_sha": "01c7a0ff921614949f62f55337b574dda5e541ba",
+      "default_head": "01c7a0ff921614949f62f55337b574dda5e541ba",
+      "tree": "8c370093579391f07d11224e7fe4729828221e5c",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/machine_learning",
+      "merge_sha": "a987dc67f3e96086917a21832f0cf9cb95b11221",
+      "default_head": "a987dc67f3e96086917a21832f0cf9cb95b11221",
+      "tree": "0d6302f3bf3fb88a215d37b90f31d370742b24da",
+      "matches": true,
+      "checks": [
+        {
+          "name": "offline",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/WS",
+      "merge_sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
+      "default_head": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
+      "tree": "a7f2987b02a1994c4964aa7a07ca74a7b90f40ec",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/MiniGPTEngine-CPP",
+      "merge_sha": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+      "default_head": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+      "tree": "02b4a6f728206620ce9752251625fd4a547ccb9a",
+      "matches": true,
+      "checks": [
+        {
+          "name": "attention (ubuntu-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "attention (macos-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/supervised_fine_tuning",
+      "merge_sha": "15a300dccaeed4824dd9539a043ced14d6acf8af",
+      "default_head": "15a300dccaeed4824dd9539a043ced14d6acf8af",
+      "tree": "ba20858182a753764d75e9da7d2b6c13e9477cbe",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/Bayesian__Stats",
+      "merge_sha": "7952324b0e0a50081f4939b5f07409561652bbff",
+      "default_head": "7952324b0e0a50081f4939b5f07409561652bbff",
+      "tree": "44e006f4bf2e60ae722d715974602670223b03cc",
+      "matches": true,
+      "checks": [
+        {
+          "name": "offline",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/rl",
+      "merge_sha": "1257d7e041e67284f0615e9b56170bbaa079e5de",
+      "default_head": "1257d7e041e67284f0615e9b56170bbaa079e5de",
+      "tree": "df01119a58ac78e915d69bb4ec45c4f752701936",
+      "matches": true,
+      "checks": [
+        {
+          "name": "services",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/dynamic_stochastic_modeling",
+      "merge_sha": "649b3ef34216f97de2dce719c07a9052f44cd6e5",
+      "default_head": "649b3ef34216f97de2dce719c07a9052f44cd6e5",
+      "tree": "f55fba7ca744d5aa0928c9a404edf860002dc803",
+      "matches": true,
+      "checks": [
+        {
+          "name": "offline",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/categorization_embeddings_sementic_search",
+      "merge_sha": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
+      "default_head": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
+      "tree": "7321ff34f8124f7aa8c71b87d8595f3f1d84c53c",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/jadenfix.github.io",
+      "merge_sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
+      "default_head": "7887330514fc1fddd223f4206217ac9074dd3df9",
+      "tree": "fe2b8783fe8a80ad8aaf15ad8b2f5c5f7b09c5bb",
+      "matches": true,
+      "checks": [
+        {
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/tempOS",
+      "merge_sha": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+      "default_head": "1ced4a5aaf8b6c99c7c8e4cc99c98fd40bfe3d55",
+      "tree": "cd0a6a88e5b96916dcd631a5b4211b4a2a077950",
+      "matches": true,
+      "checks": [
+        {
+          "name": "PR review packet",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "guard",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "macOS Rust workspace",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/cpp_fundamentals",
+      "merge_sha": "359df6ef3f52d32a622d131a51725401673e4682",
+      "default_head": "359df6ef3f52d32a622d131a51725401673e4682",
+      "tree": "c0ec8625f466f9ce9ba538411d52fc45f7621711",
+      "matches": true,
+      "checks": [
+        {
+          "name": "build-and-test (ubuntu-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "build-and-test (macos-latest)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/space-simulation-engine",
+      "merge_sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+      "default_head": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+      "tree": "6b49997c2bcd730d02465bfd98b07bf025c0c58c",
+      "matches": true,
+      "checks": [
+        {
+          "name": "nonlinear-conditioning-repair",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "assurance-ubuntu-latest-gcc",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "strict-ubuntu-latest-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "strict-macos-14-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "cmake",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "strict-ubuntu-latest-gcc",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "sanitizers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "static-analysis",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "robustness-sanitizers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "robustness-ubuntu-latest-gcc",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "assurance-macos-14-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "root-regression",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "robustness-macos-14-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "pde-sanitizers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "assurance-ubuntu-latest-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "pde-ubuntu-latest-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "sanitizers",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "pde-macos-14-clang",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "deterministic-replay",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "pde-ubuntu-latest-gcc",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "robustness-ubuntu-latest-clang",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/roe-ai-",
+      "merge_sha": "1a0828ead4b8c0250cb3d3817fc6cc43398f3e13",
+      "default_head": "1a0828ead4b8c0250cb3d3817fc6cc43398f3e13",
+      "tree": "289f9b082c6a893fc6c0c6b41f82e69ab77101b5",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/document_parsing_product_demo",
+      "merge_sha": "829c109fe92657df480f2f7d04a95722dbdc432e",
+      "default_head": "829c109fe92657df480f2f7d04a95722dbdc432e",
+      "tree": "2c3f9f6051d549640d485d896f456fa9e30f7676",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/causal_machinelearning",
+      "merge_sha": "1b8c9b1604f31332409694e02b2c9e83731441ca",
+      "default_head": "1b8c9b1604f31332409694e02b2c9e83731441ca",
+      "tree": "ddc77bd2633a3994a47b2ef18711281728938d42",
+      "matches": true,
+      "checks": [
+        {
+          "name": "offline",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_III",
+      "merge_sha": "10c043a6e70018392191265dd7eb28eeefe0d8ba",
+      "default_head": "10c043a6e70018392191265dd7eb28eeefe0d8ba",
+      "tree": "506252e16e5ef8c6cf8c3711fb239f850ec33023",
+      "matches": true,
+      "checks": [
+        {
+          "name": "offline",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/agentic_ai_HF",
+      "merge_sha": "138773cb289de37a35eed46c454d0e61e31b6ff2",
+      "default_head": "138773cb289de37a35eed46c454d0e61e31b6ff2",
+      "tree": "e02826d4f5c5fec4a09351fec08ec6e699047b84",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/ReplayKit",
+      "merge_sha": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+      "default_head": "b3798939dfb241542f9d8c5f9f0df719bca6ab53",
+      "tree": "6ddd506cbfa6656a5597f46f9075c6ced4f5378e",
+      "matches": true,
+      "checks": [
+        {
+          "name": "build + smoke",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "fmt + clippy + test",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "lint + test + build",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/EmotiFuse",
+      "merge_sha": "ec4d91205dcf435fed988712a3374ffb04fd8f2f",
+      "default_head": "ec4d91205dcf435fed988712a3374ffb04fd8f2f",
+      "tree": "180b375d68b1e98af969002620dd599c849e5ffe",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/matteoshafer.github.io",
+      "merge_sha": "45a672b47055139dd18d602dc7ab71c656efc0e3",
+      "default_head": "45a672b47055139dd18d602dc7ab71c656efc0e3",
+      "tree": "3a6427c309288428e3c47882e54448828ed7fc9e",
+      "matches": true,
+      "checks": [],
+      "note": "Browser-tested functional repair merged; post-push deployment remains blocked by Pages configuration."
+    },
+    {
+      "repository": "jadenfix/CreditAssignment-LongHorizon",
+      "merge_sha": "133b94fa5999fc2e408abc7ecf077d289329bd44",
+      "default_head": "133b94fa5999fc2e408abc7ecf077d289329bd44",
+      "tree": "96c5c9143cb18b8de404104314d2af298ba0da88",
+      "matches": true,
+      "checks": [
+        {
+          "name": "test",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/AI_and_Machine_Learning",
+      "merge_sha": "9f7e7ac6365ab8eeb00b416aa1ab9be0f03238ab",
+      "default_head": "9f7e7ac6365ab8eeb00b416aa1ab9be0f03238ab",
+      "tree": "051e7510800fc49f2451849acbdfa7010f366f6b",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/InftyThink",
+      "merge_sha": "c8731ef6dd9cbea4b01e2fc40be73500ac195658",
+      "default_head": "c8731ef6dd9cbea4b01e2fc40be73500ac195658",
+      "tree": "f2fd7cbf852de25e1b027db4f9ad5051a68367e9",
+      "matches": true,
+      "checks": [
+        {
+          "name": "tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "smoke",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/Predictive-Stochastic-Modeling-for-Financial-Markets-",
+      "merge_sha": "bc503584d827e19004501a219edfdb92db902bf1",
+      "default_head": "bc503584d827e19004501a219edfdb92db902bf1",
+      "tree": "d4100b5e304471c1f3383c39b62fad917b558719",
+      "matches": true,
+      "checks": [
+        {
+          "name": "fit",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/trading",
+      "merge_sha": "561ed312578a0002b254412a823f32f2c2d2ebd8",
+      "default_head": "561ed312578a0002b254412a823f32f2c2d2ebd8",
+      "tree": "de93e19345b32647a47574a7de37ba8fd73a7086",
+      "matches": true,
+      "checks": [
+        {
+          "name": "trading bridge extension tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "trading bridge rust tests",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "trading-cli test",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "observability API tests",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/trading_website",
+      "merge_sha": "561099f4fdbd63707a905b9bde3c1fa3bdb24cde",
+      "default_head": "561099f4fdbd63707a905b9bde3c1fa3bdb24cde",
+      "tree": "d112849aff35dbca025b505ee9facb71bc0bccfa",
+      "matches": true,
+      "checks": [
+        {
+          "name": "build",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/145-Project-",
+      "merge_sha": "54a42bc96f21fde24a7dec895ca8a6489c1ce86f",
+      "default_head": "54a42bc96f21fde24a7dec895ca8a6489c1ce86f",
+      "tree": "7f4ae8349010fcc986809ec1622069bb28444372",
+      "matches": true,
+      "checks": [
+        {
+          "name": "fit",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_I",
+      "merge_sha": "3fbebbdd20ebcd33fd9d1ad11f5eb74a92065589",
+      "default_head": "3fbebbdd20ebcd33fd9d1ad11f5eb74a92065589",
+      "tree": "4c5903024a806b992255ed0466ba7b66340035fc",
+      "matches": true,
+      "checks": [
+        {
+          "name": "assignments",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/145",
+      "merge_sha": "29b84a9440b47099065f7b0a1f6e85a718c0c54f",
+      "default_head": "29b84a9440b47099065f7b0a1f6e85a718c0c54f",
+      "tree": "a9d746f34d0ea1e5cc60b1367bc494777d7cddfc",
+      "matches": true,
+      "checks": [
+        {
+          "name": "fit",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/stochastic-site",
+      "merge_sha": "9e8928d03fce03d2265bcd664a5fae5f95fff384",
+      "default_head": "9e8928d03fce03d2265bcd664a5fae5f95fff384",
+      "tree": "c8ca3c06cd5644a2eecc9124d2858cbaa9f0ccc0",
+      "matches": true,
+      "checks": [
+        {
+          "name": "research (3.11)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "research (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    },
+    {
+      "repository": "jadenfix/1115_hack",
+      "merge_sha": "24d422953eff842b650a22a8c1c63964ce8ee0c7",
+      "default_head": "24d422953eff842b650a22a8c1c63964ce8ee0c7",
+      "tree": "e810bd0b6bd1c43389982c3b15417225d249cc7e",
+      "matches": true,
+      "checks": []
+    },
+    {
+      "repository": "jadenfix/startup",
+      "merge_sha": "a6678317023263def54258333c0a337aaa980953",
+      "default_head": "a6678317023263def54258333c0a337aaa980953",
+      "tree": "4b74711e6df640bc816b566b6a320101c72afd73",
+      "matches": true,
+      "checks": [
+        {
+          "name": "delivery (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "delivery (3.11)",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ],
+  "holds": [
+    {
+      "repository": "jadenfix/remi",
+      "pr": 49,
+      "head": "6d1d1092b80c4be8299f122ee19d14eb497ca825",
+      "base": "241ca4751c3d156589c79b4dc5a12b364bf93deb",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": null,
+      "checks": [
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [],
+      "reason": "Current-main integration/source scope not approved."
+    },
+    {
+      "repository": "jadenfix/InvoiceFlowAgent",
+      "pr": 2,
+      "head": "ec3a170e4c6a6d6361bcca52e778e8ff45f92db5",
+      "base": "d9e1dbc41b3ef60d885e1fa9bc55e7f0a7515cef",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "5e8ae2f43c96dd31182e7d804d84057bc0b29262",
+      "checks": [
+        {
+          "name": "E2E Tests",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Build Docker Image",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Deploy to Development",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Notify",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Backend Tests",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Frontend Tests",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "settings",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Security Scan",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [],
+      "reason": "Frontend timezone fixed; required95% coverage unmet, backend lint/security gates red."
+    },
+    {
+      "repository": "jadenfix/business-documents",
+      "pr": 1,
+      "head": "9c247906e9bf66bd745e2e88775d5bd0d786c6d6",
+      "base": "905bd37e407f95d64066d5e11b5b42c4d82f5bd7",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "b765a869aad86524f2f9eda01040bd4c043fc28d",
+      "checks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/business-documents/4wGAACysDSBDqHe27bP5Mq9eXhUE"
+        }
+      ],
+      "reason": "Vercel deployment fails."
+    },
+    {
+      "repository": "jadenfix/KILN",
+      "pr": 1,
+      "head": "6af68461b1c0b198d3c00d577e3f41719aace445",
+      "base": "36f2c6c33a32f65e1fcf92cf8993e8e04652a9f8",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "c4b653263064e0614429e4c2740f803708562069",
+      "checks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/kiln/HbqYzcdFtZ2bi9R9DqTFNkDmDPFB"
+        }
+      ],
+      "reason": "Vercel deployment fails."
+    },
+    {
+      "repository": "jadenfix/ruby",
+      "pr": 1,
+      "head": "ce67ec02afe3ae0e47bde162cca040746f845fc8",
+      "base": "e5e4f3f9b36733df06a9c54f7154d556687df040",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "6a240af1fcaab86d5723e6685c23c9ef66da5d34",
+      "checks": [
+        {
+          "name": "Integration Tests",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Quality Gate",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "CLI Tests (3.2)",
+          "status": "completed",
+          "conclusion": "cancelled"
+        },
+        {
+          "name": "CLI Tests (3.0)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Extension Tests",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "CLI Tests (3.3)",
+          "status": "completed",
+          "conclusion": "cancelled"
+        },
+        {
+          "name": "Container Build Test",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "CLI Tests (3.1)",
+          "status": "completed",
+          "conclusion": "cancelled"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/ruby/2WvzLMagWSyvR879SucuDMB7ZsH8"
+        }
+      ],
+      "reason": "Ruby/extension/container CI and Vercel fail."
+    },
+    {
+      "repository": "jadenfix/HumanVoiceAI",
+      "pr": 1,
+      "head": "668e5e7be2de534f5d965c76ba7d47bfa3194fd5",
+      "base": "3b40f00612a51059e96df4e492e401128f5688ad",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "3c5404207ca19bc547af934cf93ef15cc9604c3a",
+      "checks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/human-voice-ai/8epr6BpzsjM7QE2ksacnnvUFDTWz"
+        }
+      ],
+      "reason": "Scoped policy/TTS/launcher tests pass; Vercel fails; real audio/emotion workflow not validated."
+    },
+    {
+      "repository": "jadenfix/smartpaydoc",
+      "pr": 1,
+      "head": "df96ee04457f839bbe5fecbb7de9f7b03f511e93",
+      "base": "35f0782f2e21b2c9e3f7dad835ff56ebaaf86896",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": true,
+      "merge_sha": "9c2df68db1e8b48d0bc1c0a29ee795f39519f142",
+      "checks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "workflow (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "workflow (3.11)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "browser",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "workflow (3.12)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "workflow (3.11)",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "browser",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel – smartpaydoc",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/smartpaydoc/8qU7K663pRWAs4iqt4jpxPVbvgp2"
+        }
+      ],
+      "reason": "Scoped tests/HTTP/browser pass; unexplained Vercel failure, build-log access403."
+    },
+    {
+      "repository": "jadenfix/advanced_econometrics_II",
+      "pr": 1,
+      "head": "6bef5ff1c3619059a91766cfcabc82379568bec0",
+      "base": "0dd8f7c005f75c1ed5531abb2b9846bc879cfab2",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": true,
+      "merge_sha": "781b7b0a84277759252fcc9381dc5fa7fe0a6e73",
+      "checks": [
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [],
+      "reason": "Original required datasets missing; full R workflows unverified."
+    },
+    {
+      "repository": "jadenfix/tempo",
+      "pr": 665,
+      "head": "6a53f4c8a0b8813b720aaa3cdc1421280c5adc05",
+      "base": "4321159cc9dc9c89f289b88e03c1eb18bb25db95",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": true,
+      "merge_sha": "ad29eff92b3139b5ed78e949b2e92d73f25aeee1",
+      "checks": [
+        {
+          "name": "supply-chain",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "servo-supply-chain",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [],
+      "reason": "Draft real Servo/current-main audit not proven; supply-chain failure and running check."
+    },
+    {
+      "repository": "jadenfix/HumanVoiceAI",
+      "pr": 2,
+      "head": "b0515f9a3d3ea61858b381b52e3aebf0ef1922dc",
+      "base": "3b40f00612a51059e96df4e492e401128f5688ad",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "9e4521f92f1b2acebe9c69c94318107f2497fe16",
+      "checks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/human-voice-ai/GwNA5Sg4ZqsDj2HFcd6YfiPUDQts"
+        }
+      ],
+      "reason": "Scoped policy/TTS/launcher tests pass; Vercel fails; real audio/emotion workflow not validated."
+    },
+    {
+      "repository": "jadenfix/DF",
+      "pr": 1,
+      "head": "eeb23675ebcec66e147bbbc5424562b21c887e3f",
+      "base": "b2c7104f44672c37affe0350ea5a05069002e174",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "efbf9a85bd50d863b7fcffc515156f729343c28d",
+      "checks": [
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "build-test",
+          "status": "in_progress",
+          "conclusion": null
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel – dreamforge",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/dreamforge/3jQjC6xTBa2crAAcVFYAfFY5siCi"
+        },
+        {
+          "context": "Vercel – df-",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/df-/Eywkqkq4GgQQDAycvprzJZY6zwXe"
+        },
+        {
+          "context": "Vercel – df",
+          "state": "success",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/df/8w6HJ42NdasXqQTARdR2CARc18GQ"
+        }
+      ],
+      "reason": "Lint fixed; tests still running at snapshot; two deployments fail."
+    },
+    {
+      "repository": "jadenfix/dreamForge",
+      "pr": 1,
+      "head": "9ad4f9daa06595aaf17672eca7509de86f3ab521",
+      "base": "7d908c7223e694316e39b8fe86776fa977e5367e",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "0c32adf80488ddddafbcdb67bdbc01b609d97199",
+      "checks": [
+        {
+          "name": "deploy",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "test (20.x)",
+          "status": "completed",
+          "conclusion": "cancelled"
+        },
+        {
+          "name": "security-scan",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "test (18.x)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel",
+          "state": "success",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/dream-forge/3Eond5hhNuvULRSwWKk6hJT7s6aM"
+        }
+      ],
+      "reason": "Lint/security checks fail."
+    },
+    {
+      "repository": "jadenfix/OrbitAgents",
+      "pr": 2,
+      "head": "de4b19c2a5acac57751209dee7d8e28f7c41e4f7",
+      "base": "4105153f7983cf7fa58091eab0b426330d88c808",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "60d436d7eaa771b3f35a9d2e3a9fb7334f918080",
+      "checks": [
+        {
+          "name": "Docker Build",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Frontend Build",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Frontend Tests",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Auth Service Tests",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Terraform Plan",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Frontend Lint",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Terraform Lint",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Python Lint (Auth Service)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel – orbit-agents",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/orbit-agents/cKp6wS68cKwAvBAGrN2CCSjTP2S8"
+        },
+        {
+          "context": "Vercel – orbitagents",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/orbitagents/6RFMrScVgaYSrBgCgkZRahc217MV"
+        }
+      ],
+      "reason": "Lint/infrastructure/deployment checks fail; GitGuardian check also red on #3."
+    },
+    {
+      "repository": "jadenfix/OrbitAgents",
+      "pr": 3,
+      "head": "d681dd5ffdae45b91572bfb9c730deb62a5dc6eb",
+      "base": "4105153f7983cf7fa58091eab0b426330d88c808",
+      "base_branch": "main",
+      "state": "open",
+      "merged": false,
+      "draft": false,
+      "merge_sha": "5581ed0f3aa789b5c61d5800154c7b372393396f",
+      "checks": [
+        {
+          "name": "Docker Build",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Frontend Build",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Frontend Tests",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Vercel Preview Comments",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "Auth Service Tests",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Terraform Plan",
+          "status": "completed",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "GitGuardian Security Checks",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Python Lint (Auth Service)",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Terraform Lint",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "Frontend Lint",
+          "status": "completed",
+          "conclusion": "failure"
+        },
+        {
+          "name": "auth",
+          "status": "completed",
+          "conclusion": "success"
+        },
+        {
+          "name": "auth",
+          "status": "completed",
+          "conclusion": "success"
+        }
+      ],
+      "statuses": [
+        {
+          "context": "Vercel – orbit-agents",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/orbit-agents/6qt5w1nNjg3xwM12acA4d8h3HjaE"
+        },
+        {
+          "context": "Vercel – orbitagents",
+          "state": "failure",
+          "target_url": "https://vercel.com/jaden-fix-s-projects/orbitagents/8x32i6DwLh6PLQzR5Ln5SLSE7jdJ"
+        }
+      ],
+      "reason": "Lint/infrastructure/deployment checks fail; GitGuardian check also red on #3."
+    }
+  ],
+  "coordination": "Six review agents and two external peer sessions; sole merger acknowledgment received; refreshed heads required.",
+  "media_gate": "Record only final integrated default branch, exact tested SHA, verified workflow, and actual frontend where present. No GIF/video creation claimed; no video skill or media owner identified.",
+  "hosting_blocker": "matteoshafer.github.io entrypoint/phone repair merged. Actual Pages deploy returned404 because Pages hosting is not enabled/configured; no hosted success claim."
+}

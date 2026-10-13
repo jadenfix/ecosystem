@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 from ecosystem_toml import load as load_toml
+from ecosystem_paths import repo_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -79,7 +80,7 @@ def git_remote(path: Path) -> str | None:
 
 
 def check_repo(name: str, spec: dict, policy: dict, errors: list[str]) -> None:
-    path = ROOT / spec["path"]
+    path = repo_path(ROOT, spec["path"])
     if not path.is_dir():
         fail(errors, name, f"missing repo path {path}")
         return

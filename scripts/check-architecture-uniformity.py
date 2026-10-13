@@ -7,6 +7,7 @@ import re
 from pathlib import Path
 
 from ecosystem_toml import load as load_toml
+from ecosystem_paths import repo_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -53,7 +54,7 @@ def main() -> int:
 
     errors: list[str] = []
     for name, spec in data["repos"].items():
-        repo = ROOT / spec["path"]
+        repo = repo_path(ROOT, spec["path"])
         agent_doc = read(repo / "AGENTS.md") + "\n" + read(repo / "CLAUDE.md")
         cargo = read(repo / "Cargo.toml")
 

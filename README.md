@@ -24,6 +24,11 @@ its own PR.
 
 ## What This Owns
 
+The [public repository readiness audit](docs/public-repo-readiness-2026-10-12.md)
+tracks all 83 public non-fork projects, verified functional PRs, exact tested
+source trees, and outstanding recording gates. It distinguishes a working
+scoped workflow from an unverified complete product.
+
 - `ecosystem.toml`: repo registry, target toolchains, storage policy, expected
   binaries, and verification commands.
 - `AGENTS.md`: migration rules for coding agents.
@@ -60,6 +65,10 @@ After the migration queues are complete, every repo should agree on:
 
 ## Commands
 
+Check out the product repositories next to `ecosystem`. For CI or isolated
+worktrees, set `ECOSYSTEM_REPOS_ROOT` to the directory containing those product
+checkouts. The control-plane manifest is always read from this repository.
+
 ```sh
 scripts/ecosystem-pipeline.sh report
 scripts/ecosystem-pipeline.sh gate
@@ -74,3 +83,8 @@ scripts/ecosystem-smoke.sh
 `check-ecosystem-uniformity.py` is expected to fail until the repo-local
 migration tasks are completed. That failure is useful: it is the remaining work
 list made executable.
+
+The smoke gate executes scenario checks; listing their names is not verification.
+It currently fails because live cross-product scenarios are not wired. The same
+pipeline correction is tracked separately in [PR #4](https://github.com/jadenfix/ecosystem/pull/4).
+A green metadata check must not be used to authorize a live product demo.

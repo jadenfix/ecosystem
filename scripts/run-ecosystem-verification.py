@@ -9,6 +9,7 @@ import sys
 from pathlib import Path
 
 from ecosystem_toml import load as load_toml
+from ecosystem_paths import repo_path
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -46,7 +47,12 @@ def main() -> int:
     for name, spec in data["repos"].items():
         if name not in selected:
             continue
-        repo = ROOT / spec["path"]
+        repo = repo_path(ROOT, spec["path"])
+        if not repo.is_dir():
+            failures.append(f"{name}: missing checkout {repo}")
+            if not args.continue_on_error:
+                break
+            continue
         for command in spec.get("verify", []):
             print(f"==> {name}: {command}", flush=True)
             result = subprocess.run(command, cwd=repo, shell=True)
