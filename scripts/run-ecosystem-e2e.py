@@ -50,6 +50,9 @@ def run_scenarios(data: dict, selected: set[str], *, timeout: float,
         item["head"] = sha.stdout.strip()
         dirty = subprocess.run(["git", "status", "--porcelain"], cwd=checkout,
                                capture_output=True, text=True)
+        if dirty.returncode:
+            item["reason"] = "Cannot read owner worktree status before scenario"
+            continue
         item["worktree_dirty"] = bool(dirty.stdout.strip())
         with tempfile.TemporaryFile() as log:
             try:
@@ -73,10 +76,16 @@ def run_scenarios(data: dict, selected: set[str], *, timeout: float,
             item["log_tail"] = log.read().decode("utf-8", errors="replace")
         after = subprocess.run(["git", "rev-parse", "HEAD"], cwd=checkout,
                                capture_output=True, text=True)
-        if after.stdout.strip() != item["head"]:
+        if after.returncode or after.stdout.strip() != item["head"]:
             item.update(status="failed", reason="Owner HEAD changed during scenario")
-        if item["worktree_dirty"] and item["status"] == "passed":
-            item.update(status="failed", reason="Owner worktree is dirty; output cannot attest its HEAD")
+        dirty_after = subprocess.run(["git", "status", "--porcelain"], cwd=checkout,
+                                     capture_output=True, text=True)
+        if dirty_after.returncode:
+            item.update(status="failed", reason="Cannot read owner worktree status after scenario")
+        else:
+            item["worktree_dirty_after"] = bool(dirty_after.stdout.strip())
+            if (item["worktree_dirty"] or item["worktree_dirty_after"]) and item["status"] == "passed":
+                item.update(status="failed", reason="Owner worktree is dirty; output cannot attest its HEAD")
         print(f"{name}: {item['status']}", flush=True)
     complete = bool(results) and all(item["status"] == "passed" for item in results)
     receipt.parent.mkdir(parents=True, exist_ok=True)

@@ -73,3 +73,57 @@ class ExecutionTests(unittest.TestCase):
         result, receipt = self.execute([sys.executable, "-c", "pass"])
         self.assertEqual(result, 1)
         self.assertIn("dirty", receipt["results"][0]["reason"])
+
+    def test_source_changed_during_scenario_cannot_attest_head(self):
+        source = self.owner / "source.txt"
+        source.write_text("committed source")
+        subprocess.run(["git", "add", "source.txt"], cwd=self.owner, check=True)
+        subprocess.run(["git", "-c", "user.name=Test", "-c", "user.email=test@example.invalid",
+                        "commit", "-qm", "source fixture"], cwd=self.owner, check=True)
+        result, receipt = self.execute([sys.executable, "-c",
+                                        "from pathlib import Path; Path('source.txt').write_text('changed')"])
+        item = receipt["results"][0]
+        self.assertEqual(result, 1)
+        self.assertFalse(receipt["complete"])
+        self.assertFalse(item["worktree_dirty"])
+        self.assertTrue(item["worktree_dirty_after"])
+        self.assertEqual(item["returncode"], 0)
+        self.assertIn("dirty", item["reason"])
+
+    def test_failed_initial_status_blocks_scenario(self):
+        real_run = subprocess.run
+
+        def failed_status(command, **kwargs):
+            if command[:2] == ["git", "status"]:
+                return subprocess.CompletedProcess(command, 128, "", "injected status failure")
+            return real_run(command, **kwargs)
+
+        with patch.object(runner.subprocess, "run", side_effect=failed_status):
+            result, receipt = self.execute([sys.executable, "-c", "print('must not execute')"])
+        item = receipt["results"][0]
+        self.assertEqual(result, 1)
+        self.assertFalse(receipt["complete"])
+        self.assertEqual(item["status"], "blocked")
+        self.assertNotIn("returncode", item)
+        self.assertIn("status before", item["reason"])
+
+    def test_failed_final_status_cannot_attest_successful_scenario(self):
+        real_run = subprocess.run
+        status_calls = 0
+
+        def failed_final_status(command, **kwargs):
+            nonlocal status_calls
+            if command[:2] == ["git", "status"]:
+                status_calls += 1
+                if status_calls == 2:
+                    return subprocess.CompletedProcess(command, 128, "", "injected status failure")
+            return real_run(command, **kwargs)
+
+        with patch.object(runner.subprocess, "run", side_effect=failed_final_status):
+            result, receipt = self.execute([sys.executable, "-c", "print('executed')"])
+        item = receipt["results"][0]
+        self.assertEqual(result, 1)
+        self.assertFalse(receipt["complete"])
+        self.assertEqual(item["status"], "failed")
+        self.assertEqual(item["returncode"], 0)
+        self.assertIn("status after", item["reason"])
