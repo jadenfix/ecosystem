@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T06:05:00.000Z",
+  "generated_at": "2026-10-13T07:01:40.000Z",
   "scope": "all public non-fork jadenfix repositories; preserve archived status",
   "inventory_count": 83,
   "counts": {
@@ -906,11 +906,16 @@
       "default_branch": "main",
       "archived": false,
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
+      "media_notes": "No current-main workflow media. An actual offline-fixture workflow GIF/MP4 is staged in PR2.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-source offline CLI workflow verified against the checked-in fictional HTML fixture; live Wikipedia remains unverified",
+      "e2e_commands": [
+        "python -m unittest discover -s tests -v:3 passed",
+        "python demo/verify_demo.py:pass",
+        "Full GIF/MP4 decode and frame inspection:pass",
+        "Hosted push/PR38357018792/38357032882:success"
+      ],
+      "recorded_source_sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
@@ -918,6 +923,32 @@
         "inspected_count": 0,
         "scope": "Actions only; not deployment or E2E proof",
         "latest_by_workflow": []
+      },
+      "active_work": {
+        "owner": "session3eef/ws_demo; session100e79 sole merger",
+        "scope": "Source-pinned offline CLI fixture workflow, regression verification and actual-output GIF/MP4",
+        "integration": "PR2 open at 0cb4f411; independently reviewed; exact-head hosted gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/WS/pull/2",
+        "head_sha": "0cb4f411bb26471233e60b71ba69b397abd9ae6c",
+        "recorded_source_sha": "c57a3ad0dc8b111050f524a40cb7f02e93238f47",
+        "media_paths": [
+          "demo/ws-offline-demo.gif",
+          "demo/ws-offline-demo.mp4"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual CLI output from a checked-in fictional offline fixture; no live Wikipedia, current-statistics or performance claim",
+        "verification": [
+          "Parent reran3 tests and the demo verifier",
+          "All10 remote blobs match reviewed local files",
+          "GIF/MP4 fully decode and frames inspected",
+          "Fractional rate1.38 and citation/grouping transformations verified",
+          "Hosted push/PR and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/WS/pull/2#issuecomment-6139735583"
       }
     },
     {
@@ -2179,11 +2210,17 @@
       "default_branch": "main",
       "archived": false,
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
+      "media_notes": "No current-main workflow media. An actual historical-CSV backtest GIF/MP4 is staged in PR2.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-source C++ historical-CSV backtest verified with a 100-row-per-file cap; no live trading, profit or latency claim",
+      "e2e_commands": [
+        "make clean all test:pass",
+        "make smoke and ./build/trading_system --max-rows=100:pass",
+        "Strict-warning and UBSan regression/full bounded smoke:pass",
+        "make demo-verify and full GIF/MP4 decode:pass",
+        "Hosted push/PR38357985570/38357991568:success"
+      ],
+      "recorded_source_sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
@@ -2199,6 +2236,33 @@
             "url": "https://github.com/jadenfix/financial_cpp_copy/actions/runs/38328633209"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/financial_cpp_demo; session100e79 sole merger",
+        "scope": "Source-pinned real C++ build/regression/bounded backtest and actual-output GIF/MP4",
+        "integration": "PR2 open at e23d074c; independently reviewed; exact-head hosted gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/financial_cpp_copy/pull/2",
+        "head_sha": "e23d074cfa24ba0d72e66af0c6e6c7e3f22cea6e",
+        "recorded_source_sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
+        "media_paths": [
+          "demo/financial_cpp_copy_demo.gif",
+          "demo/financial_cpp_copy_demo.mp4",
+          "demo/preview.png"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual bundled historical-CSV backtest with a 100-row-per-file cap; no live trading, profit or latency guarantee",
+        "verification": [
+          "Parent reran native regression and full bounded executable smoke",
+          "44 runtime inputs match the recorded source manifest",
+          "All10 remote blobs match reviewed local files",
+          "GIF/MP4 fully decode and all six frames were inspected",
+          "Hosted push/PR and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/financial_cpp_copy/pull/2#issuecomment-6139877908"
       }
     },
     {
@@ -2293,11 +2357,17 @@
       "default_branch": "main",
       "archived": false,
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
+      "media_notes": "No current-main workflow media. An actual tiny CPU fixture CTS/GRPO workflow GIF/MP4 is staged in PR3.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-source two-step CPU fixture CTS/GRPO flow verified with archived replay plus fresh sampled rollout; no policy-quality, benchmark, scale, live-provider or paper-result claim",
+      "e2e_commands": [
+        "ruff format/check and pyright:pass; pyright0 errors",
+        "pytest:42 passed",
+        "Exact two-step CPU fixture:post-update loss5.6910386; parameter delta L1 14.0838",
+        "Demo verifier and full GIF/MP4 decode:pass",
+        "Hosted run38359418863 and GitGuardian:success"
+      ],
+      "recorded_source_sha": "fddf9acfc3f3a16e338a3dd5b7e61c34cb1a34e6",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "133b94fa5999fc2e408abc7ecf077d289329bd44",
@@ -2313,6 +2383,44 @@
             "url": "https://github.com/jadenfix/CreditAssignment-LongHorizon/actions/runs/38329761033"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/credit_longhorizon_fix; session100e79 sole merger",
+        "scope": "Fixture-only local CTS/GRPO training path, regression coverage and actual-workflow GIF/MP4",
+        "integration": "PR3 open at b8feb001; independently reviewed; exact-head hosted gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/CreditAssignment-LongHorizon/pull/3",
+        "head_sha": "b8feb0012ada446e36dcb8401ed97d6f5a863ff0",
+        "head_tree_sha": "3084f5e2156825301d4c5f0131a52b7ac22e1b00",
+        "recorded_source_sha": "fddf9acfc3f3a16e338a3dd5b7e61c34cb1a34e6",
+        "recorded_source_tree_sha": "49d56d14413d3f6d5c539ef997a4766556c8ba3a",
+        "media_paths": [
+          "docs/demo/cts-fixture.gif",
+          "docs/demo/cts-fixture.mp4"
+        ],
+        "media_sha256": {
+          "docs/demo/cts-fixture.gif": "e5c540b12b32914c49b4b3bdc2487c27b837eac5d8230e64a5b292d3af1fe192",
+          "docs/demo/cts-fixture.mp4": "ac7c3aa11505de339b7a17a35902e418354274bfb69af38df3f396678b8db82d"
+        },
+        "media_git_blobs": {
+          "docs/demo/cts-fixture.gif": "19c4086047f806e9e53f41f228da2acd84ff77a1",
+          "docs/demo/cts-fixture.mp4": "3241d7a66233adbdb166c5cba0e2b3e467889cb9"
+        },
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual tiny random CPU fixture using archived replay plus a fresh sampled rollout; no policy-quality, benchmark, scale, live-provider or paper-result claim",
+        "verification": [
+          "Parent reran targeted fixture RL and main-entry integration tests",
+          "Full suite42 tests passed with ruff and pyright0 errors",
+          "Corrected ott-jax0.6 return contract covered without weakening the gate",
+          "Exact two-step CPU receipt reproduced finite loss and nonzero parameter delta",
+          "All remote blobs match reviewed local files; GIF/MP4 fully decode and frames inspected",
+          "Hosted run38359418863 and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "builder_receipt": "https://github.com/jadenfix/CreditAssignment-LongHorizon/pull/3#issuecomment-6140126961",
+        "receipt": "https://github.com/jadenfix/CreditAssignment-LongHorizon/pull/3#issuecomment-6140159813"
       }
     },
     {
@@ -2537,8 +2645,8 @@
       }
     }
   ],
-  "followup_at": "2026-10-13T04:53:32.955Z",
-  "staged_demos": 4,
+  "followup_at": "2026-10-13T07:01:40.000Z",
+  "staged_demos": 10,
   "ci_scan": {
     "with_runs": 44,
     "without_runs": 39,
