@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T05:20:00.000Z",
+  "generated_at": "2026-10-13T06:05:00.000Z",
   "scope": "all public non-fork jadenfix repositories; preserve archived status",
   "inventory_count": 83,
   "counts": {
@@ -1437,9 +1437,14 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-head deterministic matching flow verified; positive/session-unique IDs, FIFO fills and quantity reconciliation; no live exchange/latency/performance claim",
+      "e2e_commands": [
+        "make clean all test verify-demo:pass",
+        "Full UBSan rebuild and all tests:pass",
+        "./build/fundamentals --seed8257:byte-identical across standard/UBSan",
+        "Hosted push/PR38352498130/38352483241:Ubuntu+macOS success"
+      ],
+      "recorded_source_sha": "beac9f2b9764522d3bc0445256f06c31247d32a1",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "359df6ef3f52d32a622d131a51725401673e4682",
@@ -1455,6 +1460,33 @@
             "url": "https://github.com/jadenfix/cpp_fundamentals/actions/runs/38328628561"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/cpp_order_demo; session100e79 sole merger",
+        "scope": "Order ID integrity, deterministic seeded executable, regression/UBSan coverage, actual output GIF/MP4",
+        "integration": "PR4 open at beac9f2b; independently reviewed; all exact-head checks green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/cpp_fundamentals/pull/4",
+        "head_sha": "beac9f2b9764522d3bc0445256f06c31247d32a1",
+        "recorded_source_sha": "beac9f2b9764522d3bc0445256f06c31247d32a1",
+        "media_paths": [
+          "demo/matching-engine.gif",
+          "demo/matching-engine.mp4",
+          "demo/poster.png"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual deterministic local matching-engine fixture: FIFO fills, ID rejections and conservation; no live exchange",
+        "verification": [
+          "Parent reran standard and full UBSan suites",
+          "Seeded output matched committed receipt byte-for-byte",
+          "All15 remote blobs match reviewed local files",
+          "GIF/MP4 fully decode and frames inspected",
+          "Hosted Ubuntu/macOS push+PR and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/cpp_fundamentals/pull/4#issuecomment-6139090980"
       }
     },
     {
@@ -1934,9 +1966,15 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-head production-preview desktop/mobile journey verified: strict route/day deep links, search, evidence, checklist persistence and GPX/GeoJSON export",
+      "e2e_commands": [
+        "node --import tsx --test src/lib/*.test.ts:11passed",
+        "validate-data:7routes/33routefeatures/425trailfeatures",
+        "npm run build:pass",
+        "CHROMIUM_PATH=/tmp/chromium npm run browser:e2e:desktop+mobile pass",
+        "Hosted Validate atlas38353621611 and GitGuardian:success"
+      ],
+      "recorded_source_sha": "bcd92c2aeada8814f7fe8471fedccd1963d44f43",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "2c0dbfd79f4f0a2ef94a23acb5a0a21d566f68b8",
@@ -1952,6 +1990,33 @@
             "url": "https://github.com/jadenfix/backpacking-eastern-sierra/actions/runs/38217772896"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/media_candidate_scan; session100e79 sole merger",
+        "scope": "Fix route/day deep-link race, maintain desktop/mobile browser gate, actual production-atlas GIF/MP4",
+        "integration": "PR1 open at e27b6f7d; independently reviewed; exact-head gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/backpacking-eastern-sierra/pull/1",
+        "head_sha": "e27b6f7d71ddc143e2ed0b668d796c3c5d0acc47",
+        "recorded_source_sha": "bcd92c2aeada8814f7fe8471fedccd1963d44f43",
+        "media_paths": [
+          "docs/demo/atlas-demo.gif",
+          "docs/demo/atlas-demo.mp4",
+          "docs/demo/poster.png"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual local production browser with versioned historical/static data; no reservation, payment, issued permit or current field-condition claim",
+        "verification": [
+          "Parent reran11 tests, data validation, production build and desktop/mobile E2E",
+          "All39 pinned application inputs match recorded source",
+          "All18 remote blobs match reviewed local files",
+          "GIF/MP4 fully decode and frames inspected",
+          "Hosted Validate atlas38353621611 and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/backpacking-eastern-sierra/pull/1#issuecomment-6139258605"
       }
     },
     {
@@ -2401,9 +2466,14 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-head real-process HTTP reward flow verified; deterministic normalized edit similarity with fail-closed validation and metrics; no model-quality/business claim",
+      "e2e_commands": [
+        "python -m pytest --rootdir=. apps/gateway/tests apps/collector/tests apps/reward/tests -q:19passed",
+        "Real child-process HTTP health/unchanged/rewritten/malformed/oversized/metrics:pass",
+        "python demo/verify_artifacts.py and full media decode:pass",
+        "Hosted push/PR38352998215/38353029267:success"
+      ],
+      "recorded_source_sha": "e2dcd558a9121a27b9c07ac96dba04ba0025057e",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "1257d7e041e67284f0615e9b56170bbaa079e5de",
@@ -2419,6 +2489,31 @@
             "url": "https://github.com/jadenfix/rl/actions/runs/38329750910"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/rl_reward_flow; session100e79 sole merger",
+        "scope": "Replace reward placeholder with deterministic API, strict validation, Prometheus outcomes, process E2E and actual-source GIF/MP4",
+        "integration": "PR3 open at 9369748c; independently reviewed; exact-head gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/rl/pull/3",
+        "head_sha": "9369748c534b5d4560999be84c13c05836884f07",
+        "recorded_source_sha": "e2dcd558a9121a27b9c07ac96dba04ba0025057e",
+        "media_paths": [
+          "demo/reward-edit-similarity.gif",
+          "demo/reward-edit-similarity.mp4"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual local HTTP process and deterministic fixture text; no model-quality, satisfaction, business-impact or live-provider claim",
+        "verification": [
+          "Parent reran19 combined tests",
+          "All15 remote blobs match reviewed local files",
+          "GIF/MP4 fully decode and frames inspected",
+          "Hosted push/PR service checks and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/rl/pull/3#issuecomment-6139164257"
       }
     },
     {
