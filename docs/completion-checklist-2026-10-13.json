@@ -1588,8 +1588,12 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
+      "e2e_status": "Fixture frontend flow independently verified desktop/mobile; no live blockchain/payment/provider integration",
+      "e2e_commands": [
+        "npm ci/lint/test/build:15 unit tests pass",
+        "Desktop/Pixel5 real browser workflow16 cases pass; parent independent rerun16 pass",
+        "Corrected-head hosted38348374588/38348368209:checksum,linter,15unit,build,16browser all pass"
+      ],
       "recorded_source_sha": null,
       "demo_verified": false,
       "pinned_main_ci": {
@@ -1608,9 +1612,32 @@
         ]
       },
       "active_work": {
-        "owner": "session3eef/media_inventory",
-        "scope": "16 actual desktop/mobile browser checks passed at pinned main; true frontend GIF/MP4 capture underway",
-        "integration": "new additive PR in preparation"
+        "owner": "session3eef/media_inventory; session100e79 sole merger",
+        "scope": "Completed source-guarded actual frontend GIF/MP4 with corrected uploads and CI artifact checksums",
+        "integration": "PR4 ready at corrected55f91af0; main verification pending"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/8257-tools/pull/4",
+        "head_sha": "55f91af0ebec707f110cfc8bec763c532a6be2d5",
+        "recorded_source_sha": "bf87991627645ed7ad6dbc35869ba0238777343d",
+        "inspected": true,
+        "published_bytes_verified": true,
+        "media_paths": [
+          "docs/demo/gateway.gif",
+          "docs/demo/gateway.mp4"
+        ],
+        "scope": "39-second sampled actual frontend walkthrough, fixture wallets/simulated calls/sample metrics",
+        "integration_status": "unmerged; corrected artifact integrity and hosted gates pass; sole merger must integrate and verify main",
+        "receipt": "https://github.com/jadenfix/8257-tools/pull/4#issuecomment-6138507564",
+        "rejected_head": "d12b028d201bf1c9def4504352b0b648851a0bae",
+        "rejection_reason": "Corrupted GIF/MP4 transport caught by independent blob hashes and failed decode; corrected at new head",
+        "verification": [
+          "Parent independently reran16 desktop/mobile browser flows:pass",
+          "All11 corrected published Git blobs match inspected canonical files",
+          "Both media fully decode; capture.json SHA256 checks pass",
+          "New checksum CI gate rejects original corrupt upload",
+          "Corrected-head hosted38348374588/38348368209:success"
+        ]
       }
     },
     {
@@ -1780,8 +1807,12 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
+      "e2e_status": "Canonical C numerical-assurance workflow verified; synthetic periodic benchmark, no propulsion/device-validation claim",
+      "e2e_commands": [
+        "make -C assurance -j2 test:20 native programs passed",
+        "Separate UBSan build:20 programs passed, exit0",
+        "Hosted strict/sanitizers/replay/analyzers/native38347540162/38347537149 passed"
+      ],
       "recorded_source_sha": null,
       "demo_verified": false,
       "pinned_main_ci": {
@@ -1821,9 +1852,30 @@
         ]
       },
       "active_work": {
-        "owner": "existing PR4 implementer; session3eef independent review and separate workflow repair",
-        "source_head": "04bf9073bfc9174408eb450bb9ffacbd34b9578a",
-        "scope": "PR4 exact-head20 native binaries and UBSan pass, but PR4 conflicts with newer main solver; independently validating canonical main and repairing invalid workflow YAML in a separate main-based PR. No straight approval or stale demo."
+        "owner": "session3eef/minigpt_demo independent current-main verification and additive demo; existing PR4 remains owner-controlled",
+        "source_head": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+        "scope": "Completed full canonical-main strict and UBSan20-program verification plus source-guarded benchmark GIF/MP4. Current-main YAML valid and existing conditioning resolves old-parent failure; no duplicate solver/workflow repair. PR4 conflicts with main and remains owner-controlled.",
+        "held_pr": "https://github.com/jadenfix/space-simulation-engine/pull/4"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/space-simulation-engine/pull/5",
+        "head_sha": "ca89e5361195e745f66403a80667fa17549208a8",
+        "recorded_source_sha": "52b996bd5d9132d3a32c9c62bc8bb2b2bc7a453b",
+        "media_paths": [
+          "demo/plasma-convergence.gif",
+          "demo/plasma-convergence.mp4"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual six-case plasma benchmark convergence and conservation outputs; synthetic initial conditions",
+        "verification": [
+          "All8 published Git blobs match independently reviewed bytes",
+          "Source drift guard rejects mutation and was restored",
+          "Parent recomputed plotted errors from actual native JSON; six cases pass",
+          "All applicable push/PR workflows success"
+        ],
+        "integration_status": "unmerged; sole merger required; stale solver PR4 conflicts with fixes already on main",
+        "receipt": "https://github.com/jadenfix/space-simulation-engine/pull/5#issuecomment-6138408422"
       }
     },
     {
@@ -2370,8 +2422,8 @@
       }
     }
   ],
-  "followup_at": "2026-10-13T04:30:38.249Z",
-  "staged_demos": 2,
+  "followup_at": "2026-10-13T04:53:32.955Z",
+  "staged_demos": 4,
   "ci_scan": {
     "with_runs": 44,
     "without_runs": 39,
