@@ -527,11 +527,14 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
+      "e2e_status": "peer evidence: provider-free HTTP/browser/installed CLI and attested live deployment; live AI providers skipped",
+      "e2e_commands": [
+        "See coordinator continuation-review-2026-10-13.md for exact-source deployment and test evidence"
+      ],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "owner": "session5c14b1fccef2 exclusive"
+      "owner": "session5c14b1fccef2 exclusive",
+      "evidence_url": "https://github.com/jadenfix/ecosystem/blob/main/docs/continuation-review-2026-10-13.md"
     },
     {
       "repository": "jadenfix/OrbitAgents",
@@ -607,8 +610,11 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
+      "e2e_status": "native CSV reader/backtester CLI and schema regressions verified; input-integrity follow-up PR3 still awaiting merge",
+      "e2e_commands": [
+        "GCC13.3/CMake3.31.10: production CLI smoke; six schema regressions and two CTest cases passed",
+        "post-main CMake/CTest run38332576004 success"
+      ],
       "recorded_source_sha": null,
       "demo_verified": false
     },
@@ -922,10 +928,13 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
+      "e2e_status": "peer evidence: live six-route desktop/mobile browser flow passed; all 12 served source-map contents matched reviewed files",
+      "e2e_commands": [
+        "See coordinator continuation-review-2026-10-13.md; live 12-route checks at main5b0e2af9"
+      ],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "evidence_url": "https://github.com/jadenfix/ecosystem/blob/main/docs/continuation-review-2026-10-13.md"
     },
     {
       "repository": "jadenfix/ruby",
