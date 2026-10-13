@@ -142,7 +142,7 @@ binaries = ["beater-memory"]
 contracts = ["memory-record", "retrieval"]
 
 [capabilities.settlement_chain]
-registration_blocker = "No transaction-to-receipt-to-indexer workflow is available; existing multivalidator CI is narrower. Do not substitute SDK mocks or unit tests."
+e2e_command = ["python3", "scripts/settlement-e2e.py", "--receipt", "{control_plane}/artifacts/settlement-owner.json"]
 owner = "arrha"
 product = "Arrha"
 binaries = ["aether-node", "aetherctl", "aether-indexer"]
