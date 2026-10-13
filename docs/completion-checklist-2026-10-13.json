@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-13T07:01:40.000Z",
+  "generated_at": "2026-10-13T08:04:39.000Z",
   "scope": "all public non-fork jadenfix repositories; preserve archived status",
   "inventory_count": 83,
   "counts": {
@@ -780,12 +780,19 @@
       "source_sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
       "default_branch": "main",
       "archived": false,
-      "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
+      "media_status": "no_current_main_workflow_media",
+      "media_notes": "No current-main workflow media. An actual production-build portfolio browser GIF/MP4 is staged in PR4.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-source production-build legacy-route recovery, search, filtering, and desktop/mobile navigation verified; linked repositories and external deployments unverified",
+      "e2e_commands": [
+        "npm run lint:pass",
+        "npm test:3 passed",
+        "npm run build:pass",
+        "PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH=/tmp/chromium npm run test:e2e:4 passed desktop/mobile",
+        "node scripts/verify-demo.mjs:28 runtime inputs and3 fully decoded artifacts verified",
+        "Hosted Quality38365254731 and GitGuardian:success"
+      ],
+      "recorded_source_sha": "06db8c2332966edbcdac96e5cb2d0b9a698073d5",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "7887330514fc1fddd223f4206217ac9074dd3df9",
@@ -801,6 +808,33 @@
             "url": "https://github.com/jadenfix/jadenfix.github.io/actions/runs/38329754869"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/portfolio_deeplink_fix; session100e79 sole merger",
+        "scope": "Legacy deep-link recovery, production desktop/mobile E2E, and actual browser GIF/MP4",
+        "integration": "PR4 open at 4de46898; independently reviewed; exact-head hosted gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/jadenfix.github.io/pull/4",
+        "head_sha": "4de46898cd7a1de423293a7c876f8ae956143b0e",
+        "recorded_source_sha": "06db8c2332966edbcdac96e5cb2d0b9a698073d5",
+        "media_paths": [
+          "demo/portfolio-demo.gif",
+          "demo/portfolio-demo.mp4",
+          "demo/portfolio-demo-poster.png"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual production-build browser capture using checked-in portfolio data; linked repositories and external deployments were not exercised",
+        "verification": [
+          "Parent and root independently reran unit/source-media verification",
+          "Parent and root independently ran4 desktop/mobile production-browser cases",
+          "All19 remote changed files match reviewed local bytes",
+          "GIF/MP4 fully decode and five workflow frames were inspected",
+          "Hosted Quality and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/jadenfix.github.io/pull/4#issuecomment-6140971042"
       }
     },
     {
@@ -956,12 +990,19 @@
       "source_sha": "8a2331f03203b01c615d8e13952cd44cfb28ae96",
       "default_branch": "main",
       "archived": false,
-      "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
+      "media_status": "no_current_main_workflow_media",
+      "media_notes": "No current-main workflow media. An actual deterministic simulated-accounting GIF/MP4 is staged in PR2.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-source signed-delta accounting, strict/UBSan transitions, persisted Python/C++ model bridge, and 68-configuration bounded backtest verified; no live trading or performance claim",
+      "e2e_commands": [
+        "python scripts/accounting-e2e.py: strict Werror and separately compiled UBSan transitions passed",
+        "python scripts/bridge-e2e.py: persisted BayesianRidge round trips, concurrent isolation and missing-model rejection passed",
+        "python scripts/backtester-e2e.py: exactly68 strategy/dataset runs on11 generated64-row OHLCV fixtures passed",
+        "python scripts/verify-accounting-demo.py: source/blob provenance, replay receipt, artifact hashes and full GIF/MP4 decode passed",
+        "fresh exact-head checkout remained clean after tests",
+        "Hosted Ubuntu/macOS38366346396 and GitGuardian:success"
+      ],
+      "recorded_source_sha": "d4b0acc6cde5475f532c76a7f310e9f2a357d7cb",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "8a2331f03203b01c615d8e13952cd44cfb28ae96",
@@ -984,6 +1025,33 @@
             "url": "https://github.com/jadenfix/financial_cpp/actions/runs/38337537882"
           }
         ]
+      },
+      "active_work": {
+        "owner": "session3eef/financial_cpp_fix; session100e79 sole merger",
+        "scope": "Signed-delta position accounting, strict/UBSan and bounded E2E coverage, clean repository hygiene, and actual simulated-accounting GIF/MP4",
+        "integration": "PR2 open at 880bbba9; independently reviewed; exact-head Ubuntu/macOS hosted gates and clean-tree check green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/financial_cpp/pull/2",
+        "head_sha": "880bbba9b3c6b3d6253851331855fec61dc1a14b",
+        "recorded_source_sha": "d4b0acc6cde5475f532c76a7f310e9f2a357d7cb",
+        "media_paths": [
+          "docs/demo/accounting-workflow.gif",
+          "docs/demo/accounting-workflow.mp4",
+          "docs/demo/accounting-poster.png"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual deterministic simulated fixture-fill accounting; no live brokerage/exchange, profitability, execution-quality, latency, research-performance or production-readiness claim",
+        "verification": [
+          "Parent and root independently reran strict/UBSan accounting transitions, real model bridge and media verifier",
+          "Exact68 strategy/dataset bounded executable smoke passed locally and on final hosted head",
+          "Final exact-head checkout remained clean after tests; tracked bytecode removed and demo receipt correctly excluded from broad dataset LFS rule",
+          "GIF/MP4 fully decode and opening, partial-close and reversal frames were inspected",
+          "Hosted Ubuntu/macOS and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/financial_cpp/pull/2#issuecomment-6141118584"
       }
     },
     {
@@ -2210,15 +2278,16 @@
       "default_branch": "main",
       "archived": false,
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No current-main workflow media. An actual historical-CSV backtest GIF/MP4 is staged in PR2.",
+      "media_notes": "No current-main workflow media. PR2 contains an inspected historical-CSV backtest GIF/MP4, but integration is held because the shared Portfolio implementation corrupts partial-close cost basis and realized P&L.",
       "media_paths": [],
-      "e2e_status": "Exact-source C++ historical-CSV backtest verified with a 100-row-per-file cap; no live trading, profit or latency claim",
+      "e2e_status": "Bounded historical-CSV execution was observed, but independent accounting reproduction found partial-close cost-basis and realized-P&L corruption; not functionally complete",
       "e2e_commands": [
         "make clean all test:pass",
         "make smoke and ./build/trading_system --max-rows=100:pass",
         "Strict-warning and UBSan regression/full bounded smoke:pass",
         "make demo-verify and full GIF/MP4 decode:pass",
-        "Hosted push/PR38357985570/38357991568:success"
+        "Hosted push/PR38357985570/38357991568:success",
+        "Independent accounting reproduction: buy10@100 then sell4@110 leaves quantity6 but incorrectly reports average110 and realized0; expected average100 and realized40"
       ],
       "recorded_source_sha": "162e50d9f0a95e6cfd8684d1dfbf4f6ae5764e09",
       "demo_verified": false,
@@ -2240,7 +2309,7 @@
       "active_work": {
         "owner": "session3eef/financial_cpp_demo; session100e79 sole merger",
         "scope": "Source-pinned real C++ build/regression/bounded backtest and actual-output GIF/MP4",
-        "integration": "PR2 open at e23d074c; independently reviewed; exact-head hosted gates green"
+        "integration": "PR2 open at e23d074c; HOLD despite green hosted gates because shared portfolio accounting is defective; source repair and media recapture/reverification required"
       },
       "staged_demo": {
         "pr": "https://github.com/jadenfix/financial_cpp_copy/pull/2",
@@ -2259,9 +2328,10 @@
           "44 runtime inputs match the recorded source manifest",
           "All10 remote blobs match reviewed local files",
           "GIF/MP4 fully decode and all six frames were inspected",
-          "Hosted push/PR and GitGuardian success"
+          "Hosted push/PR and GitGuardian success",
+          "Subsequent independent review reproduced incorrect partial-close basis and realized P&L in the captured source"
         ],
-        "integration_status": "unmerged; sole merger required",
+        "integration_status": "held; do not merge until accounting repair, regression coverage, recapture and exact-head verification",
         "receipt": "https://github.com/jadenfix/financial_cpp_copy/pull/2#issuecomment-6139877908"
       }
     },
@@ -2448,12 +2518,18 @@
       "source_sha": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
       "default_branch": "main",
       "archived": false,
-      "media_status": "no_project_gif_video_candidate_or_readme_reference",
-      "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
+      "media_status": "no_current_main_workflow_media",
+      "media_notes": "No current-main workflow media. A provider-free historical-results integrity GIF/MP4 is staged in PR3.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
-      "recorded_source_sha": null,
+      "e2e_status": "Exact-source provider-free results analysis verified: 34 execution successes, 17 classified, 17 abstained, 0 failed, 50% observed coverage; no precision/accuracy/provider-quality claim",
+      "e2e_commands": [
+        "python -m pytest -q:12 passed",
+        "python cli/analyze_results.py: exact checked-in JSON reproduced",
+        "missing-provider-credential pipeline: exit1 before provider work",
+        "python scripts/verify_demo.py: source/blob provenance, 34-row receipt, artifact digests and full120-frame GIF/MP4 decode passed",
+        "Hosted push/PR38363053983/38363073788 and GitGuardian:success"
+      ],
+      "recorded_source_sha": "8e578f24cefa6f82a02f44f8937476a3032acda7",
       "demo_verified": false,
       "pinned_main_ci": {
         "checked_sha": "c55fbe78ec171063d898f447ce59f0e9b91dec59",
@@ -2461,6 +2537,33 @@
         "inspected_count": 0,
         "scope": "Actions only; not deployment or E2E proof",
         "latest_by_workflow": []
+      },
+      "active_work": {
+        "owner": "session3eef/categorization_fix; session100e79 sole merger",
+        "scope": "Truthful classification/abstention accounting, provider-free regression coverage, and actual CLI GIF/MP4",
+        "integration": "PR3 open at 6142d95d; independently reviewed; exact-head hosted gates green"
+      },
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/categorization_embeddings_sementic_search/pull/3",
+        "head_sha": "6142d95d2332cecfa49d05475d03a0cad2382b0d",
+        "recorded_source_sha": "8e578f24cefa6f82a02f44f8937476a3032acda7",
+        "media_paths": [
+          "demo/venue-result-integrity.gif",
+          "demo/venue-result-integrity.mp4",
+          "demo/venue-result-integrity-poster.png"
+        ],
+        "inspected": true,
+        "published_bytes_verified": true,
+        "scope": "Actual provider-free CLI replay of checked-in historical output; no ground-truth accuracy, precision, current provider-quality, production-performance or live-integration claim",
+        "verification": [
+          "Parent reran12 tests and exact checked-in CLI analysis",
+          "All15 remote blobs match reviewed local files",
+          "GIF/MP4 fully decode and all five stable screens were inspected",
+          "34 executions reconcile to17 classified plus17 abstained and zero failed",
+          "Hosted push/PR and GitGuardian success"
+        ],
+        "integration_status": "unmerged; sole merger required",
+        "receipt": "https://github.com/jadenfix/categorization_embeddings_sementic_search/pull/3#issuecomment-6140650403"
       }
     },
     {
@@ -2645,8 +2748,8 @@
       }
     }
   ],
-  "followup_at": "2026-10-13T07:01:40.000Z",
-  "staged_demos": 10,
+  "followup_at": "2026-10-13T08:04:39.000Z",
+  "staged_demos": 13,
   "ci_scan": {
     "with_runs": 44,
     "without_runs": 39,
