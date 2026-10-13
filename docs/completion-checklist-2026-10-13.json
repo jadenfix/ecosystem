@@ -275,7 +275,27 @@
       ],
       "recorded_source_sha": null,
       "demo_verified": false,
-      "owner": "session3eef / drl_demo for additive demo"
+      "owner": "session3eef / drl_demo for additive demo",
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/DRL4MM/pull/7",
+        "head_sha": "bc40d85d743aef10f188d4d2121d5751f38f51ba",
+        "recorded_source_sha": "81752dff261636ec96c940de82b22bfeff731fcb",
+        "inspected": true,
+        "published_bytes_verified": true,
+        "media_paths": [
+          "demos/replay-demo.gif",
+          "demos/replay-demo.mp4"
+        ],
+        "scope": "Actual replay CLI output visualized; synthetic software fixture; no live market or performance claim",
+        "verification": [
+          "Independent complete38-event36-fill CLI replay and both accounting identities",
+          "python -m pytest tests -q:70 passed",
+          "PR demo/replay hosted38345638925/38345638960:success",
+          "All10 published blobs match independently tested local bytes"
+        ],
+        "integration_status": "unmerged; sole merger100e79 must integrate and verify main",
+        "receipt": "https://github.com/jadenfix/DRL4MM/pull/7#issuecomment-6138122455"
+      }
     },
     {
       "repository": "jadenfix/advanced_econometrics_III",
@@ -1107,10 +1127,34 @@
       "media_status": "no_project_gif_video_candidate_or_readme_reference",
       "media_notes": "No project GIF/video file or recognized README video reference found at this pinned default-branch revision.",
       "media_paths": [],
-      "e2e_status": "evidence reconciliation pending",
-      "e2e_commands": [],
+      "e2e_status": "educational causal-attention kernel verified; full trained-model loader/layers/token sampling remain unfinished",
+      "e2e_commands": [
+        "make all test portable-demo",
+        "python3 demo/render.py: real C++ future-token mutation left128 earlier channels unchanged",
+        "Ubuntu/macOS portable validation38345843264/38345840334 passed"
+      ],
       "recorded_source_sha": null,
-      "demo_verified": false
+      "demo_verified": false,
+      "staged_demo": {
+        "pr": "https://github.com/jadenfix/MiniGPTEngine-CPP/pull/3",
+        "head_sha": "33af8efe42bfdb281c7cb6769feb34ae610049d4",
+        "recorded_source_sha": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+        "inspected": true,
+        "published_bytes_verified": true,
+        "media_paths": [
+          "demo/causal-attention.gif",
+          "demo/causal-attention.mp4"
+        ],
+        "scope": "Actual educational eight-head identityQKV kernel outputs, fixture data; no trained-model inference/quality/performance claim",
+        "verification": [
+          "Independent generator and actual C++ fixture passed",
+          "All8 published blobs match independently tested local bytes",
+          "Source drift rejection exercised and restored",
+          "First/middle/final explanatory stages inspected"
+        ],
+        "integration_status": "unmerged; kernel demo only, complete-model E2E still blocked",
+        "receipt": "https://github.com/jadenfix/MiniGPTEngine-CPP/pull/3#issuecomment-6138145283"
+      }
     },
     {
       "repository": "jadenfix/rl",
@@ -1138,5 +1182,7 @@
       "recorded_source_sha": null,
       "demo_verified": false
     }
-  ]
+  ],
+  "followup_at": "2026-10-13T04:20:40Z",
+  "staged_demos": 2
 }
